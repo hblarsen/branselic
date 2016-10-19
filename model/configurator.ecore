@@ -34,7 +34,8 @@
     <eClassifiers xsi:type="ecore:EClass" name="Bool" eSuperTypes="#//branselic/Type"/>
     <eClassifiers xsi:type="ecore:EClass" name="Int" eSuperTypes="#//branselic/Type"/>
     <eClassifiers xsi:type="ecore:EClass" name="Enum" eSuperTypes="#//branselic/Type">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" upperBound="-1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="BooleanExpression"/>
     <eClassifiers xsi:type="ecore:EClass" name="Atom" eSuperTypes="#//branselic/BooleanExpression">

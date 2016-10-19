@@ -1418,7 +1418,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_FUiCkI8JEea03-irjZwWWg" name="Enum" tooltipText="&#xA;ERROR : The attribute 'Enum.values' is not transient so it must have a data type that is serializable&#xA;WARNING : The generic type associated with the 'EEList' classifier should have 1 type argument(s) to match the number of type parameter(s) of the classifier " outgoingEdges="_KGlcUI8JEea03-irjZwWWg" width="12" height="10">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_FUiCkI8JEea03-irjZwWWg" name="Enum" tooltipText="" outgoingEdges="_KGlcUI8JEea03-irjZwWWg" width="12" height="10">
         <target xmi:type="ecore:EClass" href="model/configurator.ecore#//branselic/Enum"/>
         <semanticElements xmi:type="ecore:EClass" href="model/configurator.ecore#//branselic/Enum"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1428,7 +1428,7 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="__Iri0JUzEeaHxtYMi8-vOA" name="values : EEList" tooltipText="">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="__Iri0JUzEeaHxtYMi8-vOA" name="values : EString" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="model/configurator.ecore#//branselic/Enum/values"/>
           <semanticElements xmi:type="ecore:EAttribute" href="model/configurator.ecore#//branselic/Enum/values"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="__Iri0ZUzEeaHxtYMi8-vOA" labelAlignment="LEFT">
