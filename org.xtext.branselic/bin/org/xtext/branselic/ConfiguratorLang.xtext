@@ -2,113 +2,103 @@
 grammar org.xtext.branselic.ConfiguratorLang with org.eclipse.xtext.common.Terminals
 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
-import "http://www.itu.dk/configurator/branselic" as branselic
+generate domainmodel "http://www.itu.dk/configurator/branselic" as branselic
 
 ConfiguratorModel returns branselic::ConfiguratorModel:
-	'ConfiguratorModel'
-	'{'
-		'feature' '{' feature+=Feature ( "," feature+=Feature)* '}' 
-		'ruleset' ruleset=RuleSet
-	'}';
-
-
-
-Type returns branselic::Type:
-	Type_Impl | Bool | Int0 | Enum;
-
-
-BooleanExpression returns branselic::BooleanExpression:
-	BooleanExpression_Impl | Atom | Or | Negation | And | Const;
+	'Features' feature+=Feature (feature+=Feature)* 
+	'Rules' ruleset=RuleSet
+	;
 
 
 Feature returns branselic::Feature:
-	'Feature'
-	'{'
-		('Name' Name=EString)?
-		'type' type=[branselic::Type|EString]
-	'}';
+	Name=EString
+	':'
+	type=[branselic::Type]
+	;
+	
+Operator returns branselic::Operator:
+	feature=[branselic::Feature|EString]
+	op=OpSymbol
+	value=EString
+	;
+
+OpSymbol returns ecore::EString:
+	('=' | '<' | '>' )
+	;
+
+
+Type returns branselic::Type:
+	BoolType | IntType | EnumType;
+
+
+BoolType returns branselic::Bool:
+	{branselic::Bool}
+	'bool'
+	;
+
+IntType returns branselic::Int:
+	{branselic::Int}
+	'int'
+	;
+
+EnumType returns branselic::Enum:
+	{branselic::Enum}
+	'['
+		(values+=EString ( "," values+=EString)* )?
+	']';
+
+
 
 RuleSet returns branselic::RuleSet:
 	{branselic::RuleSet}
-	'RuleSet'
-	'{'
-		('rule' '{' rule+=Rule ( "," rule+=Rule)* '}' )?
-	'}';
-
-EString returns ecore::EString:
-	STRING | ID;
-
-Type_Impl returns branselic::Type:
-	{branselic::Type}
-	'Type'
+	(rule+=Rule)*
 	;
 
-Bool returns branselic::Bool:
-	{branselic::Bool}
-	'Bool'
-	;
 
-Int0 returns branselic::Int:
-	{branselic::Int}
-	'Int'
-	;
-
-Enum returns branselic::Enum:
-	{branselic::Enum}
-	'Enum'
-	'{'
-		('values' '{' values+=EString ( "," values+=EString)* '}' )?
-	'}';
 
 Rule returns branselic::Rule:
-	'Rule'
-	'{'
-		'if' if=BooleanExpression
-		'then' then=BooleanExpression
-	'}';
+	if=BooleanExpression
+	'->'
+	then=BooleanExpression
+	;
 
-BooleanExpression_Impl returns branselic::BooleanExpression:
-	{branselic::BooleanExpression}
-	'BooleanExpression'
+
+BooleanExpression returns branselic::BooleanExpression:
+	Const | Atom | And | Negation ;
+
+
+Const returns branselic::Const:
+	value=EBoolean
 	;
 
 Atom returns branselic::Atom:
-	'Atom'
-	'{'
-		'operator' operator=[branselic::Operator|EString]
-	'}';
-
-Or returns branselic::Or:
-	'Or'
-	'{'
-		'booleanexpression' '{' booleanexpression+=BooleanExpression ( "," booleanexpression+=BooleanExpression)* '}' 
-	'}';
-
-Negation returns branselic::Negation:
-	'Negation'
-	'{'
-		'booleanexpression' booleanexpression=BooleanExpression
-	'}';
-
-And returns branselic::And:
-	'And'
-	'{'
-		'booleanexpression' '{' booleanexpression+=BooleanExpression ( "," booleanexpression+=BooleanExpression)* '}' 
-	'}';
-
-Const returns branselic::Const:
-	{branselic::Const}
-	(value?='value')?
-	'Const'
+	operator=[branselic::Operator]
 	;
 
-Operator returns branselic::Operator:
-	'Operator'
-	'{'
-		('value' value=EString)?
-		('op' op=EString)?
-		'feature' feature=[branselic::Feature|EString]
-	'}';
+SimpleBoolean returns branselic::BooleanExpression:
+	Const | Atom | "(" BooleanExpression ")"
+	;
+
+Or returns branselic::Or:
+	booleanexpression+=SimpleBoolean
+	"or"
+	booleanexpression+=SimpleBoolean 
+	;
+
+Negation returns branselic::Negation:
+	'not'
+	booleanexpression=SimpleBoolean
+	;
+
+And returns branselic::And:
+	booleanexpression+=SimpleBoolean
+	"and"
+	booleanexpression+=SimpleBoolean
+	;
+
+
+EString returns ecore::EString:
+	STRING | ID;
 
 EBoolean returns ecore::EBoolean:
 	'true' | 'false';
