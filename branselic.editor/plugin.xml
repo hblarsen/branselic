@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated configurator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="configurator.branselic.presentation.BranselicModelWizardID"
+            name="%_UI_BranselicModelWizard_label"
+            class="configurator.branselic.presentation.BranselicModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/BranselicModelFile.gif">
+         <description>%_UI_BranselicModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated configurator -->
+      <editor
+            id="configurator.branselic.presentation.BranselicEditorID"
+            name="%_UI_BranselicEditor_label"
+            icon="icons/full/obj16/BranselicModelFile.gif"
+            extensions="branselic"
+            class="configurator.branselic.presentation.BranselicEditor"
+            contributorClass="configurator.branselic.presentation.BranselicActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

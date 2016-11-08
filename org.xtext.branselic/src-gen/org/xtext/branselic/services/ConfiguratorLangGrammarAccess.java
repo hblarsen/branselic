@@ -27,111 +27,133 @@ public class ConfiguratorLangGrammarAccess extends AbstractGrammarElementFinder 
 	public class ConfiguratorModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.branselic.ConfiguratorLang.ConfiguratorModel");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFeaturesKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cFeatureAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cFeatureFeatureParserRuleCall_1_0 = (RuleCall)cFeatureAssignment_1.eContents().get(0);
-		private final Assignment cFeatureAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cFeatureFeatureParserRuleCall_2_0 = (RuleCall)cFeatureAssignment_2.eContents().get(0);
-		private final Keyword cRulesKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cRulesetAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cRulesetRuleSetParserRuleCall_4_0 = (RuleCall)cRulesetAssignment_4.eContents().get(0);
+		private final Keyword cNameKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cFeaturesKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cFeatureAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cFeatureFeatureParserRuleCall_4_0 = (RuleCall)cFeatureAssignment_4.eContents().get(0);
+		private final Assignment cFeatureAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cFeatureFeatureParserRuleCall_5_0 = (RuleCall)cFeatureAssignment_5.eContents().get(0);
+		private final Keyword cRulesKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cRulesetAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cRulesetRuleSetParserRuleCall_7_0 = (RuleCall)cRulesetAssignment_7.eContents().get(0);
 		
 		//ConfiguratorModel branselic::ConfiguratorModel:
+		//	'Name' ':' name=STRING
 		//	'Features' feature+=Feature feature+=Feature*
 		//	'Rules' ruleset=RuleSet
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Features' feature+=Feature feature+=Feature* 'Rules' ruleset=RuleSet
+		//'Name' ':' name=STRING 'Features' feature+=Feature feature+=Feature* 'Rules' ruleset=RuleSet
 		public Group getGroup() { return cGroup; }
 		
+		//'Name'
+		public Keyword getNameKeyword_0() { return cNameKeyword_0; }
+		
+		//':'
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		
 		//'Features'
-		public Keyword getFeaturesKeyword_0() { return cFeaturesKeyword_0; }
+		public Keyword getFeaturesKeyword_3() { return cFeaturesKeyword_3; }
 		
 		//feature+=Feature
-		public Assignment getFeatureAssignment_1() { return cFeatureAssignment_1; }
+		public Assignment getFeatureAssignment_4() { return cFeatureAssignment_4; }
 		
 		//Feature
-		public RuleCall getFeatureFeatureParserRuleCall_1_0() { return cFeatureFeatureParserRuleCall_1_0; }
+		public RuleCall getFeatureFeatureParserRuleCall_4_0() { return cFeatureFeatureParserRuleCall_4_0; }
 		
 		//feature+=Feature*
-		public Assignment getFeatureAssignment_2() { return cFeatureAssignment_2; }
+		public Assignment getFeatureAssignment_5() { return cFeatureAssignment_5; }
 		
 		//Feature
-		public RuleCall getFeatureFeatureParserRuleCall_2_0() { return cFeatureFeatureParserRuleCall_2_0; }
+		public RuleCall getFeatureFeatureParserRuleCall_5_0() { return cFeatureFeatureParserRuleCall_5_0; }
 		
 		//'Rules'
-		public Keyword getRulesKeyword_3() { return cRulesKeyword_3; }
+		public Keyword getRulesKeyword_6() { return cRulesKeyword_6; }
 		
 		//ruleset=RuleSet
-		public Assignment getRulesetAssignment_4() { return cRulesetAssignment_4; }
+		public Assignment getRulesetAssignment_7() { return cRulesetAssignment_7; }
 		
 		//RuleSet
-		public RuleCall getRulesetRuleSetParserRuleCall_4_0() { return cRulesetRuleSetParserRuleCall_4_0; }
+		public RuleCall getRulesetRuleSetParserRuleCall_7_0() { return cRulesetRuleSetParserRuleCall_7_0; }
 	}
 	public class FeatureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.branselic.ConfiguratorLang.Feature");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameEStringParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cTypeTypeCrossReference_2_0 = (CrossReference)cTypeAssignment_2.eContents().get(0);
-		private final RuleCall cTypeTypeIDTerminalRuleCall_2_0_1 = (RuleCall)cTypeTypeCrossReference_2_0.eContents().get(1);
+		private final RuleCall cTypeTypeParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		private final Assignment cTextAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTextSTRINGTerminalRuleCall_3_0 = (RuleCall)cTextAssignment_3.eContents().get(0);
 		
 		//Feature branselic::Feature:
-		//	Name=EString
+		//	name=ID
 		//	':'
-		//	type=[branselic::Type]
+		//	type=Type
+		//	text=STRING?
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Name=EString ':' type=[branselic::Type]
+		//name=ID ':' type=Type text=STRING?
 		public Group getGroup() { return cGroup; }
 		
-		//Name=EString
+		//name=ID
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_0_0() { return cNameEStringParserRuleCall_0_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 		
 		//':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
-		//type=[branselic::Type]
+		//type=Type
 		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
 		
-		//[branselic::Type]
-		public CrossReference getTypeTypeCrossReference_2_0() { return cTypeTypeCrossReference_2_0; }
+		//Type
+		public RuleCall getTypeTypeParserRuleCall_2_0() { return cTypeTypeParserRuleCall_2_0; }
 		
-		//ID
-		public RuleCall getTypeTypeIDTerminalRuleCall_2_0_1() { return cTypeTypeIDTerminalRuleCall_2_0_1; }
+		//text=STRING?
+		public Assignment getTextAssignment_3() { return cTextAssignment_3; }
+		
+		//STRING
+		public RuleCall getTextSTRINGTerminalRuleCall_3_0() { return cTextSTRINGTerminalRuleCall_3_0; }
 	}
 	public class OperatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.branselic.ConfiguratorLang.Operator");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cFeatureAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final CrossReference cFeatureFeatureCrossReference_0_0 = (CrossReference)cFeatureAssignment_0.eContents().get(0);
-		private final RuleCall cFeatureFeatureEStringParserRuleCall_0_0_1 = (RuleCall)cFeatureFeatureCrossReference_0_0.eContents().get(1);
+		private final RuleCall cFeatureFeatureIDTerminalRuleCall_0_0_1 = (RuleCall)cFeatureFeatureCrossReference_0_0.eContents().get(1);
 		private final Assignment cOpAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cOpOpSymbolParserRuleCall_1_0 = (RuleCall)cOpAssignment_1.eContents().get(0);
 		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueEStringParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final RuleCall cValueIDTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
 		//Operator branselic::Operator:
-		//	feature=[branselic::Feature|EString] op=OpSymbol
-		//	value=EString
+		//	feature=[branselic::Feature] op=OpSymbol
+		//	value=ID
 		@Override public ParserRule getRule() { return rule; }
 		
-		//feature=[branselic::Feature|EString] op=OpSymbol value=EString
+		//feature=[branselic::Feature] op=OpSymbol value=ID
 		public Group getGroup() { return cGroup; }
 		
-		//feature=[branselic::Feature|EString]
+		//feature=[branselic::Feature]
 		public Assignment getFeatureAssignment_0() { return cFeatureAssignment_0; }
 		
-		//[branselic::Feature|EString]
+		//[branselic::Feature]
 		public CrossReference getFeatureFeatureCrossReference_0_0() { return cFeatureFeatureCrossReference_0_0; }
 		
-		//EString
-		public RuleCall getFeatureFeatureEStringParserRuleCall_0_0_1() { return cFeatureFeatureEStringParserRuleCall_0_0_1; }
+		//ID
+		public RuleCall getFeatureFeatureIDTerminalRuleCall_0_0_1() { return cFeatureFeatureIDTerminalRuleCall_0_0_1; }
 		
 		//op=OpSymbol
 		public Assignment getOpAssignment_1() { return cOpAssignment_1; }
@@ -139,11 +161,11 @@ public class ConfiguratorLangGrammarAccess extends AbstractGrammarElementFinder 
 		//OpSymbol
 		public RuleCall getOpOpSymbolParserRuleCall_1_0() { return cOpOpSymbolParserRuleCall_1_0; }
 		
-		//value=EString
+		//value=ID
 		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
 		
-		//EString
-		public RuleCall getValueEStringParserRuleCall_2_0() { return cValueEStringParserRuleCall_2_0; }
+		//ID
+		public RuleCall getValueIDTerminalRuleCall_2_0() { return cValueIDTerminalRuleCall_2_0; }
 	}
 	public class OpSymbolElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.branselic.ConfiguratorLang.OpSymbol");
@@ -238,20 +260,20 @@ public class ConfiguratorLangGrammarAccess extends AbstractGrammarElementFinder 
 		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Assignment cValuesAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
-		private final RuleCall cValuesEStringParserRuleCall_2_0_0 = (RuleCall)cValuesAssignment_2_0.eContents().get(0);
+		private final RuleCall cValuesIDTerminalRuleCall_2_0_0 = (RuleCall)cValuesAssignment_2_0.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
 		private final Keyword cCommaKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
 		private final Assignment cValuesAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
-		private final RuleCall cValuesEStringParserRuleCall_2_1_1_0 = (RuleCall)cValuesAssignment_2_1_1.eContents().get(0);
+		private final RuleCall cValuesIDTerminalRuleCall_2_1_1_0 = (RuleCall)cValuesAssignment_2_1_1.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//EnumType branselic::Enum:
 		//	{branselic::Enum}
-		//	'[' (values+=EString ("," values+=EString)*)?
+		//	'[' (values+=ID ("," values+=ID)*)?
 		//	']'
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{branselic::Enum} '[' (values+=EString ("," values+=EString)*)? ']'
+		//{branselic::Enum} '[' (values+=ID ("," values+=ID)*)? ']'
 		public Group getGroup() { return cGroup; }
 		
 		//{branselic::Enum}
@@ -260,26 +282,26 @@ public class ConfiguratorLangGrammarAccess extends AbstractGrammarElementFinder 
 		//'['
 		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
 		
-		//(values+=EString ("," values+=EString)*)?
+		//(values+=ID ("," values+=ID)*)?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//values+=EString
+		//values+=ID
 		public Assignment getValuesAssignment_2_0() { return cValuesAssignment_2_0; }
 		
-		//EString
-		public RuleCall getValuesEStringParserRuleCall_2_0_0() { return cValuesEStringParserRuleCall_2_0_0; }
+		//ID
+		public RuleCall getValuesIDTerminalRuleCall_2_0_0() { return cValuesIDTerminalRuleCall_2_0_0; }
 		
-		//("," values+=EString)*
+		//("," values+=ID)*
 		public Group getGroup_2_1() { return cGroup_2_1; }
 		
 		//","
 		public Keyword getCommaKeyword_2_1_0() { return cCommaKeyword_2_1_0; }
 		
-		//values+=EString
+		//values+=ID
 		public Assignment getValuesAssignment_2_1_1() { return cValuesAssignment_2_1_1; }
 		
-		//EString
-		public RuleCall getValuesEStringParserRuleCall_2_1_1_0() { return cValuesEStringParserRuleCall_2_1_1_0; }
+		//ID
+		public RuleCall getValuesIDTerminalRuleCall_2_1_1_0() { return cValuesIDTerminalRuleCall_2_1_1_0; }
 		
 		//']'
 		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
@@ -310,35 +332,61 @@ public class ConfiguratorLangGrammarAccess extends AbstractGrammarElementFinder 
 	public class RuleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.branselic.ConfiguratorLang.Rule");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cIfAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cIfBooleanExpressionParserRuleCall_0_0 = (RuleCall)cIfAssignment_0.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cThenAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cThenBooleanExpressionParserRuleCall_2_0 = (RuleCall)cThenAssignment_2.eContents().get(0);
+		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0_0 = (RuleCall)cNameAssignment_0_0.eContents().get(0);
+		private final Keyword cColonKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cIfAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cIfSimpleBooleanParserRuleCall_1_0 = (RuleCall)cIfAssignment_1.eContents().get(0);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cThenAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cThenSimpleBooleanParserRuleCall_3_0 = (RuleCall)cThenAssignment_3.eContents().get(0);
+		private final Assignment cTextAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cTextSTRINGTerminalRuleCall_4_0 = (RuleCall)cTextAssignment_4.eContents().get(0);
 		
 		//Rule branselic::Rule:
-		//	if=BooleanExpression
+		//	(name=ID ':')?
+		//	if=SimpleBoolean
 		//	'->'
-		//	then=BooleanExpression
+		//	then=SimpleBoolean
+		//	text=STRING?
 		@Override public ParserRule getRule() { return rule; }
 		
-		//if=BooleanExpression '->' then=BooleanExpression
+		//(name=ID ':')? if=SimpleBoolean '->' then=SimpleBoolean text=STRING?
 		public Group getGroup() { return cGroup; }
 		
-		//if=BooleanExpression
-		public Assignment getIfAssignment_0() { return cIfAssignment_0; }
+		//(name=ID ':')?
+		public Group getGroup_0() { return cGroup_0; }
 		
-		//BooleanExpression
-		public RuleCall getIfBooleanExpressionParserRuleCall_0_0() { return cIfBooleanExpressionParserRuleCall_0_0; }
+		//name=ID
+		public Assignment getNameAssignment_0_0() { return cNameAssignment_0_0; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0_0() { return cNameIDTerminalRuleCall_0_0_0; }
+		
+		//':'
+		public Keyword getColonKeyword_0_1() { return cColonKeyword_0_1; }
+		
+		//if=SimpleBoolean
+		public Assignment getIfAssignment_1() { return cIfAssignment_1; }
+		
+		//SimpleBoolean
+		public RuleCall getIfSimpleBooleanParserRuleCall_1_0() { return cIfSimpleBooleanParserRuleCall_1_0; }
 		
 		//'->'
-		public Keyword getHyphenMinusGreaterThanSignKeyword_1() { return cHyphenMinusGreaterThanSignKeyword_1; }
+		public Keyword getHyphenMinusGreaterThanSignKeyword_2() { return cHyphenMinusGreaterThanSignKeyword_2; }
 		
-		//then=BooleanExpression
-		public Assignment getThenAssignment_2() { return cThenAssignment_2; }
+		//then=SimpleBoolean
+		public Assignment getThenAssignment_3() { return cThenAssignment_3; }
 		
-		//BooleanExpression
-		public RuleCall getThenBooleanExpressionParserRuleCall_2_0() { return cThenBooleanExpressionParserRuleCall_2_0; }
+		//SimpleBoolean
+		public RuleCall getThenSimpleBooleanParserRuleCall_3_0() { return cThenSimpleBooleanParserRuleCall_3_0; }
+		
+		//text=STRING?
+		public Assignment getTextAssignment_4() { return cTextAssignment_4; }
+		
+		//STRING
+		public RuleCall getTextSTRINGTerminalRuleCall_4_0() { return cTextSTRINGTerminalRuleCall_4_0; }
 	}
 	public class BooleanExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.branselic.ConfiguratorLang.BooleanExpression");
@@ -385,21 +433,17 @@ public class ConfiguratorLangGrammarAccess extends AbstractGrammarElementFinder 
 	public class AtomElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.branselic.ConfiguratorLang.Atom");
 		private final Assignment cOperatorAssignment = (Assignment)rule.eContents().get(1);
-		private final CrossReference cOperatorOperatorCrossReference_0 = (CrossReference)cOperatorAssignment.eContents().get(0);
-		private final RuleCall cOperatorOperatorIDTerminalRuleCall_0_1 = (RuleCall)cOperatorOperatorCrossReference_0.eContents().get(1);
+		private final RuleCall cOperatorOperatorParserRuleCall_0 = (RuleCall)cOperatorAssignment.eContents().get(0);
 		
 		//Atom branselic::Atom:
-		//	operator=[branselic::Operator]
+		//	operator=Operator
 		@Override public ParserRule getRule() { return rule; }
 		
-		//operator=[branselic::Operator]
+		//operator=Operator
 		public Assignment getOperatorAssignment() { return cOperatorAssignment; }
 		
-		//[branselic::Operator]
-		public CrossReference getOperatorOperatorCrossReference_0() { return cOperatorOperatorCrossReference_0; }
-		
-		//ID
-		public RuleCall getOperatorOperatorIDTerminalRuleCall_0_1() { return cOperatorOperatorIDTerminalRuleCall_0_1; }
+		//Operator
+		public RuleCall getOperatorOperatorParserRuleCall_0() { return cOperatorOperatorParserRuleCall_0; }
 	}
 	public class SimpleBooleanElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.branselic.ConfiguratorLang.SimpleBoolean");
@@ -436,39 +480,6 @@ public class ConfiguratorLangGrammarAccess extends AbstractGrammarElementFinder 
 		//")"
 		public Keyword getRightParenthesisKeyword_2_2() { return cRightParenthesisKeyword_2_2; }
 	}
-	public class OrElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.branselic.ConfiguratorLang.Or");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cBooleanexpressionAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cBooleanexpressionSimpleBooleanParserRuleCall_0_0 = (RuleCall)cBooleanexpressionAssignment_0.eContents().get(0);
-		private final Keyword cOrKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cBooleanexpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cBooleanexpressionSimpleBooleanParserRuleCall_2_0 = (RuleCall)cBooleanexpressionAssignment_2.eContents().get(0);
-		
-		//Or branselic::Or:
-		//	booleanexpression+=SimpleBoolean
-		//	"or"
-		//	booleanexpression+=SimpleBoolean
-		@Override public ParserRule getRule() { return rule; }
-		
-		//booleanexpression+=SimpleBoolean "or" booleanexpression+=SimpleBoolean
-		public Group getGroup() { return cGroup; }
-		
-		//booleanexpression+=SimpleBoolean
-		public Assignment getBooleanexpressionAssignment_0() { return cBooleanexpressionAssignment_0; }
-		
-		//SimpleBoolean
-		public RuleCall getBooleanexpressionSimpleBooleanParserRuleCall_0_0() { return cBooleanexpressionSimpleBooleanParserRuleCall_0_0; }
-		
-		//"or"
-		public Keyword getOrKeyword_1() { return cOrKeyword_1; }
-		
-		//booleanexpression+=SimpleBoolean
-		public Assignment getBooleanexpressionAssignment_2() { return cBooleanexpressionAssignment_2; }
-		
-		//SimpleBoolean
-		public RuleCall getBooleanexpressionSimpleBooleanParserRuleCall_2_0() { return cBooleanexpressionSimpleBooleanParserRuleCall_2_0; }
-	}
 	public class NegationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.branselic.ConfiguratorLang.Negation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -503,9 +514,7 @@ public class ConfiguratorLangGrammarAccess extends AbstractGrammarElementFinder 
 		private final RuleCall cBooleanexpressionSimpleBooleanParserRuleCall_2_0 = (RuleCall)cBooleanexpressionAssignment_2.eContents().get(0);
 		
 		//And branselic::And:
-		//	booleanexpression+=SimpleBoolean
-		//	"and"
-		//	booleanexpression+=SimpleBoolean
+		//	booleanexpression+=SimpleBoolean "and" booleanexpression+=SimpleBoolean
 		@Override public ParserRule getRule() { return rule; }
 		
 		//booleanexpression+=SimpleBoolean "and" booleanexpression+=SimpleBoolean
@@ -526,24 +535,36 @@ public class ConfiguratorLangGrammarAccess extends AbstractGrammarElementFinder 
 		//SimpleBoolean
 		public RuleCall getBooleanexpressionSimpleBooleanParserRuleCall_2_0() { return cBooleanexpressionSimpleBooleanParserRuleCall_2_0; }
 	}
-	public class EStringElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.branselic.ConfiguratorLang.EString");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+	public class OrElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.branselic.ConfiguratorLang.Or");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cBooleanexpressionAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cBooleanexpressionSimpleBooleanParserRuleCall_0_0 = (RuleCall)cBooleanexpressionAssignment_0.eContents().get(0);
+		private final Keyword cOrKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cBooleanexpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cBooleanexpressionSimpleBooleanParserRuleCall_2_0 = (RuleCall)cBooleanexpressionAssignment_2.eContents().get(0);
 		
-		//EString:
-		//	STRING | ID;
+		//Or branselic::Or:
+		//	booleanexpression+=SimpleBoolean "or" booleanexpression+=SimpleBoolean
 		@Override public ParserRule getRule() { return rule; }
 		
-		//STRING | ID
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//booleanexpression+=SimpleBoolean "or" booleanexpression+=SimpleBoolean
+		public Group getGroup() { return cGroup; }
 		
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_0() { return cSTRINGTerminalRuleCall_0; }
+		//booleanexpression+=SimpleBoolean
+		public Assignment getBooleanexpressionAssignment_0() { return cBooleanexpressionAssignment_0; }
 		
-		//ID
-		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
+		//SimpleBoolean
+		public RuleCall getBooleanexpressionSimpleBooleanParserRuleCall_0_0() { return cBooleanexpressionSimpleBooleanParserRuleCall_0_0; }
+		
+		//"or"
+		public Keyword getOrKeyword_1() { return cOrKeyword_1; }
+		
+		//booleanexpression+=SimpleBoolean
+		public Assignment getBooleanexpressionAssignment_2() { return cBooleanexpressionAssignment_2; }
+		
+		//SimpleBoolean
+		public RuleCall getBooleanexpressionSimpleBooleanParserRuleCall_2_0() { return cBooleanexpressionSimpleBooleanParserRuleCall_2_0; }
 	}
 	public class EBooleanElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.branselic.ConfiguratorLang.EBoolean");
@@ -580,10 +601,9 @@ public class ConfiguratorLangGrammarAccess extends AbstractGrammarElementFinder 
 	private final ConstElements pConst;
 	private final AtomElements pAtom;
 	private final SimpleBooleanElements pSimpleBoolean;
-	private final OrElements pOr;
 	private final NegationElements pNegation;
 	private final AndElements pAnd;
-	private final EStringElements pEString;
+	private final OrElements pOr;
 	private final EBooleanElements pEBoolean;
 	
 	private final Grammar grammar;
@@ -609,10 +629,9 @@ public class ConfiguratorLangGrammarAccess extends AbstractGrammarElementFinder 
 		this.pConst = new ConstElements();
 		this.pAtom = new AtomElements();
 		this.pSimpleBoolean = new SimpleBooleanElements();
-		this.pOr = new OrElements();
 		this.pNegation = new NegationElements();
 		this.pAnd = new AndElements();
-		this.pEString = new EStringElements();
+		this.pOr = new OrElements();
 		this.pEBoolean = new EBooleanElements();
 	}
 	
@@ -644,6 +663,7 @@ public class ConfiguratorLangGrammarAccess extends AbstractGrammarElementFinder 
 
 	
 	//ConfiguratorModel branselic::ConfiguratorModel:
+	//	'Name' ':' name=STRING
 	//	'Features' feature+=Feature feature+=Feature*
 	//	'Rules' ruleset=RuleSet
 	public ConfiguratorModelElements getConfiguratorModelAccess() {
@@ -655,9 +675,10 @@ public class ConfiguratorLangGrammarAccess extends AbstractGrammarElementFinder 
 	}
 	
 	//Feature branselic::Feature:
-	//	Name=EString
+	//	name=ID
 	//	':'
-	//	type=[branselic::Type]
+	//	type=Type
+	//	text=STRING?
 	public FeatureElements getFeatureAccess() {
 		return pFeature;
 	}
@@ -667,8 +688,8 @@ public class ConfiguratorLangGrammarAccess extends AbstractGrammarElementFinder 
 	}
 	
 	//Operator branselic::Operator:
-	//	feature=[branselic::Feature|EString] op=OpSymbol
-	//	value=EString
+	//	feature=[branselic::Feature] op=OpSymbol
+	//	value=ID
 	public OperatorElements getOperatorAccess() {
 		return pOperator;
 	}
@@ -721,7 +742,7 @@ public class ConfiguratorLangGrammarAccess extends AbstractGrammarElementFinder 
 	
 	//EnumType branselic::Enum:
 	//	{branselic::Enum}
-	//	'[' (values+=EString ("," values+=EString)*)?
+	//	'[' (values+=ID ("," values+=ID)*)?
 	//	']'
 	public EnumTypeElements getEnumTypeAccess() {
 		return pEnumType;
@@ -742,9 +763,11 @@ public class ConfiguratorLangGrammarAccess extends AbstractGrammarElementFinder 
 	}
 	
 	//Rule branselic::Rule:
-	//	if=BooleanExpression
+	//	(name=ID ':')?
+	//	if=SimpleBoolean
 	//	'->'
-	//	then=BooleanExpression
+	//	then=SimpleBoolean
+	//	text=STRING?
 	public RuleElements getRuleAccess() {
 		return pRule;
 	}
@@ -774,7 +797,7 @@ public class ConfiguratorLangGrammarAccess extends AbstractGrammarElementFinder 
 	}
 	
 	//Atom branselic::Atom:
-	//	operator=[branselic::Operator]
+	//	operator=Operator
 	public AtomElements getAtomAccess() {
 		return pAtom;
 	}
@@ -793,18 +816,6 @@ public class ConfiguratorLangGrammarAccess extends AbstractGrammarElementFinder 
 		return getSimpleBooleanAccess().getRule();
 	}
 	
-	//Or branselic::Or:
-	//	booleanexpression+=SimpleBoolean
-	//	"or"
-	//	booleanexpression+=SimpleBoolean
-	public OrElements getOrAccess() {
-		return pOr;
-	}
-	
-	public ParserRule getOrRule() {
-		return getOrAccess().getRule();
-	}
-	
 	//Negation branselic::Negation:
 	//	'not'
 	//	booleanexpression=SimpleBoolean
@@ -817,9 +828,7 @@ public class ConfiguratorLangGrammarAccess extends AbstractGrammarElementFinder 
 	}
 	
 	//And branselic::And:
-	//	booleanexpression+=SimpleBoolean
-	//	"and"
-	//	booleanexpression+=SimpleBoolean
+	//	booleanexpression+=SimpleBoolean "and" booleanexpression+=SimpleBoolean
 	public AndElements getAndAccess() {
 		return pAnd;
 	}
@@ -828,14 +837,14 @@ public class ConfiguratorLangGrammarAccess extends AbstractGrammarElementFinder 
 		return getAndAccess().getRule();
 	}
 	
-	//EString:
-	//	STRING | ID;
-	public EStringElements getEStringAccess() {
-		return pEString;
+	//Or branselic::Or:
+	//	booleanexpression+=SimpleBoolean "or" booleanexpression+=SimpleBoolean
+	public OrElements getOrAccess() {
+		return pOr;
 	}
 	
-	public ParserRule getEStringRule() {
-		return getEStringAccess().getRule();
+	public ParserRule getOrRule() {
+		return getOrAccess().getRule();
 	}
 	
 	//EBoolean ecore::EBoolean:

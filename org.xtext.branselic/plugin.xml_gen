@@ -3,7 +3,7 @@
 <plugin>
 	<extension point="org.eclipse.emf.ecore.generated_package">
 		<package 
-			uri = "http://www.itu.dk/configurator/branselic"
+			uri = "http://itu.dk/configurator/branselic"
 			class = "org.xtext.branselic.domainmodel.DomainmodelPackage"
 			genModel = "model/generated/ConfiguratorLang.genmodel" />
 	</extension>

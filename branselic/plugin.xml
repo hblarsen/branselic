@@ -14,4 +14,12 @@
             genModel="model/configurator.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated configurator -->
+      <package
+            uri="http://itu.dk/configurator/branselic"
+            class="configurator.branselic.BranselicPackage"
+            genModel="model/configurator.genmodel"/>
+   </extension>
+
 </plugin>

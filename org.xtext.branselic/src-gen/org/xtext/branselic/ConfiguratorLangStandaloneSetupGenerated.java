@@ -30,8 +30,8 @@ public class ConfiguratorLangStandaloneSetupGenerated implements ISetup {
 	}
 	
 	public void register(Injector injector) {
-		if (!EPackage.Registry.INSTANCE.containsKey("http://www.itu.dk/configurator/branselic")) {
-			EPackage.Registry.INSTANCE.put("http://www.itu.dk/configurator/branselic", DomainmodelPackage.eINSTANCE);
+		if (!EPackage.Registry.INSTANCE.containsKey("http://itu.dk/configurator/branselic")) {
+			EPackage.Registry.INSTANCE.put("http://itu.dk/configurator/branselic", DomainmodelPackage.eINSTANCE);
 		}
 		IResourceFactory resourceFactory = injector.getInstance(IResourceFactory.class);
 		IResourceServiceProvider serviceProvider = injector.getInstance(IResourceServiceProvider.class);

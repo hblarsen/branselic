@@ -132,15 +132,6 @@ public interface DomainmodelFactory extends EFactory
   Atom createAtom();
 
   /**
-   * Returns a new object of class '<em>Or</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Or</em>'.
-   * @generated
-   */
-  Or createOr();
-
-  /**
    * Returns a new object of class '<em>Negation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -157,6 +148,15 @@ public interface DomainmodelFactory extends EFactory
    * @generated
    */
   And createAnd();
+
+  /**
+   * Returns a new object of class '<em>Or</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Or</em>'.
+   * @generated
+   */
+  Or createOr();
 
   /**
    * Returns the package supported by this factory.

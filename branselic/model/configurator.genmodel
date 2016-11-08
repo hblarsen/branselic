@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/configurator.branselic/src" editDirectory="/configurator.branselic.edit/src"
-    editorDirectory="/configurator.branselic.editor/src" modelPluginID="configurator.branselic"
-    modelName="branselic" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    editPluginID="configurator.branselic.edit" editorPluginID="configurator.branselic.editor"
-    operationReflection="true" importOrganizing="true">
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/branselic/src" modelPluginID="branselic" modelName="Configurator"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>configurator.ecore</foreignModel>
   <genPackages prefix="Configurator" disposableProviderFactory="true" ecorePackage="configurator.ecore#/">
     <nestedGenPackages prefix="Branselic" disposableProviderFactory="true" ecorePackage="configurator.ecore#//branselic">
@@ -43,7 +40,7 @@
             ecoreFeature="ecore:EReference configurator.ecore#//branselic/Atom/operator"/>
       </genClasses>
       <genClasses ecoreClass="configurator.ecore#//branselic/Or">
-        <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference configurator.ecore#//branselic/Or/booleanexpression"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference configurator.ecore#//branselic/Or/booleanexpression"/>
       </genClasses>
       <genClasses ecoreClass="configurator.ecore#//branselic/Negation">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference configurator.ecore#//branselic/Negation/booleanexpression"/>

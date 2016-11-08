@@ -7,12 +7,14 @@
   <genPackages prefix="Domainmodel" basePackage="org.xtext.branselic" disposableProviderFactory="true"
       fileExtensions="bselic" ecorePackage="ConfiguratorLang.ecore#/">
     <genClasses ecoreClass="ConfiguratorLang.ecore#//ConfiguratorModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ConfiguratorLang.ecore#//ConfiguratorModel/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ConfiguratorLang.ecore#//ConfiguratorModel/feature"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ConfiguratorLang.ecore#//ConfiguratorModel/ruleset"/>
     </genClasses>
     <genClasses ecoreClass="ConfiguratorLang.ecore#//Feature">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ConfiguratorLang.ecore#//Feature/Name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ConfiguratorLang.ecore#//Feature/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ConfiguratorLang.ecore#//Feature/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ConfiguratorLang.ecore#//Feature/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ConfiguratorLang.ecore#//Feature/text"/>
     </genClasses>
     <genClasses ecoreClass="ConfiguratorLang.ecore#//Operator">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ConfiguratorLang.ecore#//Operator/feature"/>
@@ -29,24 +31,26 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ConfiguratorLang.ecore#//RuleSet/rule"/>
     </genClasses>
     <genClasses ecoreClass="ConfiguratorLang.ecore#//Rule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ConfiguratorLang.ecore#//Rule/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ConfiguratorLang.ecore#//Rule/if"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ConfiguratorLang.ecore#//Rule/then"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ConfiguratorLang.ecore#//Rule/text"/>
     </genClasses>
     <genClasses ecoreClass="ConfiguratorLang.ecore#//BooleanExpression"/>
     <genClasses ecoreClass="ConfiguratorLang.ecore#//Const">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ConfiguratorLang.ecore#//Const/value"/>
     </genClasses>
     <genClasses ecoreClass="ConfiguratorLang.ecore#//Atom">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ConfiguratorLang.ecore#//Atom/operator"/>
-    </genClasses>
-    <genClasses ecoreClass="ConfiguratorLang.ecore#//Or">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ConfiguratorLang.ecore#//Or/booleanexpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ConfiguratorLang.ecore#//Atom/operator"/>
     </genClasses>
     <genClasses ecoreClass="ConfiguratorLang.ecore#//Negation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ConfiguratorLang.ecore#//Negation/booleanexpression"/>
     </genClasses>
     <genClasses ecoreClass="ConfiguratorLang.ecore#//And">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ConfiguratorLang.ecore#//And/booleanexpression"/>
+    </genClasses>
+    <genClasses ecoreClass="ConfiguratorLang.ecore#//Or">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ConfiguratorLang.ecore#//Or/booleanexpression"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

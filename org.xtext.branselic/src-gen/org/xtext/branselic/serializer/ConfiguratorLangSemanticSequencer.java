@@ -108,7 +108,7 @@ public class ConfiguratorLangSemanticSequencer extends AbstractDelegatingSemanti
 	 *     SimpleBoolean returns Atom
 	 *
 	 * Constraint:
-	 *     operator=[Operator|ID]
+	 *     operator=Operator
 	 */
 	protected void sequence_Atom(ISerializationContext context, Atom semanticObject) {
 		if (errorAcceptor != null) {
@@ -116,7 +116,7 @@ public class ConfiguratorLangSemanticSequencer extends AbstractDelegatingSemanti
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainmodelPackage.Literals.ATOM__OPERATOR));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAtomAccess().getOperatorOperatorIDTerminalRuleCall_0_1(), semanticObject.getOperator());
+		feeder.accept(grammarAccess.getAtomAccess().getOperatorOperatorParserRuleCall_0(), semanticObject.getOperator());
 		feeder.finish();
 	}
 	
@@ -139,7 +139,7 @@ public class ConfiguratorLangSemanticSequencer extends AbstractDelegatingSemanti
 	 *     ConfiguratorModel returns ConfiguratorModel
 	 *
 	 * Constraint:
-	 *     (feature+=Feature feature+=Feature* ruleset=RuleSet)
+	 *     (name=STRING feature+=Feature feature+=Feature* ruleset=RuleSet)
 	 */
 	protected void sequence_ConfiguratorModel(ISerializationContext context, ConfiguratorModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -172,7 +172,7 @@ public class ConfiguratorLangSemanticSequencer extends AbstractDelegatingSemanti
 	 *     EnumType returns Enum
 	 *
 	 * Constraint:
-	 *     (values+=EString values+=EString*)?
+	 *     (values+=ID values+=ID*)?
 	 */
 	protected void sequence_EnumType(ISerializationContext context, org.xtext.branselic.domainmodel.Enum semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -184,19 +184,10 @@ public class ConfiguratorLangSemanticSequencer extends AbstractDelegatingSemanti
 	 *     Feature returns Feature
 	 *
 	 * Constraint:
-	 *     (Name=EString type=[Type|ID])
+	 *     (name=ID type=Type text=STRING?)
 	 */
 	protected void sequence_Feature(ISerializationContext context, Feature semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DomainmodelPackage.Literals.FEATURE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainmodelPackage.Literals.FEATURE__NAME));
-			if (transientValues.isValueTransient(semanticObject, DomainmodelPackage.Literals.FEATURE__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainmodelPackage.Literals.FEATURE__TYPE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFeatureAccess().getNameEStringParserRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getFeatureAccess().getTypeTypeIDTerminalRuleCall_2_0_1(), semanticObject.getType());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -238,7 +229,7 @@ public class ConfiguratorLangSemanticSequencer extends AbstractDelegatingSemanti
 	 *     Operator returns Operator
 	 *
 	 * Constraint:
-	 *     (feature=[Feature|EString] op=OpSymbol value=EString)
+	 *     (feature=[Feature|ID] op=OpSymbol value=ID)
 	 */
 	protected void sequence_Operator(ISerializationContext context, Operator semanticObject) {
 		if (errorAcceptor != null) {
@@ -250,9 +241,9 @@ public class ConfiguratorLangSemanticSequencer extends AbstractDelegatingSemanti
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainmodelPackage.Literals.OPERATOR__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getOperatorAccess().getFeatureFeatureEStringParserRuleCall_0_0_1(), semanticObject.getFeature());
+		feeder.accept(grammarAccess.getOperatorAccess().getFeatureFeatureIDTerminalRuleCall_0_0_1(), semanticObject.getFeature());
 		feeder.accept(grammarAccess.getOperatorAccess().getOpOpSymbolParserRuleCall_1_0(), semanticObject.getOp());
-		feeder.accept(grammarAccess.getOperatorAccess().getValueEStringParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getOperatorAccess().getValueIDTerminalRuleCall_2_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -286,19 +277,10 @@ public class ConfiguratorLangSemanticSequencer extends AbstractDelegatingSemanti
 	 *     Rule returns Rule
 	 *
 	 * Constraint:
-	 *     (if=BooleanExpression then=BooleanExpression)
+	 *     (name=ID? if=SimpleBoolean then=SimpleBoolean text=STRING?)
 	 */
 	protected void sequence_Rule(ISerializationContext context, Rule semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DomainmodelPackage.Literals.RULE__IF) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainmodelPackage.Literals.RULE__IF));
-			if (transientValues.isValueTransient(semanticObject, DomainmodelPackage.Literals.RULE__THEN) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainmodelPackage.Literals.RULE__THEN));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRuleAccess().getIfBooleanExpressionParserRuleCall_0_0(), semanticObject.getIf());
-		feeder.accept(grammarAccess.getRuleAccess().getThenBooleanExpressionParserRuleCall_2_0(), semanticObject.getThen());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

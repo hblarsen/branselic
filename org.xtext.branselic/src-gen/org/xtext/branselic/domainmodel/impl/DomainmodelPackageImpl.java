@@ -124,13 +124,6 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass orEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass negationEClass = null;
 
   /**
@@ -139,6 +132,13 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
    * @generated
    */
   private EClass andEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass orEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -218,9 +218,19 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getConfiguratorModel_Name()
+  {
+    return (EAttribute)configuratorModelEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getConfiguratorModel_Feature()
   {
-    return (EReference)configuratorModelEClass.getEStructuralFeatures().get(0);
+    return (EReference)configuratorModelEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -230,7 +240,7 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
    */
   public EReference getConfiguratorModel_Ruleset()
   {
-    return (EReference)configuratorModelEClass.getEStructuralFeatures().get(1);
+    return (EReference)configuratorModelEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -261,6 +271,16 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
   public EReference getFeature_Type()
   {
     return (EReference)featureEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFeature_Text()
+  {
+    return (EAttribute)featureEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -388,9 +408,19 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getRule_Name()
+  {
+    return (EAttribute)ruleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getRule_If()
   {
-    return (EReference)ruleEClass.getEStructuralFeatures().get(0);
+    return (EReference)ruleEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -400,7 +430,17 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
    */
   public EReference getRule_Then()
   {
-    return (EReference)ruleEClass.getEStructuralFeatures().get(1);
+    return (EReference)ruleEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRule_Text()
+  {
+    return (EAttribute)ruleEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -458,26 +498,6 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getOr()
-  {
-    return orEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getOr_Booleanexpression()
-  {
-    return (EReference)orEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getNegation()
   {
     return negationEClass;
@@ -518,6 +538,26 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getOr()
+  {
+    return orEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOr_Booleanexpression()
+  {
+    return (EReference)orEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public DomainmodelFactory getDomainmodelFactory()
   {
     return (DomainmodelFactory)getEFactoryInstance();
@@ -544,12 +584,14 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
 
     // Create classes and their features
     configuratorModelEClass = createEClass(CONFIGURATOR_MODEL);
+    createEAttribute(configuratorModelEClass, CONFIGURATOR_MODEL__NAME);
     createEReference(configuratorModelEClass, CONFIGURATOR_MODEL__FEATURE);
     createEReference(configuratorModelEClass, CONFIGURATOR_MODEL__RULESET);
 
     featureEClass = createEClass(FEATURE);
     createEAttribute(featureEClass, FEATURE__NAME);
     createEReference(featureEClass, FEATURE__TYPE);
+    createEAttribute(featureEClass, FEATURE__TEXT);
 
     operatorEClass = createEClass(OPERATOR);
     createEReference(operatorEClass, OPERATOR__FEATURE);
@@ -569,8 +611,10 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
     createEReference(ruleSetEClass, RULE_SET__RULE);
 
     ruleEClass = createEClass(RULE);
+    createEAttribute(ruleEClass, RULE__NAME);
     createEReference(ruleEClass, RULE__IF);
     createEReference(ruleEClass, RULE__THEN);
+    createEAttribute(ruleEClass, RULE__TEXT);
 
     booleanExpressionEClass = createEClass(BOOLEAN_EXPRESSION);
 
@@ -580,14 +624,14 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
     atomEClass = createEClass(ATOM);
     createEReference(atomEClass, ATOM__OPERATOR);
 
-    orEClass = createEClass(OR);
-    createEReference(orEClass, OR__BOOLEANEXPRESSION);
-
     negationEClass = createEClass(NEGATION);
     createEReference(negationEClass, NEGATION__BOOLEANEXPRESSION);
 
     andEClass = createEClass(AND);
     createEReference(andEClass, AND__BOOLEANEXPRESSION);
+
+    orEClass = createEClass(OR);
+    createEReference(orEClass, OR__BOOLEANEXPRESSION);
   }
 
   /**
@@ -629,12 +673,14 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
 
     // Initialize classes and features; add operations and parameters
     initEClass(configuratorModelEClass, ConfiguratorModel.class, "ConfiguratorModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getConfiguratorModel_Name(), ecorePackage.getEString(), "name", null, 0, 1, ConfiguratorModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConfiguratorModel_Feature(), this.getFeature(), null, "feature", null, 0, -1, ConfiguratorModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConfiguratorModel_Ruleset(), this.getRuleSet(), null, "ruleset", null, 0, 1, ConfiguratorModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(featureEClass, Feature.class, "Feature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFeature_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFeature_Type(), this.getType(), null, "type", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFeature_Name(), ecorePackage.getEString(), "name", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFeature_Type(), this.getType(), null, "type", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFeature_Text(), ecorePackage.getEString(), "text", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(operatorEClass, Operator.class, "Operator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOperator_Feature(), this.getFeature(), null, "feature", null, 0, 1, Operator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -654,8 +700,10 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
     initEReference(getRuleSet_Rule(), this.getRule(), null, "rule", null, 0, -1, RuleSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRule_Name(), ecorePackage.getEString(), "name", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRule_If(), this.getBooleanExpression(), null, "if", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRule_Then(), this.getBooleanExpression(), null, "then", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRule_Text(), ecorePackage.getEString(), "text", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(booleanExpressionEClass, BooleanExpression.class, "BooleanExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -663,16 +711,16 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
     initEAttribute(getConst_Value(), ecorePackage.getEBoolean(), "value", null, 0, 1, Const.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(atomEClass, Atom.class, "Atom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAtom_Operator(), this.getOperator(), null, "operator", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(orEClass, Or.class, "Or", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getOr_Booleanexpression(), this.getBooleanExpression(), null, "booleanexpression", null, 0, -1, Or.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAtom_Operator(), this.getOperator(), null, "operator", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(negationEClass, Negation.class, "Negation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getNegation_Booleanexpression(), this.getBooleanExpression(), null, "booleanexpression", null, 0, 1, Negation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(andEClass, And.class, "And", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAnd_Booleanexpression(), this.getBooleanExpression(), null, "booleanexpression", null, 0, -1, And.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(orEClass, Or.class, "Or", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOr_Booleanexpression(), this.getBooleanExpression(), null, "booleanexpression", null, 0, -1, Or.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -2,24 +2,27 @@
 grammar org.xtext.branselic.ConfiguratorLang with org.eclipse.xtext.common.Terminals
 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
-generate domainmodel "http://www.itu.dk/configurator/branselic" as branselic
+generate domainmodel "http://itu.dk/configurator/branselic" as branselic
+
 
 ConfiguratorModel returns branselic::ConfiguratorModel:
+	'Name' ':' name=STRING
 	'Features' feature+=Feature (feature+=Feature)* 
 	'Rules' ruleset=RuleSet
 	;
 
 
 Feature returns branselic::Feature:
-	Name=EString
+	name=ID
 	':'
-	type=[branselic::Type]
+	type=Type
+	(text = STRING)?
 	;
 	
 Operator returns branselic::Operator:
-	feature=[branselic::Feature|EString]
+	feature=[branselic::Feature|ID]
 	op=OpSymbol
-	value=EString
+	value=ID
 	;
 
 OpSymbol returns ecore::EString:
@@ -44,7 +47,7 @@ IntType returns branselic::Int:
 EnumType returns branselic::Enum:
 	{branselic::Enum}
 	'['
-		(values+=EString ( "," values+=EString)* )?
+		(values+=ID ( "," values+=ID)* )?
 	']';
 
 
@@ -57,9 +60,11 @@ RuleSet returns branselic::RuleSet:
 
 
 Rule returns branselic::Rule:
-	if=BooleanExpression
+	(name = ID ':')?
+	if=SimpleBoolean
 	'->'
-	then=BooleanExpression
+	then=SimpleBoolean
+	(text = STRING)?
 	;
 
 
@@ -72,18 +77,12 @@ Const returns branselic::Const:
 	;
 
 Atom returns branselic::Atom:
-	operator=[branselic::Operator]
-	;
+	operator=Operator;
 
 SimpleBoolean returns branselic::BooleanExpression:
 	Const | Atom | "(" BooleanExpression ")"
 	;
 
-Or returns branselic::Or:
-	booleanexpression+=SimpleBoolean
-	"or"
-	booleanexpression+=SimpleBoolean 
-	;
 
 Negation returns branselic::Negation:
 	'not'
@@ -91,14 +90,12 @@ Negation returns branselic::Negation:
 	;
 
 And returns branselic::And:
-	booleanexpression+=SimpleBoolean
-	"and"
-	booleanexpression+=SimpleBoolean
-	;
+	booleanexpression+=SimpleBoolean "and" booleanexpression+=SimpleBoolean
+;
 
-
-EString returns ecore::EString:
-	STRING | ID;
+Or returns branselic::Or:
+	booleanexpression+=SimpleBoolean "or" booleanexpression+=SimpleBoolean
+;
 
 EBoolean returns ecore::EBoolean:
 	'true' | 'false';

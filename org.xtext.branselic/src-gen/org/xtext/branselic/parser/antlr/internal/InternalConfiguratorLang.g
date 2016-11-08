@@ -76,16 +76,42 @@ ruleConfiguratorModel returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Features'
+		otherlv_0='Name'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getConfiguratorModelAccess().getFeaturesKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getConfiguratorModelAccess().getNameKeyword_0());
+		}
+		otherlv_1=':'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getConfiguratorModelAccess().getColonKeyword_1());
+		}
+		(
+			(
+				lv_name_2_0=RULE_STRING
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getConfiguratorModelAccess().getNameSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getConfiguratorModelRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_3='Features'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getConfiguratorModelAccess().getFeaturesKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getConfiguratorModelAccess().getFeatureFeatureParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getConfiguratorModelAccess().getFeatureFeatureParserRuleCall_4_0());
 				}
-				lv_feature_1_0=ruleFeature
+				lv_feature_4_0=ruleFeature
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getConfiguratorModelRule());
@@ -93,7 +119,7 @@ ruleConfiguratorModel returns [EObject current=null]
 					add(
 						$current,
 						"feature",
-						lv_feature_1_0,
+						lv_feature_4_0,
 						"org.xtext.branselic.ConfiguratorLang.Feature");
 					afterParserOrEnumRuleCall();
 				}
@@ -102,9 +128,9 @@ ruleConfiguratorModel returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getConfiguratorModelAccess().getFeatureFeatureParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getConfiguratorModelAccess().getFeatureFeatureParserRuleCall_5_0());
 				}
-				lv_feature_2_0=ruleFeature
+				lv_feature_5_0=ruleFeature
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getConfiguratorModelRule());
@@ -112,22 +138,22 @@ ruleConfiguratorModel returns [EObject current=null]
 					add(
 						$current,
 						"feature",
-						lv_feature_2_0,
+						lv_feature_5_0,
 						"org.xtext.branselic.ConfiguratorLang.Feature");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_3='Rules'
+		otherlv_6='Rules'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getConfiguratorModelAccess().getRulesKeyword_3());
+			newLeafNode(otherlv_6, grammarAccess.getConfiguratorModelAccess().getRulesKeyword_6());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getConfiguratorModelAccess().getRulesetRuleSetParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getConfiguratorModelAccess().getRulesetRuleSetParserRuleCall_7_0());
 				}
-				lv_ruleset_4_0=ruleRuleSet
+				lv_ruleset_7_0=ruleRuleSet
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getConfiguratorModelRule());
@@ -135,7 +161,7 @@ ruleConfiguratorModel returns [EObject current=null]
 					set(
 						$current,
 						"ruleset",
-						lv_ruleset_4_0,
+						lv_ruleset_7_0,
 						"org.xtext.branselic.ConfiguratorLang.RuleSet");
 					afterParserOrEnumRuleCall();
 				}
@@ -162,20 +188,19 @@ ruleFeature returns [EObject current=null]
 	(
 		(
 			(
+				lv_name_0_0=RULE_ID
 				{
-					newCompositeNode(grammarAccess.getFeatureAccess().getNameEStringParserRuleCall_0_0());
+					newLeafNode(lv_name_0_0, grammarAccess.getFeatureAccess().getNameIDTerminalRuleCall_0_0());
 				}
-				lv_Name_0_0=ruleEString
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getFeatureRule());
+						$current = createModelElement(grammarAccess.getFeatureRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
-						"Name",
-						lv_Name_0_0,
-						"org.xtext.branselic.ConfiguratorLang.EString");
-					afterParserOrEnumRuleCall();
+						"name",
+						lv_name_0_0,
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -186,13 +211,106 @@ ruleFeature returns [EObject current=null]
 		(
 			(
 				{
+					newCompositeNode(grammarAccess.getFeatureAccess().getTypeTypeParserRuleCall_2_0());
+				}
+				lv_type_2_0=ruleType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getFeatureRule());
+					}
+					set(
+						$current,
+						"type",
+						lv_type_2_0,
+						"org.xtext.branselic.ConfiguratorLang.Type");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_text_3_0=RULE_STRING
+				{
+					newLeafNode(lv_text_3_0, grammarAccess.getFeatureAccess().getTextSTRINGTerminalRuleCall_3_0());
+				}
+				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getFeatureRule());
 					}
+					setWithLastConsumed(
+						$current,
+						"text",
+						lv_text_3_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
-				otherlv_2=RULE_ID
+			)
+		)?
+	)
+;
+
+// Entry rule entryRuleOperator
+entryRuleOperator returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getOperatorRule()); }
+	iv_ruleOperator=ruleOperator
+	{ $current=$iv_ruleOperator.current; }
+	EOF;
+
+// Rule Operator
+ruleOperator returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
 				{
-					newLeafNode(otherlv_2, grammarAccess.getFeatureAccess().getTypeTypeCrossReference_2_0());
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getOperatorRule());
+					}
+				}
+				otherlv_0=RULE_ID
+				{
+					newLeafNode(otherlv_0, grammarAccess.getOperatorAccess().getFeatureFeatureCrossReference_0_0());
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getOperatorAccess().getOpOpSymbolParserRuleCall_1_0());
+				}
+				lv_op_1_0=ruleOpSymbol
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getOperatorRule());
+					}
+					set(
+						$current,
+						"op",
+						lv_op_1_0,
+						"org.xtext.branselic.ConfiguratorLang.OpSymbol");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_value_2_0=RULE_ID
+				{
+					newLeafNode(lv_value_2_0, grammarAccess.getOperatorAccess().getValueIDTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getOperatorRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"value",
+						lv_value_2_0,
+						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
@@ -231,6 +349,51 @@ ruleOpSymbol returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
 		{
 			$current.merge(kw);
 			newLeafNode(kw, grammarAccess.getOpSymbolAccess().getGreaterThanSignKeyword_2());
+		}
+	)
+;
+
+// Entry rule entryRuleType
+entryRuleType returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTypeRule()); }
+	iv_ruleType=ruleType
+	{ $current=$iv_ruleType.current; }
+	EOF;
+
+// Rule Type
+ruleType returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getTypeAccess().getBoolTypeParserRuleCall_0());
+		}
+		this_BoolType_0=ruleBoolType
+		{
+			$current = $this_BoolType_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getTypeAccess().getIntTypeParserRuleCall_1());
+		}
+		this_IntType_1=ruleIntType
+		{
+			$current = $this_IntType_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getTypeAccess().getEnumTypeParserRuleCall_2());
+		}
+		this_EnumType_2=ruleEnumType
+		{
+			$current = $this_EnumType_2.current;
+			afterParserOrEnumRuleCall();
 		}
 	)
 ;
@@ -325,20 +488,19 @@ ruleEnumType returns [EObject current=null]
 		(
 			(
 				(
+					lv_values_2_0=RULE_ID
 					{
-						newCompositeNode(grammarAccess.getEnumTypeAccess().getValuesEStringParserRuleCall_2_0_0());
+						newLeafNode(lv_values_2_0, grammarAccess.getEnumTypeAccess().getValuesIDTerminalRuleCall_2_0_0());
 					}
-					lv_values_2_0=ruleEString
 					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getEnumTypeRule());
+							$current = createModelElement(grammarAccess.getEnumTypeRule());
 						}
-						add(
+						addWithLastConsumed(
 							$current,
 							"values",
 							lv_values_2_0,
-							"org.xtext.branselic.ConfiguratorLang.EString");
-						afterParserOrEnumRuleCall();
+							"org.eclipse.xtext.common.Terminals.ID");
 					}
 				)
 			)
@@ -349,20 +511,19 @@ ruleEnumType returns [EObject current=null]
 				}
 				(
 					(
+						lv_values_4_0=RULE_ID
 						{
-							newCompositeNode(grammarAccess.getEnumTypeAccess().getValuesEStringParserRuleCall_2_1_1_0());
+							newLeafNode(lv_values_4_0, grammarAccess.getEnumTypeAccess().getValuesIDTerminalRuleCall_2_1_1_0());
 						}
-						lv_values_4_0=ruleEString
 						{
 							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getEnumTypeRule());
+								$current = createModelElement(grammarAccess.getEnumTypeRule());
 							}
-							add(
+							addWithLastConsumed(
 								$current,
 								"values",
 								lv_values_4_0,
-								"org.xtext.branselic.ConfiguratorLang.EString");
-							afterParserOrEnumRuleCall();
+								"org.eclipse.xtext.common.Terminals.ID");
 						}
 					)
 				)
@@ -438,10 +599,34 @@ ruleRule returns [EObject current=null]
 	(
 		(
 			(
+				(
+					lv_name_0_0=RULE_ID
+					{
+						newLeafNode(lv_name_0_0, grammarAccess.getRuleAccess().getNameIDTerminalRuleCall_0_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getRuleRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_0_0,
+							"org.eclipse.xtext.common.Terminals.ID");
+					}
+				)
+			)
+			otherlv_1=':'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getRuleAccess().getColonKeyword_0_1());
+			}
+		)?
+		(
+			(
 				{
-					newCompositeNode(grammarAccess.getRuleAccess().getIfBooleanExpressionParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getRuleAccess().getIfSimpleBooleanParserRuleCall_1_0());
 				}
-				lv_if_0_0=ruleBooleanExpression
+				lv_if_2_0=ruleSimpleBoolean
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRuleRule());
@@ -449,22 +634,22 @@ ruleRule returns [EObject current=null]
 					set(
 						$current,
 						"if",
-						lv_if_0_0,
-						"org.xtext.branselic.ConfiguratorLang.BooleanExpression");
+						lv_if_2_0,
+						"org.xtext.branselic.ConfiguratorLang.SimpleBoolean");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_1='->'
+		otherlv_3='->'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getRuleAccess().getHyphenMinusGreaterThanSignKeyword_1());
+			newLeafNode(otherlv_3, grammarAccess.getRuleAccess().getHyphenMinusGreaterThanSignKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRuleAccess().getThenBooleanExpressionParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getRuleAccess().getThenSimpleBooleanParserRuleCall_3_0());
 				}
-				lv_then_2_0=ruleBooleanExpression
+				lv_then_4_0=ruleSimpleBoolean
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRuleRule());
@@ -472,12 +657,30 @@ ruleRule returns [EObject current=null]
 					set(
 						$current,
 						"then",
-						lv_then_2_0,
-						"org.xtext.branselic.ConfiguratorLang.BooleanExpression");
+						lv_then_4_0,
+						"org.xtext.branselic.ConfiguratorLang.SimpleBoolean");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		(
+			(
+				lv_text_5_0=RULE_STRING
+				{
+					newLeafNode(lv_text_5_0, grammarAccess.getRuleAccess().getTextSTRINGTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRuleRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"text",
+						lv_text_5_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)?
 	)
 ;
 
@@ -589,13 +792,19 @@ ruleAtom returns [EObject current=null]
 	(
 		(
 			{
-				if ($current==null) {
-					$current = createModelElement(grammarAccess.getAtomRule());
-				}
+				newCompositeNode(grammarAccess.getAtomAccess().getOperatorOperatorParserRuleCall_0());
 			}
-			otherlv_0=RULE_ID
+			lv_operator_0_0=ruleOperator
 			{
-				newLeafNode(otherlv_0, grammarAccess.getAtomAccess().getOperatorOperatorCrossReference_0());
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getAtomRule());
+				}
+				set(
+					$current,
+					"operator",
+					lv_operator_0_0,
+					"org.xtext.branselic.ConfiguratorLang.Operator");
+				afterParserOrEnumRuleCall();
 			}
 		)
 	)
@@ -756,40 +965,6 @@ ruleAnd returns [EObject current=null]
 				}
 			)
 		)
-	)
-;
-
-// Entry rule entryRuleEString
-entryRuleEString returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getEStringRule()); }
-	iv_ruleEString=ruleEString
-	{ $current=$iv_ruleEString.current.getText(); }
-	EOF;
-
-// Rule EString
-ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		this_STRING_0=RULE_STRING
-		{
-			$current.merge(this_STRING_0);
-		}
-		{
-			newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0());
-		}
-		    |
-		this_ID_1=RULE_ID
-		{
-			$current.merge(this_ID_1);
-		}
-		{
-			newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1());
-		}
 	)
 ;
 

@@ -39,7 +39,7 @@ public interface DomainmodelPackage extends EPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  String eNS_URI = "http://www.itu.dk/configurator/branselic";
+  String eNS_URI = "http://itu.dk/configurator/branselic";
 
   /**
    * The package namespace name.
@@ -68,13 +68,22 @@ public interface DomainmodelPackage extends EPackage
   int CONFIGURATOR_MODEL = 0;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONFIGURATOR_MODEL__NAME = 0;
+
+  /**
    * The feature id for the '<em><b>Feature</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONFIGURATOR_MODEL__FEATURE = 0;
+  int CONFIGURATOR_MODEL__FEATURE = 1;
 
   /**
    * The feature id for the '<em><b>Ruleset</b></em>' containment reference.
@@ -83,7 +92,7 @@ public interface DomainmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONFIGURATOR_MODEL__RULESET = 1;
+  int CONFIGURATOR_MODEL__RULESET = 2;
 
   /**
    * The number of structural features of the '<em>Configurator Model</em>' class.
@@ -92,7 +101,7 @@ public interface DomainmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONFIGURATOR_MODEL_FEATURE_COUNT = 2;
+  int CONFIGURATOR_MODEL_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.branselic.domainmodel.impl.FeatureImpl <em>Feature</em>}' class.
@@ -114,7 +123,7 @@ public interface DomainmodelPackage extends EPackage
   int FEATURE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' reference.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -123,13 +132,22 @@ public interface DomainmodelPackage extends EPackage
   int FEATURE__TYPE = 1;
 
   /**
+   * The feature id for the '<em><b>Text</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURE__TEXT = 2;
+
+  /**
    * The number of structural features of the '<em>Feature</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEATURE_FEATURE_COUNT = 2;
+  int FEATURE_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.branselic.domainmodel.impl.OperatorImpl <em>Operator</em>}' class.
@@ -301,13 +319,22 @@ public interface DomainmodelPackage extends EPackage
   int RULE = 8;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE__NAME = 0;
+
+  /**
    * The feature id for the '<em><b>If</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RULE__IF = 0;
+  int RULE__IF = 1;
 
   /**
    * The feature id for the '<em><b>Then</b></em>' containment reference.
@@ -316,7 +343,16 @@ public interface DomainmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RULE__THEN = 1;
+  int RULE__THEN = 2;
+
+  /**
+   * The feature id for the '<em><b>Text</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE__TEXT = 3;
 
   /**
    * The number of structural features of the '<em>Rule</em>' class.
@@ -325,7 +361,7 @@ public interface DomainmodelPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RULE_FEATURE_COUNT = 2;
+  int RULE_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link org.xtext.branselic.domainmodel.impl.BooleanExpressionImpl <em>Boolean Expression</em>}' class.
@@ -385,7 +421,7 @@ public interface DomainmodelPackage extends EPackage
   int ATOM = 11;
 
   /**
-   * The feature id for the '<em><b>Operator</b></em>' reference.
+   * The feature id for the '<em><b>Operator</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -403,34 +439,6 @@ public interface DomainmodelPackage extends EPackage
   int ATOM_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.branselic.domainmodel.impl.OrImpl <em>Or</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.branselic.domainmodel.impl.OrImpl
-   * @see org.xtext.branselic.domainmodel.impl.DomainmodelPackageImpl#getOr()
-   * @generated
-   */
-  int OR = 12;
-
-  /**
-   * The feature id for the '<em><b>Booleanexpression</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR__BOOLEANEXPRESSION = 0;
-
-  /**
-   * The number of structural features of the '<em>Or</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link org.xtext.branselic.domainmodel.impl.NegationImpl <em>Negation</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -438,7 +446,7 @@ public interface DomainmodelPackage extends EPackage
    * @see org.xtext.branselic.domainmodel.impl.DomainmodelPackageImpl#getNegation()
    * @generated
    */
-  int NEGATION = 13;
+  int NEGATION = 12;
 
   /**
    * The feature id for the '<em><b>Booleanexpression</b></em>' containment reference.
@@ -466,7 +474,7 @@ public interface DomainmodelPackage extends EPackage
    * @see org.xtext.branselic.domainmodel.impl.DomainmodelPackageImpl#getAnd()
    * @generated
    */
-  int AND = 14;
+  int AND = 13;
 
   /**
    * The feature id for the '<em><b>Booleanexpression</b></em>' containment reference list.
@@ -486,6 +494,34 @@ public interface DomainmodelPackage extends EPackage
    */
   int AND_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
 
+  /**
+   * The meta object id for the '{@link org.xtext.branselic.domainmodel.impl.OrImpl <em>Or</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.branselic.domainmodel.impl.OrImpl
+   * @see org.xtext.branselic.domainmodel.impl.DomainmodelPackageImpl#getOr()
+   * @generated
+   */
+  int OR = 14;
+
+  /**
+   * The feature id for the '<em><b>Booleanexpression</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR__BOOLEANEXPRESSION = 0;
+
+  /**
+   * The number of structural features of the '<em>Or</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_FEATURE_COUNT = 1;
+
 
   /**
    * Returns the meta object for class '{@link org.xtext.branselic.domainmodel.ConfiguratorModel <em>Configurator Model</em>}'.
@@ -496,6 +532,17 @@ public interface DomainmodelPackage extends EPackage
    * @generated
    */
   EClass getConfiguratorModel();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.branselic.domainmodel.ConfiguratorModel#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.branselic.domainmodel.ConfiguratorModel#getName()
+   * @see #getConfiguratorModel()
+   * @generated
+   */
+  EAttribute getConfiguratorModel_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.branselic.domainmodel.ConfiguratorModel#getFeature <em>Feature</em>}'.
@@ -541,15 +588,26 @@ public interface DomainmodelPackage extends EPackage
   EAttribute getFeature_Name();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.branselic.domainmodel.Feature#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.branselic.domainmodel.Feature#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see org.xtext.branselic.domainmodel.Feature#getType()
    * @see #getFeature()
    * @generated
    */
   EReference getFeature_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.branselic.domainmodel.Feature#getText <em>Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Text</em>'.
+   * @see org.xtext.branselic.domainmodel.Feature#getText()
+   * @see #getFeature()
+   * @generated
+   */
+  EAttribute getFeature_Text();
 
   /**
    * Returns the meta object for class '{@link org.xtext.branselic.domainmodel.Operator <em>Operator</em>}'.
@@ -677,6 +735,17 @@ public interface DomainmodelPackage extends EPackage
   EClass getRule();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.branselic.domainmodel.Rule#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.branselic.domainmodel.Rule#getName()
+   * @see #getRule()
+   * @generated
+   */
+  EAttribute getRule_Name();
+
+  /**
    * Returns the meta object for the containment reference '{@link org.xtext.branselic.domainmodel.Rule#getIf <em>If</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -697,6 +766,17 @@ public interface DomainmodelPackage extends EPackage
    * @generated
    */
   EReference getRule_Then();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.branselic.domainmodel.Rule#getText <em>Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Text</em>'.
+   * @see org.xtext.branselic.domainmodel.Rule#getText()
+   * @see #getRule()
+   * @generated
+   */
+  EAttribute getRule_Text();
 
   /**
    * Returns the meta object for class '{@link org.xtext.branselic.domainmodel.BooleanExpression <em>Boolean Expression</em>}'.
@@ -740,36 +820,15 @@ public interface DomainmodelPackage extends EPackage
   EClass getAtom();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.branselic.domainmodel.Atom#getOperator <em>Operator</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.branselic.domainmodel.Atom#getOperator <em>Operator</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Operator</em>'.
+   * @return the meta object for the containment reference '<em>Operator</em>'.
    * @see org.xtext.branselic.domainmodel.Atom#getOperator()
    * @see #getAtom()
    * @generated
    */
   EReference getAtom_Operator();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.branselic.domainmodel.Or <em>Or</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Or</em>'.
-   * @see org.xtext.branselic.domainmodel.Or
-   * @generated
-   */
-  EClass getOr();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.branselic.domainmodel.Or#getBooleanexpression <em>Booleanexpression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Booleanexpression</em>'.
-   * @see org.xtext.branselic.domainmodel.Or#getBooleanexpression()
-   * @see #getOr()
-   * @generated
-   */
-  EReference getOr_Booleanexpression();
 
   /**
    * Returns the meta object for class '{@link org.xtext.branselic.domainmodel.Negation <em>Negation</em>}'.
@@ -814,6 +873,27 @@ public interface DomainmodelPackage extends EPackage
   EReference getAnd_Booleanexpression();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.branselic.domainmodel.Or <em>Or</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Or</em>'.
+   * @see org.xtext.branselic.domainmodel.Or
+   * @generated
+   */
+  EClass getOr();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.branselic.domainmodel.Or#getBooleanexpression <em>Booleanexpression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Booleanexpression</em>'.
+   * @see org.xtext.branselic.domainmodel.Or#getBooleanexpression()
+   * @see #getOr()
+   * @generated
+   */
+  EReference getOr_Booleanexpression();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -845,6 +925,14 @@ public interface DomainmodelPackage extends EPackage
      * @generated
      */
     EClass CONFIGURATOR_MODEL = eINSTANCE.getConfiguratorModel();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONFIGURATOR_MODEL__NAME = eINSTANCE.getConfiguratorModel_Name();
 
     /**
      * The meta object literal for the '<em><b>Feature</b></em>' containment reference list feature.
@@ -881,12 +969,20 @@ public interface DomainmodelPackage extends EPackage
     EAttribute FEATURE__NAME = eINSTANCE.getFeature_Name();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference FEATURE__TYPE = eINSTANCE.getFeature_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FEATURE__TEXT = eINSTANCE.getFeature_Text();
 
     /**
      * The meta object literal for the '{@link org.xtext.branselic.domainmodel.impl.OperatorImpl <em>Operator</em>}' class.
@@ -999,6 +1095,14 @@ public interface DomainmodelPackage extends EPackage
     EClass RULE = eINSTANCE.getRule();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RULE__NAME = eINSTANCE.getRule_Name();
+
+    /**
      * The meta object literal for the '<em><b>If</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1013,6 +1117,14 @@ public interface DomainmodelPackage extends EPackage
      * @generated
      */
     EReference RULE__THEN = eINSTANCE.getRule_Then();
+
+    /**
+     * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RULE__TEXT = eINSTANCE.getRule_Text();
 
     /**
      * The meta object literal for the '{@link org.xtext.branselic.domainmodel.impl.BooleanExpressionImpl <em>Boolean Expression</em>}' class.
@@ -1053,30 +1165,12 @@ public interface DomainmodelPackage extends EPackage
     EClass ATOM = eINSTANCE.getAtom();
 
     /**
-     * The meta object literal for the '<em><b>Operator</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Operator</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference ATOM__OPERATOR = eINSTANCE.getAtom_Operator();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.branselic.domainmodel.impl.OrImpl <em>Or</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.branselic.domainmodel.impl.OrImpl
-     * @see org.xtext.branselic.domainmodel.impl.DomainmodelPackageImpl#getOr()
-     * @generated
-     */
-    EClass OR = eINSTANCE.getOr();
-
-    /**
-     * The meta object literal for the '<em><b>Booleanexpression</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference OR__BOOLEANEXPRESSION = eINSTANCE.getOr_Booleanexpression();
 
     /**
      * The meta object literal for the '{@link org.xtext.branselic.domainmodel.impl.NegationImpl <em>Negation</em>}' class.
@@ -1113,6 +1207,24 @@ public interface DomainmodelPackage extends EPackage
      * @generated
      */
     EReference AND__BOOLEANEXPRESSION = eINSTANCE.getAnd_Booleanexpression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.branselic.domainmodel.impl.OrImpl <em>Or</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.branselic.domainmodel.impl.OrImpl
+     * @see org.xtext.branselic.domainmodel.impl.DomainmodelPackageImpl#getOr()
+     * @generated
+     */
+    EClass OR = eINSTANCE.getOr();
+
+    /**
+     * The meta object literal for the '<em><b>Booleanexpression</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OR__BOOLEANEXPRESSION = eINSTANCE.getOr_Booleanexpression();
 
   }
 

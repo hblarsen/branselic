@@ -7,7 +7,7 @@ Bundle-SymbolicName: org.xtext.branselic.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.xtext.branselic,
  org.xtext.branselic.ide,
- configurator.branselic,
+ branselic,
  org.eclipse.xtext.ui,
  org.eclipse.xtext.ui.shared,
  org.eclipse.xtext.ui.codetemplates.ui,

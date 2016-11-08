@@ -92,9 +92,9 @@ public class DomainmodelFactoryImpl extends EFactoryImpl implements DomainmodelF
       case DomainmodelPackage.BOOLEAN_EXPRESSION: return createBooleanExpression();
       case DomainmodelPackage.CONST: return createConst();
       case DomainmodelPackage.ATOM: return createAtom();
-      case DomainmodelPackage.OR: return createOr();
       case DomainmodelPackage.NEGATION: return createNegation();
       case DomainmodelPackage.AND: return createAnd();
+      case DomainmodelPackage.OR: return createOr();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -237,17 +237,6 @@ public class DomainmodelFactoryImpl extends EFactoryImpl implements DomainmodelF
    * <!-- end-user-doc -->
    * @generated
    */
-  public Or createOr()
-  {
-    OrImpl or = new OrImpl();
-    return or;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Negation createNegation()
   {
     NegationImpl negation = new NegationImpl();
@@ -263,6 +252,17 @@ public class DomainmodelFactoryImpl extends EFactoryImpl implements DomainmodelF
   {
     AndImpl and = new AndImpl();
     return and;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Or createOr()
+  {
+    OrImpl or = new OrImpl();
+    return or;
   }
 
   /**

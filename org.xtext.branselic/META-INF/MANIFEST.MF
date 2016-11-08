@@ -5,7 +5,7 @@ Bundle-Vendor: My Company
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.xtext.branselic; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: configurator.branselic,
+Require-Bundle: branselic,
  org.eclipse.xtext,
  org.eclipse.xtext.xbase,
  org.eclipse.equinox.common;bundle-version="3.5.0",

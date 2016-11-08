@@ -150,11 +150,6 @@ public class DomainmodelAdapterFactory extends AdapterFactoryImpl
         return createAtomAdapter();
       }
       @Override
-      public Adapter caseOr(Or object)
-      {
-        return createOrAdapter();
-      }
-      @Override
       public Adapter caseNegation(Negation object)
       {
         return createNegationAdapter();
@@ -163,6 +158,11 @@ public class DomainmodelAdapterFactory extends AdapterFactoryImpl
       public Adapter caseAnd(And object)
       {
         return createAndAdapter();
+      }
+      @Override
+      public Adapter caseOr(Or object)
+      {
+        return createOrAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -367,21 +367,6 @@ public class DomainmodelAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.branselic.domainmodel.Or <em>Or</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.branselic.domainmodel.Or
-   * @generated
-   */
-  public Adapter createOrAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.xtext.branselic.domainmodel.Negation <em>Negation</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -407,6 +392,21 @@ public class DomainmodelAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAndAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.branselic.domainmodel.Or <em>Or</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.branselic.domainmodel.Or
+   * @generated
+   */
+  public Adapter createOrAdapter()
   {
     return null;
   }
