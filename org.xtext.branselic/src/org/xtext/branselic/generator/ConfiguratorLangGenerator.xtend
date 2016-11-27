@@ -16,10 +16,8 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class ConfiguratorLangGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(typeof(Greeting))
-//				.map[name]
-//				.join(', '))
+		val generator = new ScalaGeneratorAdapter()
+		fsa.generateFile(generator.getResourceName(resource), 
+			generator.generateScala(resource))
 	}
 }

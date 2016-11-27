@@ -35,11 +35,13 @@ public class ConfiguratorLangParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getOperatorAccess().getValueAlternatives_2_0(), "rule__Operator__ValueAlternatives_2_0");
 					put(grammarAccess.getOpSymbolAccess().getAlternatives(), "rule__OpSymbol__Alternatives");
 					put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
-					put(grammarAccess.getBooleanExpressionAccess().getAlternatives(), "rule__BooleanExpression__Alternatives");
 					put(grammarAccess.getSimpleBooleanAccess().getAlternatives(), "rule__SimpleBoolean__Alternatives");
 					put(grammarAccess.getEBooleanAccess().getAlternatives(), "rule__EBoolean__Alternatives");
+					put(grammarAccess.getBoolStringAccess().getAlternatives(), "rule__BoolString__Alternatives");
+					put(grammarAccess.getNLAccess().getAlternatives(), "rule__NL__Alternatives");
 					put(grammarAccess.getConfiguratorModelAccess().getGroup(), "rule__ConfiguratorModel__Group__0");
 					put(grammarAccess.getFeatureAccess().getGroup(), "rule__Feature__Group__0");
 					put(grammarAccess.getOperatorAccess().getGroup(), "rule__Operator__Group__0");
@@ -50,11 +52,12 @@ public class ConfiguratorLangParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEnumTypeAccess().getGroup_2_1(), "rule__EnumType__Group_2_1__0");
 					put(grammarAccess.getRuleSetAccess().getGroup(), "rule__RuleSet__Group__0");
 					put(grammarAccess.getRuleAccess().getGroup(), "rule__Rule__Group__0");
-					put(grammarAccess.getRuleAccess().getGroup_0(), "rule__Rule__Group_0__0");
-					put(grammarAccess.getSimpleBooleanAccess().getGroup_2(), "rule__SimpleBoolean__Group_2__0");
+					put(grammarAccess.getBooleanExpressionAccess().getGroup(), "rule__BooleanExpression__Group__0");
+					put(grammarAccess.getBooleanExpressionAccess().getGroup_1(), "rule__BooleanExpression__Group_1__0");
+					put(grammarAccess.getAndBoolAccess().getGroup(), "rule__AndBool__Group__0");
+					put(grammarAccess.getAndBoolAccess().getGroup_1(), "rule__AndBool__Group_1__0");
+					put(grammarAccess.getSimpleBooleanAccess().getGroup_3(), "rule__SimpleBoolean__Group_3__0");
 					put(grammarAccess.getNegationAccess().getGroup(), "rule__Negation__Group__0");
-					put(grammarAccess.getAndAccess().getGroup(), "rule__And__Group__0");
-					put(grammarAccess.getOrAccess().getGroup(), "rule__Or__Group__0");
 					put(grammarAccess.getConfiguratorModelAccess().getNameAssignment_2(), "rule__ConfiguratorModel__NameAssignment_2");
 					put(grammarAccess.getConfiguratorModelAccess().getFeatureAssignment_4(), "rule__ConfiguratorModel__FeatureAssignment_4");
 					put(grammarAccess.getConfiguratorModelAccess().getFeatureAssignment_5(), "rule__ConfiguratorModel__FeatureAssignment_5");
@@ -68,17 +71,15 @@ public class ConfiguratorLangParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEnumTypeAccess().getValuesAssignment_2_0(), "rule__EnumType__ValuesAssignment_2_0");
 					put(grammarAccess.getEnumTypeAccess().getValuesAssignment_2_1_1(), "rule__EnumType__ValuesAssignment_2_1_1");
 					put(grammarAccess.getRuleSetAccess().getRuleAssignment_1(), "rule__RuleSet__RuleAssignment_1");
-					put(grammarAccess.getRuleAccess().getNameAssignment_0_0(), "rule__Rule__NameAssignment_0_0");
-					put(grammarAccess.getRuleAccess().getIfAssignment_1(), "rule__Rule__IfAssignment_1");
-					put(grammarAccess.getRuleAccess().getThenAssignment_3(), "rule__Rule__ThenAssignment_3");
-					put(grammarAccess.getRuleAccess().getTextAssignment_4(), "rule__Rule__TextAssignment_4");
+					put(grammarAccess.getRuleAccess().getNameAssignment_0(), "rule__Rule__NameAssignment_0");
+					put(grammarAccess.getRuleAccess().getIfAssignment_2(), "rule__Rule__IfAssignment_2");
+					put(grammarAccess.getRuleAccess().getThenAssignment_4(), "rule__Rule__ThenAssignment_4");
+					put(grammarAccess.getRuleAccess().getTextAssignment_5(), "rule__Rule__TextAssignment_5");
+					put(grammarAccess.getBooleanExpressionAccess().getBooleanexpressionAssignment_1_2(), "rule__BooleanExpression__BooleanexpressionAssignment_1_2");
+					put(grammarAccess.getAndBoolAccess().getBooleanexpressionAssignment_1_2(), "rule__AndBool__BooleanexpressionAssignment_1_2");
 					put(grammarAccess.getConstAccess().getValueAssignment(), "rule__Const__ValueAssignment");
 					put(grammarAccess.getAtomAccess().getOperatorAssignment(), "rule__Atom__OperatorAssignment");
 					put(grammarAccess.getNegationAccess().getBooleanexpressionAssignment_1(), "rule__Negation__BooleanexpressionAssignment_1");
-					put(grammarAccess.getAndAccess().getBooleanexpressionAssignment_0(), "rule__And__BooleanexpressionAssignment_0");
-					put(grammarAccess.getAndAccess().getBooleanexpressionAssignment_2(), "rule__And__BooleanexpressionAssignment_2");
-					put(grammarAccess.getOrAccess().getBooleanexpressionAssignment_0(), "rule__Or__BooleanexpressionAssignment_0");
-					put(grammarAccess.getOrAccess().getBooleanexpressionAssignment_2(), "rule__Or__BooleanexpressionAssignment_2");
 				}
 			};
 		}

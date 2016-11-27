@@ -22,9 +22,9 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalConfiguratorLangParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'='", "'<'", "'>'", "'true'", "'false'", "'Name'", "':'", "'Features'", "'Rules'", "'bool'", "'int'", "'['", "']'", "','", "'->'", "'('", "')'", "'not'", "'and'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'='", "'<'", "'>'", "'true'", "'false'", "'Name'", "':'", "'Features'", "'Rules'", "'bool'", "'int'", "'['", "']'", "','", "'->'", "'or'", "'and'", "'('", "')'", "'not'"
     };
-    public static final int RULE_STRING=4;
+    public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
@@ -36,13 +36,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
+    public static final int T__30=30;
     public static final int RULE_ID=5;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
-    public static final int RULE_INT=6;
+    public static final int RULE_INT=4;
     public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
@@ -888,31 +889,31 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "ruleBooleanExpression"
-    // InternalConfiguratorLang.g:312:1: ruleBooleanExpression : ( ( rule__BooleanExpression__Alternatives ) ) ;
+    // InternalConfiguratorLang.g:312:1: ruleBooleanExpression : ( ( rule__BooleanExpression__Group__0 ) ) ;
     public final void ruleBooleanExpression() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:316:2: ( ( ( rule__BooleanExpression__Alternatives ) ) )
-            // InternalConfiguratorLang.g:317:2: ( ( rule__BooleanExpression__Alternatives ) )
+            // InternalConfiguratorLang.g:316:2: ( ( ( rule__BooleanExpression__Group__0 ) ) )
+            // InternalConfiguratorLang.g:317:2: ( ( rule__BooleanExpression__Group__0 ) )
             {
-            // InternalConfiguratorLang.g:317:2: ( ( rule__BooleanExpression__Alternatives ) )
-            // InternalConfiguratorLang.g:318:3: ( rule__BooleanExpression__Alternatives )
+            // InternalConfiguratorLang.g:317:2: ( ( rule__BooleanExpression__Group__0 ) )
+            // InternalConfiguratorLang.g:318:3: ( rule__BooleanExpression__Group__0 )
             {
-             before(grammarAccess.getBooleanExpressionAccess().getAlternatives()); 
-            // InternalConfiguratorLang.g:319:3: ( rule__BooleanExpression__Alternatives )
-            // InternalConfiguratorLang.g:319:4: rule__BooleanExpression__Alternatives
+             before(grammarAccess.getBooleanExpressionAccess().getGroup()); 
+            // InternalConfiguratorLang.g:319:3: ( rule__BooleanExpression__Group__0 )
+            // InternalConfiguratorLang.g:319:4: rule__BooleanExpression__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__BooleanExpression__Alternatives();
+            rule__BooleanExpression__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getBooleanExpressionAccess().getAlternatives()); 
+             after(grammarAccess.getBooleanExpressionAccess().getGroup()); 
 
             }
 
@@ -934,12 +935,89 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
     // $ANTLR end "ruleBooleanExpression"
 
 
+    // $ANTLR start "entryRuleAndBool"
+    // InternalConfiguratorLang.g:328:1: entryRuleAndBool : ruleAndBool EOF ;
+    public final void entryRuleAndBool() throws RecognitionException {
+        try {
+            // InternalConfiguratorLang.g:329:1: ( ruleAndBool EOF )
+            // InternalConfiguratorLang.g:330:1: ruleAndBool EOF
+            {
+             before(grammarAccess.getAndBoolRule()); 
+            pushFollow(FOLLOW_1);
+            ruleAndBool();
+
+            state._fsp--;
+
+             after(grammarAccess.getAndBoolRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleAndBool"
+
+
+    // $ANTLR start "ruleAndBool"
+    // InternalConfiguratorLang.g:337:1: ruleAndBool : ( ( rule__AndBool__Group__0 ) ) ;
+    public final void ruleAndBool() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:341:2: ( ( ( rule__AndBool__Group__0 ) ) )
+            // InternalConfiguratorLang.g:342:2: ( ( rule__AndBool__Group__0 ) )
+            {
+            // InternalConfiguratorLang.g:342:2: ( ( rule__AndBool__Group__0 ) )
+            // InternalConfiguratorLang.g:343:3: ( rule__AndBool__Group__0 )
+            {
+             before(grammarAccess.getAndBoolAccess().getGroup()); 
+            // InternalConfiguratorLang.g:344:3: ( rule__AndBool__Group__0 )
+            // InternalConfiguratorLang.g:344:4: rule__AndBool__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__AndBool__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getAndBoolAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleAndBool"
+
+
     // $ANTLR start "entryRuleConst"
-    // InternalConfiguratorLang.g:328:1: entryRuleConst : ruleConst EOF ;
+    // InternalConfiguratorLang.g:353:1: entryRuleConst : ruleConst EOF ;
     public final void entryRuleConst() throws RecognitionException {
         try {
-            // InternalConfiguratorLang.g:329:1: ( ruleConst EOF )
-            // InternalConfiguratorLang.g:330:1: ruleConst EOF
+            // InternalConfiguratorLang.g:354:1: ( ruleConst EOF )
+            // InternalConfiguratorLang.g:355:1: ruleConst EOF
             {
              before(grammarAccess.getConstRule()); 
             pushFollow(FOLLOW_1);
@@ -965,21 +1043,21 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "ruleConst"
-    // InternalConfiguratorLang.g:337:1: ruleConst : ( ( rule__Const__ValueAssignment ) ) ;
+    // InternalConfiguratorLang.g:362:1: ruleConst : ( ( rule__Const__ValueAssignment ) ) ;
     public final void ruleConst() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:341:2: ( ( ( rule__Const__ValueAssignment ) ) )
-            // InternalConfiguratorLang.g:342:2: ( ( rule__Const__ValueAssignment ) )
+            // InternalConfiguratorLang.g:366:2: ( ( ( rule__Const__ValueAssignment ) ) )
+            // InternalConfiguratorLang.g:367:2: ( ( rule__Const__ValueAssignment ) )
             {
-            // InternalConfiguratorLang.g:342:2: ( ( rule__Const__ValueAssignment ) )
-            // InternalConfiguratorLang.g:343:3: ( rule__Const__ValueAssignment )
+            // InternalConfiguratorLang.g:367:2: ( ( rule__Const__ValueAssignment ) )
+            // InternalConfiguratorLang.g:368:3: ( rule__Const__ValueAssignment )
             {
              before(grammarAccess.getConstAccess().getValueAssignment()); 
-            // InternalConfiguratorLang.g:344:3: ( rule__Const__ValueAssignment )
-            // InternalConfiguratorLang.g:344:4: rule__Const__ValueAssignment
+            // InternalConfiguratorLang.g:369:3: ( rule__Const__ValueAssignment )
+            // InternalConfiguratorLang.g:369:4: rule__Const__ValueAssignment
             {
             pushFollow(FOLLOW_2);
             rule__Const__ValueAssignment();
@@ -1012,11 +1090,11 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "entryRuleAtom"
-    // InternalConfiguratorLang.g:353:1: entryRuleAtom : ruleAtom EOF ;
+    // InternalConfiguratorLang.g:378:1: entryRuleAtom : ruleAtom EOF ;
     public final void entryRuleAtom() throws RecognitionException {
         try {
-            // InternalConfiguratorLang.g:354:1: ( ruleAtom EOF )
-            // InternalConfiguratorLang.g:355:1: ruleAtom EOF
+            // InternalConfiguratorLang.g:379:1: ( ruleAtom EOF )
+            // InternalConfiguratorLang.g:380:1: ruleAtom EOF
             {
              before(grammarAccess.getAtomRule()); 
             pushFollow(FOLLOW_1);
@@ -1042,21 +1120,21 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "ruleAtom"
-    // InternalConfiguratorLang.g:362:1: ruleAtom : ( ( rule__Atom__OperatorAssignment ) ) ;
+    // InternalConfiguratorLang.g:387:1: ruleAtom : ( ( rule__Atom__OperatorAssignment ) ) ;
     public final void ruleAtom() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:366:2: ( ( ( rule__Atom__OperatorAssignment ) ) )
-            // InternalConfiguratorLang.g:367:2: ( ( rule__Atom__OperatorAssignment ) )
+            // InternalConfiguratorLang.g:391:2: ( ( ( rule__Atom__OperatorAssignment ) ) )
+            // InternalConfiguratorLang.g:392:2: ( ( rule__Atom__OperatorAssignment ) )
             {
-            // InternalConfiguratorLang.g:367:2: ( ( rule__Atom__OperatorAssignment ) )
-            // InternalConfiguratorLang.g:368:3: ( rule__Atom__OperatorAssignment )
+            // InternalConfiguratorLang.g:392:2: ( ( rule__Atom__OperatorAssignment ) )
+            // InternalConfiguratorLang.g:393:3: ( rule__Atom__OperatorAssignment )
             {
              before(grammarAccess.getAtomAccess().getOperatorAssignment()); 
-            // InternalConfiguratorLang.g:369:3: ( rule__Atom__OperatorAssignment )
-            // InternalConfiguratorLang.g:369:4: rule__Atom__OperatorAssignment
+            // InternalConfiguratorLang.g:394:3: ( rule__Atom__OperatorAssignment )
+            // InternalConfiguratorLang.g:394:4: rule__Atom__OperatorAssignment
             {
             pushFollow(FOLLOW_2);
             rule__Atom__OperatorAssignment();
@@ -1089,11 +1167,11 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "entryRuleSimpleBoolean"
-    // InternalConfiguratorLang.g:378:1: entryRuleSimpleBoolean : ruleSimpleBoolean EOF ;
+    // InternalConfiguratorLang.g:403:1: entryRuleSimpleBoolean : ruleSimpleBoolean EOF ;
     public final void entryRuleSimpleBoolean() throws RecognitionException {
         try {
-            // InternalConfiguratorLang.g:379:1: ( ruleSimpleBoolean EOF )
-            // InternalConfiguratorLang.g:380:1: ruleSimpleBoolean EOF
+            // InternalConfiguratorLang.g:404:1: ( ruleSimpleBoolean EOF )
+            // InternalConfiguratorLang.g:405:1: ruleSimpleBoolean EOF
             {
              before(grammarAccess.getSimpleBooleanRule()); 
             pushFollow(FOLLOW_1);
@@ -1119,21 +1197,21 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "ruleSimpleBoolean"
-    // InternalConfiguratorLang.g:387:1: ruleSimpleBoolean : ( ( rule__SimpleBoolean__Alternatives ) ) ;
+    // InternalConfiguratorLang.g:412:1: ruleSimpleBoolean : ( ( rule__SimpleBoolean__Alternatives ) ) ;
     public final void ruleSimpleBoolean() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:391:2: ( ( ( rule__SimpleBoolean__Alternatives ) ) )
-            // InternalConfiguratorLang.g:392:2: ( ( rule__SimpleBoolean__Alternatives ) )
+            // InternalConfiguratorLang.g:416:2: ( ( ( rule__SimpleBoolean__Alternatives ) ) )
+            // InternalConfiguratorLang.g:417:2: ( ( rule__SimpleBoolean__Alternatives ) )
             {
-            // InternalConfiguratorLang.g:392:2: ( ( rule__SimpleBoolean__Alternatives ) )
-            // InternalConfiguratorLang.g:393:3: ( rule__SimpleBoolean__Alternatives )
+            // InternalConfiguratorLang.g:417:2: ( ( rule__SimpleBoolean__Alternatives ) )
+            // InternalConfiguratorLang.g:418:3: ( rule__SimpleBoolean__Alternatives )
             {
              before(grammarAccess.getSimpleBooleanAccess().getAlternatives()); 
-            // InternalConfiguratorLang.g:394:3: ( rule__SimpleBoolean__Alternatives )
-            // InternalConfiguratorLang.g:394:4: rule__SimpleBoolean__Alternatives
+            // InternalConfiguratorLang.g:419:3: ( rule__SimpleBoolean__Alternatives )
+            // InternalConfiguratorLang.g:419:4: rule__SimpleBoolean__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__SimpleBoolean__Alternatives();
@@ -1166,11 +1244,11 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "entryRuleNegation"
-    // InternalConfiguratorLang.g:403:1: entryRuleNegation : ruleNegation EOF ;
+    // InternalConfiguratorLang.g:428:1: entryRuleNegation : ruleNegation EOF ;
     public final void entryRuleNegation() throws RecognitionException {
         try {
-            // InternalConfiguratorLang.g:404:1: ( ruleNegation EOF )
-            // InternalConfiguratorLang.g:405:1: ruleNegation EOF
+            // InternalConfiguratorLang.g:429:1: ( ruleNegation EOF )
+            // InternalConfiguratorLang.g:430:1: ruleNegation EOF
             {
              before(grammarAccess.getNegationRule()); 
             pushFollow(FOLLOW_1);
@@ -1196,21 +1274,21 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "ruleNegation"
-    // InternalConfiguratorLang.g:412:1: ruleNegation : ( ( rule__Negation__Group__0 ) ) ;
+    // InternalConfiguratorLang.g:437:1: ruleNegation : ( ( rule__Negation__Group__0 ) ) ;
     public final void ruleNegation() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:416:2: ( ( ( rule__Negation__Group__0 ) ) )
-            // InternalConfiguratorLang.g:417:2: ( ( rule__Negation__Group__0 ) )
+            // InternalConfiguratorLang.g:441:2: ( ( ( rule__Negation__Group__0 ) ) )
+            // InternalConfiguratorLang.g:442:2: ( ( rule__Negation__Group__0 ) )
             {
-            // InternalConfiguratorLang.g:417:2: ( ( rule__Negation__Group__0 ) )
-            // InternalConfiguratorLang.g:418:3: ( rule__Negation__Group__0 )
+            // InternalConfiguratorLang.g:442:2: ( ( rule__Negation__Group__0 ) )
+            // InternalConfiguratorLang.g:443:3: ( rule__Negation__Group__0 )
             {
              before(grammarAccess.getNegationAccess().getGroup()); 
-            // InternalConfiguratorLang.g:419:3: ( rule__Negation__Group__0 )
-            // InternalConfiguratorLang.g:419:4: rule__Negation__Group__0
+            // InternalConfiguratorLang.g:444:3: ( rule__Negation__Group__0 )
+            // InternalConfiguratorLang.g:444:4: rule__Negation__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Negation__Group__0();
@@ -1240,83 +1318,6 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
         return ;
     }
     // $ANTLR end "ruleNegation"
-
-
-    // $ANTLR start "entryRuleAnd"
-    // InternalConfiguratorLang.g:428:1: entryRuleAnd : ruleAnd EOF ;
-    public final void entryRuleAnd() throws RecognitionException {
-        try {
-            // InternalConfiguratorLang.g:429:1: ( ruleAnd EOF )
-            // InternalConfiguratorLang.g:430:1: ruleAnd EOF
-            {
-             before(grammarAccess.getAndRule()); 
-            pushFollow(FOLLOW_1);
-            ruleAnd();
-
-            state._fsp--;
-
-             after(grammarAccess.getAndRule()); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleAnd"
-
-
-    // $ANTLR start "ruleAnd"
-    // InternalConfiguratorLang.g:437:1: ruleAnd : ( ( rule__And__Group__0 ) ) ;
-    public final void ruleAnd() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalConfiguratorLang.g:441:2: ( ( ( rule__And__Group__0 ) ) )
-            // InternalConfiguratorLang.g:442:2: ( ( rule__And__Group__0 ) )
-            {
-            // InternalConfiguratorLang.g:442:2: ( ( rule__And__Group__0 ) )
-            // InternalConfiguratorLang.g:443:3: ( rule__And__Group__0 )
-            {
-             before(grammarAccess.getAndAccess().getGroup()); 
-            // InternalConfiguratorLang.g:444:3: ( rule__And__Group__0 )
-            // InternalConfiguratorLang.g:444:4: rule__And__Group__0
-            {
-            pushFollow(FOLLOW_2);
-            rule__And__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getAndAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleAnd"
 
 
     // $ANTLR start "entryRuleEBoolean"
@@ -1396,27 +1397,172 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
     // $ANTLR end "ruleEBoolean"
 
 
-    // $ANTLR start "rule__OpSymbol__Alternatives"
-    // InternalConfiguratorLang.g:477:1: rule__OpSymbol__Alternatives : ( ( '=' ) | ( '<' ) | ( '>' ) );
-    public final void rule__OpSymbol__Alternatives() throws RecognitionException {
+    // $ANTLR start "entryRuleBoolString"
+    // InternalConfiguratorLang.g:478:1: entryRuleBoolString : ruleBoolString EOF ;
+    public final void entryRuleBoolString() throws RecognitionException {
+        try {
+            // InternalConfiguratorLang.g:479:1: ( ruleBoolString EOF )
+            // InternalConfiguratorLang.g:480:1: ruleBoolString EOF
+            {
+             before(grammarAccess.getBoolStringRule()); 
+            pushFollow(FOLLOW_1);
+            ruleBoolString();
+
+            state._fsp--;
+
+             after(grammarAccess.getBoolStringRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleBoolString"
+
+
+    // $ANTLR start "ruleBoolString"
+    // InternalConfiguratorLang.g:487:1: ruleBoolString : ( ( rule__BoolString__Alternatives ) ) ;
+    public final void ruleBoolString() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:481:1: ( ( '=' ) | ( '<' ) | ( '>' ) )
+            // InternalConfiguratorLang.g:491:2: ( ( ( rule__BoolString__Alternatives ) ) )
+            // InternalConfiguratorLang.g:492:2: ( ( rule__BoolString__Alternatives ) )
+            {
+            // InternalConfiguratorLang.g:492:2: ( ( rule__BoolString__Alternatives ) )
+            // InternalConfiguratorLang.g:493:3: ( rule__BoolString__Alternatives )
+            {
+             before(grammarAccess.getBoolStringAccess().getAlternatives()); 
+            // InternalConfiguratorLang.g:494:3: ( rule__BoolString__Alternatives )
+            // InternalConfiguratorLang.g:494:4: rule__BoolString__Alternatives
+            {
+            pushFollow(FOLLOW_2);
+            rule__BoolString__Alternatives();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getBoolStringAccess().getAlternatives()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleBoolString"
+
+
+    // $ANTLR start "entryRuleIntString"
+    // InternalConfiguratorLang.g:503:1: entryRuleIntString : ruleIntString EOF ;
+    public final void entryRuleIntString() throws RecognitionException {
+        try {
+            // InternalConfiguratorLang.g:504:1: ( ruleIntString EOF )
+            // InternalConfiguratorLang.g:505:1: ruleIntString EOF
+            {
+             before(grammarAccess.getIntStringRule()); 
+            pushFollow(FOLLOW_1);
+            ruleIntString();
+
+            state._fsp--;
+
+             after(grammarAccess.getIntStringRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleIntString"
+
+
+    // $ANTLR start "ruleIntString"
+    // InternalConfiguratorLang.g:512:1: ruleIntString : ( RULE_INT ) ;
+    public final void ruleIntString() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:516:2: ( ( RULE_INT ) )
+            // InternalConfiguratorLang.g:517:2: ( RULE_INT )
+            {
+            // InternalConfiguratorLang.g:517:2: ( RULE_INT )
+            // InternalConfiguratorLang.g:518:3: RULE_INT
+            {
+             before(grammarAccess.getIntStringAccess().getINTTerminalRuleCall()); 
+            match(input,RULE_INT,FOLLOW_2); 
+             after(grammarAccess.getIntStringAccess().getINTTerminalRuleCall()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleIntString"
+
+
+    // $ANTLR start "rule__Operator__ValueAlternatives_2_0"
+    // InternalConfiguratorLang.g:527:1: rule__Operator__ValueAlternatives_2_0 : ( ( ruleBoolString ) | ( ruleIntString ) | ( RULE_ID ) );
+    public final void rule__Operator__ValueAlternatives_2_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:531:1: ( ( ruleBoolString ) | ( ruleIntString ) | ( RULE_ID ) )
             int alt1=3;
             switch ( input.LA(1) ) {
-            case 11:
+            case 14:
+            case 15:
                 {
                 alt1=1;
                 }
                 break;
-            case 12:
+            case RULE_INT:
                 {
                 alt1=2;
                 }
                 break;
-            case 13:
+            case RULE_ID:
                 {
                 alt1=3;
                 }
@@ -1430,10 +1576,113 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
             switch (alt1) {
                 case 1 :
-                    // InternalConfiguratorLang.g:482:2: ( '=' )
+                    // InternalConfiguratorLang.g:532:2: ( ruleBoolString )
                     {
-                    // InternalConfiguratorLang.g:482:2: ( '=' )
-                    // InternalConfiguratorLang.g:483:3: '='
+                    // InternalConfiguratorLang.g:532:2: ( ruleBoolString )
+                    // InternalConfiguratorLang.g:533:3: ruleBoolString
+                    {
+                     before(grammarAccess.getOperatorAccess().getValueBoolStringParserRuleCall_2_0_0()); 
+                    pushFollow(FOLLOW_2);
+                    ruleBoolString();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getOperatorAccess().getValueBoolStringParserRuleCall_2_0_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalConfiguratorLang.g:538:2: ( ruleIntString )
+                    {
+                    // InternalConfiguratorLang.g:538:2: ( ruleIntString )
+                    // InternalConfiguratorLang.g:539:3: ruleIntString
+                    {
+                     before(grammarAccess.getOperatorAccess().getValueIntStringParserRuleCall_2_0_1()); 
+                    pushFollow(FOLLOW_2);
+                    ruleIntString();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getOperatorAccess().getValueIntStringParserRuleCall_2_0_1()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalConfiguratorLang.g:544:2: ( RULE_ID )
+                    {
+                    // InternalConfiguratorLang.g:544:2: ( RULE_ID )
+                    // InternalConfiguratorLang.g:545:3: RULE_ID
+                    {
+                     before(grammarAccess.getOperatorAccess().getValueIDTerminalRuleCall_2_0_2()); 
+                    match(input,RULE_ID,FOLLOW_2); 
+                     after(grammarAccess.getOperatorAccess().getValueIDTerminalRuleCall_2_0_2()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Operator__ValueAlternatives_2_0"
+
+
+    // $ANTLR start "rule__OpSymbol__Alternatives"
+    // InternalConfiguratorLang.g:554:1: rule__OpSymbol__Alternatives : ( ( '=' ) | ( '<' ) | ( '>' ) );
+    public final void rule__OpSymbol__Alternatives() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:558:1: ( ( '=' ) | ( '<' ) | ( '>' ) )
+            int alt2=3;
+            switch ( input.LA(1) ) {
+            case 11:
+                {
+                alt2=1;
+                }
+                break;
+            case 12:
+                {
+                alt2=2;
+                }
+                break;
+            case 13:
+                {
+                alt2=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 2, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt2) {
+                case 1 :
+                    // InternalConfiguratorLang.g:559:2: ( '=' )
+                    {
+                    // InternalConfiguratorLang.g:559:2: ( '=' )
+                    // InternalConfiguratorLang.g:560:3: '='
                     {
                      before(grammarAccess.getOpSymbolAccess().getEqualsSignKeyword_0()); 
                     match(input,11,FOLLOW_2); 
@@ -1445,10 +1694,10 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalConfiguratorLang.g:488:2: ( '<' )
+                    // InternalConfiguratorLang.g:565:2: ( '<' )
                     {
-                    // InternalConfiguratorLang.g:488:2: ( '<' )
-                    // InternalConfiguratorLang.g:489:3: '<'
+                    // InternalConfiguratorLang.g:565:2: ( '<' )
+                    // InternalConfiguratorLang.g:566:3: '<'
                     {
                      before(grammarAccess.getOpSymbolAccess().getLessThanSignKeyword_1()); 
                     match(input,12,FOLLOW_2); 
@@ -1460,10 +1709,10 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 3 :
-                    // InternalConfiguratorLang.g:494:2: ( '>' )
+                    // InternalConfiguratorLang.g:571:2: ( '>' )
                     {
-                    // InternalConfiguratorLang.g:494:2: ( '>' )
-                    // InternalConfiguratorLang.g:495:3: '>'
+                    // InternalConfiguratorLang.g:571:2: ( '>' )
+                    // InternalConfiguratorLang.g:572:3: '>'
                     {
                      before(grammarAccess.getOpSymbolAccess().getGreaterThanSignKeyword_2()); 
                     match(input,13,FOLLOW_2); 
@@ -1492,43 +1741,43 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Type__Alternatives"
-    // InternalConfiguratorLang.g:504:1: rule__Type__Alternatives : ( ( ruleBoolType ) | ( ruleIntType ) | ( ruleEnumType ) );
+    // InternalConfiguratorLang.g:581:1: rule__Type__Alternatives : ( ( ruleBoolType ) | ( ruleIntType ) | ( ruleEnumType ) );
     public final void rule__Type__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:508:1: ( ( ruleBoolType ) | ( ruleIntType ) | ( ruleEnumType ) )
-            int alt2=3;
+            // InternalConfiguratorLang.g:585:1: ( ( ruleBoolType ) | ( ruleIntType ) | ( ruleEnumType ) )
+            int alt3=3;
             switch ( input.LA(1) ) {
             case 20:
                 {
-                alt2=1;
+                alt3=1;
                 }
                 break;
             case 21:
                 {
-                alt2=2;
+                alt3=2;
                 }
                 break;
             case 22:
                 {
-                alt2=3;
+                alt3=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 2, 0, input);
+                    new NoViableAltException("", 3, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt2) {
+            switch (alt3) {
                 case 1 :
-                    // InternalConfiguratorLang.g:509:2: ( ruleBoolType )
+                    // InternalConfiguratorLang.g:586:2: ( ruleBoolType )
                     {
-                    // InternalConfiguratorLang.g:509:2: ( ruleBoolType )
-                    // InternalConfiguratorLang.g:510:3: ruleBoolType
+                    // InternalConfiguratorLang.g:586:2: ( ruleBoolType )
+                    // InternalConfiguratorLang.g:587:3: ruleBoolType
                     {
                      before(grammarAccess.getTypeAccess().getBoolTypeParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -1544,10 +1793,10 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalConfiguratorLang.g:515:2: ( ruleIntType )
+                    // InternalConfiguratorLang.g:592:2: ( ruleIntType )
                     {
-                    // InternalConfiguratorLang.g:515:2: ( ruleIntType )
-                    // InternalConfiguratorLang.g:516:3: ruleIntType
+                    // InternalConfiguratorLang.g:592:2: ( ruleIntType )
+                    // InternalConfiguratorLang.g:593:3: ruleIntType
                     {
                      before(grammarAccess.getTypeAccess().getIntTypeParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -1563,10 +1812,10 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 3 :
-                    // InternalConfiguratorLang.g:521:2: ( ruleEnumType )
+                    // InternalConfiguratorLang.g:598:2: ( ruleEnumType )
                     {
-                    // InternalConfiguratorLang.g:521:2: ( ruleEnumType )
-                    // InternalConfiguratorLang.g:522:3: ruleEnumType
+                    // InternalConfiguratorLang.g:598:2: ( ruleEnumType )
+                    // InternalConfiguratorLang.g:599:3: ruleEnumType
                     {
                      before(grammarAccess.getTypeAccess().getEnumTypeParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
@@ -1598,119 +1847,15 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
     // $ANTLR end "rule__Type__Alternatives"
 
 
-    // $ANTLR start "rule__BooleanExpression__Alternatives"
-    // InternalConfiguratorLang.g:531:1: rule__BooleanExpression__Alternatives : ( ( ruleConst ) | ( ruleAtom ) | ( ruleAnd ) | ( ruleNegation ) );
-    public final void rule__BooleanExpression__Alternatives() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalConfiguratorLang.g:535:1: ( ( ruleConst ) | ( ruleAtom ) | ( ruleAnd ) | ( ruleNegation ) )
-            int alt3=4;
-            alt3 = dfa3.predict(input);
-            switch (alt3) {
-                case 1 :
-                    // InternalConfiguratorLang.g:536:2: ( ruleConst )
-                    {
-                    // InternalConfiguratorLang.g:536:2: ( ruleConst )
-                    // InternalConfiguratorLang.g:537:3: ruleConst
-                    {
-                     before(grammarAccess.getBooleanExpressionAccess().getConstParserRuleCall_0()); 
-                    pushFollow(FOLLOW_2);
-                    ruleConst();
-
-                    state._fsp--;
-
-                     after(grammarAccess.getBooleanExpressionAccess().getConstParserRuleCall_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalConfiguratorLang.g:542:2: ( ruleAtom )
-                    {
-                    // InternalConfiguratorLang.g:542:2: ( ruleAtom )
-                    // InternalConfiguratorLang.g:543:3: ruleAtom
-                    {
-                     before(grammarAccess.getBooleanExpressionAccess().getAtomParserRuleCall_1()); 
-                    pushFollow(FOLLOW_2);
-                    ruleAtom();
-
-                    state._fsp--;
-
-                     after(grammarAccess.getBooleanExpressionAccess().getAtomParserRuleCall_1()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // InternalConfiguratorLang.g:548:2: ( ruleAnd )
-                    {
-                    // InternalConfiguratorLang.g:548:2: ( ruleAnd )
-                    // InternalConfiguratorLang.g:549:3: ruleAnd
-                    {
-                     before(grammarAccess.getBooleanExpressionAccess().getAndParserRuleCall_2()); 
-                    pushFollow(FOLLOW_2);
-                    ruleAnd();
-
-                    state._fsp--;
-
-                     after(grammarAccess.getBooleanExpressionAccess().getAndParserRuleCall_2()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 4 :
-                    // InternalConfiguratorLang.g:554:2: ( ruleNegation )
-                    {
-                    // InternalConfiguratorLang.g:554:2: ( ruleNegation )
-                    // InternalConfiguratorLang.g:555:3: ruleNegation
-                    {
-                     before(grammarAccess.getBooleanExpressionAccess().getNegationParserRuleCall_3()); 
-                    pushFollow(FOLLOW_2);
-                    ruleNegation();
-
-                    state._fsp--;
-
-                     after(grammarAccess.getBooleanExpressionAccess().getNegationParserRuleCall_3()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BooleanExpression__Alternatives"
-
-
     // $ANTLR start "rule__SimpleBoolean__Alternatives"
-    // InternalConfiguratorLang.g:564:1: rule__SimpleBoolean__Alternatives : ( ( ruleConst ) | ( ruleAtom ) | ( ( rule__SimpleBoolean__Group_2__0 ) ) );
+    // InternalConfiguratorLang.g:608:1: rule__SimpleBoolean__Alternatives : ( ( ruleConst ) | ( ruleAtom ) | ( ruleNegation ) | ( ( rule__SimpleBoolean__Group_3__0 ) ) );
     public final void rule__SimpleBoolean__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:568:1: ( ( ruleConst ) | ( ruleAtom ) | ( ( rule__SimpleBoolean__Group_2__0 ) ) )
-            int alt4=3;
+            // InternalConfiguratorLang.g:612:1: ( ( ruleConst ) | ( ruleAtom ) | ( ruleNegation ) | ( ( rule__SimpleBoolean__Group_3__0 ) ) )
+            int alt4=4;
             switch ( input.LA(1) ) {
             case 14:
             case 15:
@@ -1723,9 +1868,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
                 alt4=2;
                 }
                 break;
-            case 26:
+            case 30:
                 {
                 alt4=3;
+                }
+                break;
+            case 28:
+                {
+                alt4=4;
                 }
                 break;
             default:
@@ -1737,10 +1887,10 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
             switch (alt4) {
                 case 1 :
-                    // InternalConfiguratorLang.g:569:2: ( ruleConst )
+                    // InternalConfiguratorLang.g:613:2: ( ruleConst )
                     {
-                    // InternalConfiguratorLang.g:569:2: ( ruleConst )
-                    // InternalConfiguratorLang.g:570:3: ruleConst
+                    // InternalConfiguratorLang.g:613:2: ( ruleConst )
+                    // InternalConfiguratorLang.g:614:3: ruleConst
                     {
                      before(grammarAccess.getSimpleBooleanAccess().getConstParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -1756,10 +1906,10 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalConfiguratorLang.g:575:2: ( ruleAtom )
+                    // InternalConfiguratorLang.g:619:2: ( ruleAtom )
                     {
-                    // InternalConfiguratorLang.g:575:2: ( ruleAtom )
-                    // InternalConfiguratorLang.g:576:3: ruleAtom
+                    // InternalConfiguratorLang.g:619:2: ( ruleAtom )
+                    // InternalConfiguratorLang.g:620:3: ruleAtom
                     {
                      before(grammarAccess.getSimpleBooleanAccess().getAtomParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -1775,24 +1925,43 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 3 :
-                    // InternalConfiguratorLang.g:581:2: ( ( rule__SimpleBoolean__Group_2__0 ) )
+                    // InternalConfiguratorLang.g:625:2: ( ruleNegation )
                     {
-                    // InternalConfiguratorLang.g:581:2: ( ( rule__SimpleBoolean__Group_2__0 ) )
-                    // InternalConfiguratorLang.g:582:3: ( rule__SimpleBoolean__Group_2__0 )
+                    // InternalConfiguratorLang.g:625:2: ( ruleNegation )
+                    // InternalConfiguratorLang.g:626:3: ruleNegation
                     {
-                     before(grammarAccess.getSimpleBooleanAccess().getGroup_2()); 
-                    // InternalConfiguratorLang.g:583:3: ( rule__SimpleBoolean__Group_2__0 )
-                    // InternalConfiguratorLang.g:583:4: rule__SimpleBoolean__Group_2__0
+                     before(grammarAccess.getSimpleBooleanAccess().getNegationParserRuleCall_2()); 
+                    pushFollow(FOLLOW_2);
+                    ruleNegation();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getSimpleBooleanAccess().getNegationParserRuleCall_2()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // InternalConfiguratorLang.g:631:2: ( ( rule__SimpleBoolean__Group_3__0 ) )
+                    {
+                    // InternalConfiguratorLang.g:631:2: ( ( rule__SimpleBoolean__Group_3__0 ) )
+                    // InternalConfiguratorLang.g:632:3: ( rule__SimpleBoolean__Group_3__0 )
+                    {
+                     before(grammarAccess.getSimpleBooleanAccess().getGroup_3()); 
+                    // InternalConfiguratorLang.g:633:3: ( rule__SimpleBoolean__Group_3__0 )
+                    // InternalConfiguratorLang.g:633:4: rule__SimpleBoolean__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__SimpleBoolean__Group_2__0();
+                    rule__SimpleBoolean__Group_3__0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getSimpleBooleanAccess().getGroup_2()); 
+                     after(grammarAccess.getSimpleBooleanAccess().getGroup_3()); 
 
                     }
 
@@ -1817,13 +1986,13 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EBoolean__Alternatives"
-    // InternalConfiguratorLang.g:591:1: rule__EBoolean__Alternatives : ( ( 'true' ) | ( 'false' ) );
+    // InternalConfiguratorLang.g:641:1: rule__EBoolean__Alternatives : ( ( 'true' ) | ( 'false' ) );
     public final void rule__EBoolean__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:595:1: ( ( 'true' ) | ( 'false' ) )
+            // InternalConfiguratorLang.g:645:1: ( ( 'true' ) | ( 'false' ) )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -1841,10 +2010,10 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
             }
             switch (alt5) {
                 case 1 :
-                    // InternalConfiguratorLang.g:596:2: ( 'true' )
+                    // InternalConfiguratorLang.g:646:2: ( 'true' )
                     {
-                    // InternalConfiguratorLang.g:596:2: ( 'true' )
-                    // InternalConfiguratorLang.g:597:3: 'true'
+                    // InternalConfiguratorLang.g:646:2: ( 'true' )
+                    // InternalConfiguratorLang.g:647:3: 'true'
                     {
                      before(grammarAccess.getEBooleanAccess().getTrueKeyword_0()); 
                     match(input,14,FOLLOW_2); 
@@ -1856,10 +2025,10 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
                     }
                     break;
                 case 2 :
-                    // InternalConfiguratorLang.g:602:2: ( 'false' )
+                    // InternalConfiguratorLang.g:652:2: ( 'false' )
                     {
-                    // InternalConfiguratorLang.g:602:2: ( 'false' )
-                    // InternalConfiguratorLang.g:603:3: 'false'
+                    // InternalConfiguratorLang.g:652:2: ( 'false' )
+                    // InternalConfiguratorLang.g:653:3: 'false'
                     {
                      before(grammarAccess.getEBooleanAccess().getFalseKeyword_1()); 
                     match(input,15,FOLLOW_2); 
@@ -1887,15 +2056,86 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
     // $ANTLR end "rule__EBoolean__Alternatives"
 
 
+    // $ANTLR start "rule__BoolString__Alternatives"
+    // InternalConfiguratorLang.g:662:1: rule__BoolString__Alternatives : ( ( 'true' ) | ( 'false' ) );
+    public final void rule__BoolString__Alternatives() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:666:1: ( ( 'true' ) | ( 'false' ) )
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( (LA6_0==14) ) {
+                alt6=1;
+            }
+            else if ( (LA6_0==15) ) {
+                alt6=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 6, 0, input);
+
+                throw nvae;
+            }
+            switch (alt6) {
+                case 1 :
+                    // InternalConfiguratorLang.g:667:2: ( 'true' )
+                    {
+                    // InternalConfiguratorLang.g:667:2: ( 'true' )
+                    // InternalConfiguratorLang.g:668:3: 'true'
+                    {
+                     before(grammarAccess.getBoolStringAccess().getTrueKeyword_0()); 
+                    match(input,14,FOLLOW_2); 
+                     after(grammarAccess.getBoolStringAccess().getTrueKeyword_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalConfiguratorLang.g:673:2: ( 'false' )
+                    {
+                    // InternalConfiguratorLang.g:673:2: ( 'false' )
+                    // InternalConfiguratorLang.g:674:3: 'false'
+                    {
+                     before(grammarAccess.getBoolStringAccess().getFalseKeyword_1()); 
+                    match(input,15,FOLLOW_2); 
+                     after(grammarAccess.getBoolStringAccess().getFalseKeyword_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__BoolString__Alternatives"
+
+
     // $ANTLR start "rule__ConfiguratorModel__Group__0"
-    // InternalConfiguratorLang.g:612:1: rule__ConfiguratorModel__Group__0 : rule__ConfiguratorModel__Group__0__Impl rule__ConfiguratorModel__Group__1 ;
+    // InternalConfiguratorLang.g:683:1: rule__ConfiguratorModel__Group__0 : rule__ConfiguratorModel__Group__0__Impl rule__ConfiguratorModel__Group__1 ;
     public final void rule__ConfiguratorModel__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:616:1: ( rule__ConfiguratorModel__Group__0__Impl rule__ConfiguratorModel__Group__1 )
-            // InternalConfiguratorLang.g:617:2: rule__ConfiguratorModel__Group__0__Impl rule__ConfiguratorModel__Group__1
+            // InternalConfiguratorLang.g:687:1: ( rule__ConfiguratorModel__Group__0__Impl rule__ConfiguratorModel__Group__1 )
+            // InternalConfiguratorLang.g:688:2: rule__ConfiguratorModel__Group__0__Impl rule__ConfiguratorModel__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__ConfiguratorModel__Group__0__Impl();
@@ -1926,17 +2166,17 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ConfiguratorModel__Group__0__Impl"
-    // InternalConfiguratorLang.g:624:1: rule__ConfiguratorModel__Group__0__Impl : ( 'Name' ) ;
+    // InternalConfiguratorLang.g:695:1: rule__ConfiguratorModel__Group__0__Impl : ( 'Name' ) ;
     public final void rule__ConfiguratorModel__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:628:1: ( ( 'Name' ) )
-            // InternalConfiguratorLang.g:629:1: ( 'Name' )
+            // InternalConfiguratorLang.g:699:1: ( ( 'Name' ) )
+            // InternalConfiguratorLang.g:700:1: ( 'Name' )
             {
-            // InternalConfiguratorLang.g:629:1: ( 'Name' )
-            // InternalConfiguratorLang.g:630:2: 'Name'
+            // InternalConfiguratorLang.g:700:1: ( 'Name' )
+            // InternalConfiguratorLang.g:701:2: 'Name'
             {
              before(grammarAccess.getConfiguratorModelAccess().getNameKeyword_0()); 
             match(input,16,FOLLOW_2); 
@@ -1963,14 +2203,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ConfiguratorModel__Group__1"
-    // InternalConfiguratorLang.g:639:1: rule__ConfiguratorModel__Group__1 : rule__ConfiguratorModel__Group__1__Impl rule__ConfiguratorModel__Group__2 ;
+    // InternalConfiguratorLang.g:710:1: rule__ConfiguratorModel__Group__1 : rule__ConfiguratorModel__Group__1__Impl rule__ConfiguratorModel__Group__2 ;
     public final void rule__ConfiguratorModel__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:643:1: ( rule__ConfiguratorModel__Group__1__Impl rule__ConfiguratorModel__Group__2 )
-            // InternalConfiguratorLang.g:644:2: rule__ConfiguratorModel__Group__1__Impl rule__ConfiguratorModel__Group__2
+            // InternalConfiguratorLang.g:714:1: ( rule__ConfiguratorModel__Group__1__Impl rule__ConfiguratorModel__Group__2 )
+            // InternalConfiguratorLang.g:715:2: rule__ConfiguratorModel__Group__1__Impl rule__ConfiguratorModel__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__ConfiguratorModel__Group__1__Impl();
@@ -2001,17 +2241,17 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ConfiguratorModel__Group__1__Impl"
-    // InternalConfiguratorLang.g:651:1: rule__ConfiguratorModel__Group__1__Impl : ( ':' ) ;
+    // InternalConfiguratorLang.g:722:1: rule__ConfiguratorModel__Group__1__Impl : ( ':' ) ;
     public final void rule__ConfiguratorModel__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:655:1: ( ( ':' ) )
-            // InternalConfiguratorLang.g:656:1: ( ':' )
+            // InternalConfiguratorLang.g:726:1: ( ( ':' ) )
+            // InternalConfiguratorLang.g:727:1: ( ':' )
             {
-            // InternalConfiguratorLang.g:656:1: ( ':' )
-            // InternalConfiguratorLang.g:657:2: ':'
+            // InternalConfiguratorLang.g:727:1: ( ':' )
+            // InternalConfiguratorLang.g:728:2: ':'
             {
              before(grammarAccess.getConfiguratorModelAccess().getColonKeyword_1()); 
             match(input,17,FOLLOW_2); 
@@ -2038,14 +2278,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ConfiguratorModel__Group__2"
-    // InternalConfiguratorLang.g:666:1: rule__ConfiguratorModel__Group__2 : rule__ConfiguratorModel__Group__2__Impl rule__ConfiguratorModel__Group__3 ;
+    // InternalConfiguratorLang.g:737:1: rule__ConfiguratorModel__Group__2 : rule__ConfiguratorModel__Group__2__Impl rule__ConfiguratorModel__Group__3 ;
     public final void rule__ConfiguratorModel__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:670:1: ( rule__ConfiguratorModel__Group__2__Impl rule__ConfiguratorModel__Group__3 )
-            // InternalConfiguratorLang.g:671:2: rule__ConfiguratorModel__Group__2__Impl rule__ConfiguratorModel__Group__3
+            // InternalConfiguratorLang.g:741:1: ( rule__ConfiguratorModel__Group__2__Impl rule__ConfiguratorModel__Group__3 )
+            // InternalConfiguratorLang.g:742:2: rule__ConfiguratorModel__Group__2__Impl rule__ConfiguratorModel__Group__3
             {
             pushFollow(FOLLOW_5);
             rule__ConfiguratorModel__Group__2__Impl();
@@ -2076,21 +2316,21 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ConfiguratorModel__Group__2__Impl"
-    // InternalConfiguratorLang.g:678:1: rule__ConfiguratorModel__Group__2__Impl : ( ( rule__ConfiguratorModel__NameAssignment_2 ) ) ;
+    // InternalConfiguratorLang.g:749:1: rule__ConfiguratorModel__Group__2__Impl : ( ( rule__ConfiguratorModel__NameAssignment_2 ) ) ;
     public final void rule__ConfiguratorModel__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:682:1: ( ( ( rule__ConfiguratorModel__NameAssignment_2 ) ) )
-            // InternalConfiguratorLang.g:683:1: ( ( rule__ConfiguratorModel__NameAssignment_2 ) )
+            // InternalConfiguratorLang.g:753:1: ( ( ( rule__ConfiguratorModel__NameAssignment_2 ) ) )
+            // InternalConfiguratorLang.g:754:1: ( ( rule__ConfiguratorModel__NameAssignment_2 ) )
             {
-            // InternalConfiguratorLang.g:683:1: ( ( rule__ConfiguratorModel__NameAssignment_2 ) )
-            // InternalConfiguratorLang.g:684:2: ( rule__ConfiguratorModel__NameAssignment_2 )
+            // InternalConfiguratorLang.g:754:1: ( ( rule__ConfiguratorModel__NameAssignment_2 ) )
+            // InternalConfiguratorLang.g:755:2: ( rule__ConfiguratorModel__NameAssignment_2 )
             {
              before(grammarAccess.getConfiguratorModelAccess().getNameAssignment_2()); 
-            // InternalConfiguratorLang.g:685:2: ( rule__ConfiguratorModel__NameAssignment_2 )
-            // InternalConfiguratorLang.g:685:3: rule__ConfiguratorModel__NameAssignment_2
+            // InternalConfiguratorLang.g:756:2: ( rule__ConfiguratorModel__NameAssignment_2 )
+            // InternalConfiguratorLang.g:756:3: rule__ConfiguratorModel__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__ConfiguratorModel__NameAssignment_2();
@@ -2123,14 +2363,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ConfiguratorModel__Group__3"
-    // InternalConfiguratorLang.g:693:1: rule__ConfiguratorModel__Group__3 : rule__ConfiguratorModel__Group__3__Impl rule__ConfiguratorModel__Group__4 ;
+    // InternalConfiguratorLang.g:764:1: rule__ConfiguratorModel__Group__3 : rule__ConfiguratorModel__Group__3__Impl rule__ConfiguratorModel__Group__4 ;
     public final void rule__ConfiguratorModel__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:697:1: ( rule__ConfiguratorModel__Group__3__Impl rule__ConfiguratorModel__Group__4 )
-            // InternalConfiguratorLang.g:698:2: rule__ConfiguratorModel__Group__3__Impl rule__ConfiguratorModel__Group__4
+            // InternalConfiguratorLang.g:768:1: ( rule__ConfiguratorModel__Group__3__Impl rule__ConfiguratorModel__Group__4 )
+            // InternalConfiguratorLang.g:769:2: rule__ConfiguratorModel__Group__3__Impl rule__ConfiguratorModel__Group__4
             {
             pushFollow(FOLLOW_6);
             rule__ConfiguratorModel__Group__3__Impl();
@@ -2161,17 +2401,17 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ConfiguratorModel__Group__3__Impl"
-    // InternalConfiguratorLang.g:705:1: rule__ConfiguratorModel__Group__3__Impl : ( 'Features' ) ;
+    // InternalConfiguratorLang.g:776:1: rule__ConfiguratorModel__Group__3__Impl : ( 'Features' ) ;
     public final void rule__ConfiguratorModel__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:709:1: ( ( 'Features' ) )
-            // InternalConfiguratorLang.g:710:1: ( 'Features' )
+            // InternalConfiguratorLang.g:780:1: ( ( 'Features' ) )
+            // InternalConfiguratorLang.g:781:1: ( 'Features' )
             {
-            // InternalConfiguratorLang.g:710:1: ( 'Features' )
-            // InternalConfiguratorLang.g:711:2: 'Features'
+            // InternalConfiguratorLang.g:781:1: ( 'Features' )
+            // InternalConfiguratorLang.g:782:2: 'Features'
             {
              before(grammarAccess.getConfiguratorModelAccess().getFeaturesKeyword_3()); 
             match(input,18,FOLLOW_2); 
@@ -2198,14 +2438,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ConfiguratorModel__Group__4"
-    // InternalConfiguratorLang.g:720:1: rule__ConfiguratorModel__Group__4 : rule__ConfiguratorModel__Group__4__Impl rule__ConfiguratorModel__Group__5 ;
+    // InternalConfiguratorLang.g:791:1: rule__ConfiguratorModel__Group__4 : rule__ConfiguratorModel__Group__4__Impl rule__ConfiguratorModel__Group__5 ;
     public final void rule__ConfiguratorModel__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:724:1: ( rule__ConfiguratorModel__Group__4__Impl rule__ConfiguratorModel__Group__5 )
-            // InternalConfiguratorLang.g:725:2: rule__ConfiguratorModel__Group__4__Impl rule__ConfiguratorModel__Group__5
+            // InternalConfiguratorLang.g:795:1: ( rule__ConfiguratorModel__Group__4__Impl rule__ConfiguratorModel__Group__5 )
+            // InternalConfiguratorLang.g:796:2: rule__ConfiguratorModel__Group__4__Impl rule__ConfiguratorModel__Group__5
             {
             pushFollow(FOLLOW_7);
             rule__ConfiguratorModel__Group__4__Impl();
@@ -2236,21 +2476,21 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ConfiguratorModel__Group__4__Impl"
-    // InternalConfiguratorLang.g:732:1: rule__ConfiguratorModel__Group__4__Impl : ( ( rule__ConfiguratorModel__FeatureAssignment_4 ) ) ;
+    // InternalConfiguratorLang.g:803:1: rule__ConfiguratorModel__Group__4__Impl : ( ( rule__ConfiguratorModel__FeatureAssignment_4 ) ) ;
     public final void rule__ConfiguratorModel__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:736:1: ( ( ( rule__ConfiguratorModel__FeatureAssignment_4 ) ) )
-            // InternalConfiguratorLang.g:737:1: ( ( rule__ConfiguratorModel__FeatureAssignment_4 ) )
+            // InternalConfiguratorLang.g:807:1: ( ( ( rule__ConfiguratorModel__FeatureAssignment_4 ) ) )
+            // InternalConfiguratorLang.g:808:1: ( ( rule__ConfiguratorModel__FeatureAssignment_4 ) )
             {
-            // InternalConfiguratorLang.g:737:1: ( ( rule__ConfiguratorModel__FeatureAssignment_4 ) )
-            // InternalConfiguratorLang.g:738:2: ( rule__ConfiguratorModel__FeatureAssignment_4 )
+            // InternalConfiguratorLang.g:808:1: ( ( rule__ConfiguratorModel__FeatureAssignment_4 ) )
+            // InternalConfiguratorLang.g:809:2: ( rule__ConfiguratorModel__FeatureAssignment_4 )
             {
              before(grammarAccess.getConfiguratorModelAccess().getFeatureAssignment_4()); 
-            // InternalConfiguratorLang.g:739:2: ( rule__ConfiguratorModel__FeatureAssignment_4 )
-            // InternalConfiguratorLang.g:739:3: rule__ConfiguratorModel__FeatureAssignment_4
+            // InternalConfiguratorLang.g:810:2: ( rule__ConfiguratorModel__FeatureAssignment_4 )
+            // InternalConfiguratorLang.g:810:3: rule__ConfiguratorModel__FeatureAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__ConfiguratorModel__FeatureAssignment_4();
@@ -2283,14 +2523,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ConfiguratorModel__Group__5"
-    // InternalConfiguratorLang.g:747:1: rule__ConfiguratorModel__Group__5 : rule__ConfiguratorModel__Group__5__Impl rule__ConfiguratorModel__Group__6 ;
+    // InternalConfiguratorLang.g:818:1: rule__ConfiguratorModel__Group__5 : rule__ConfiguratorModel__Group__5__Impl rule__ConfiguratorModel__Group__6 ;
     public final void rule__ConfiguratorModel__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:751:1: ( rule__ConfiguratorModel__Group__5__Impl rule__ConfiguratorModel__Group__6 )
-            // InternalConfiguratorLang.g:752:2: rule__ConfiguratorModel__Group__5__Impl rule__ConfiguratorModel__Group__6
+            // InternalConfiguratorLang.g:822:1: ( rule__ConfiguratorModel__Group__5__Impl rule__ConfiguratorModel__Group__6 )
+            // InternalConfiguratorLang.g:823:2: rule__ConfiguratorModel__Group__5__Impl rule__ConfiguratorModel__Group__6
             {
             pushFollow(FOLLOW_7);
             rule__ConfiguratorModel__Group__5__Impl();
@@ -2321,33 +2561,33 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ConfiguratorModel__Group__5__Impl"
-    // InternalConfiguratorLang.g:759:1: rule__ConfiguratorModel__Group__5__Impl : ( ( rule__ConfiguratorModel__FeatureAssignment_5 )* ) ;
+    // InternalConfiguratorLang.g:830:1: rule__ConfiguratorModel__Group__5__Impl : ( ( rule__ConfiguratorModel__FeatureAssignment_5 )* ) ;
     public final void rule__ConfiguratorModel__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:763:1: ( ( ( rule__ConfiguratorModel__FeatureAssignment_5 )* ) )
-            // InternalConfiguratorLang.g:764:1: ( ( rule__ConfiguratorModel__FeatureAssignment_5 )* )
+            // InternalConfiguratorLang.g:834:1: ( ( ( rule__ConfiguratorModel__FeatureAssignment_5 )* ) )
+            // InternalConfiguratorLang.g:835:1: ( ( rule__ConfiguratorModel__FeatureAssignment_5 )* )
             {
-            // InternalConfiguratorLang.g:764:1: ( ( rule__ConfiguratorModel__FeatureAssignment_5 )* )
-            // InternalConfiguratorLang.g:765:2: ( rule__ConfiguratorModel__FeatureAssignment_5 )*
+            // InternalConfiguratorLang.g:835:1: ( ( rule__ConfiguratorModel__FeatureAssignment_5 )* )
+            // InternalConfiguratorLang.g:836:2: ( rule__ConfiguratorModel__FeatureAssignment_5 )*
             {
              before(grammarAccess.getConfiguratorModelAccess().getFeatureAssignment_5()); 
-            // InternalConfiguratorLang.g:766:2: ( rule__ConfiguratorModel__FeatureAssignment_5 )*
-            loop6:
+            // InternalConfiguratorLang.g:837:2: ( rule__ConfiguratorModel__FeatureAssignment_5 )*
+            loop7:
             do {
-                int alt6=2;
-                int LA6_0 = input.LA(1);
+                int alt7=2;
+                int LA7_0 = input.LA(1);
 
-                if ( (LA6_0==RULE_ID) ) {
-                    alt6=1;
+                if ( (LA7_0==RULE_ID) ) {
+                    alt7=1;
                 }
 
 
-                switch (alt6) {
+                switch (alt7) {
             	case 1 :
-            	    // InternalConfiguratorLang.g:766:3: rule__ConfiguratorModel__FeatureAssignment_5
+            	    // InternalConfiguratorLang.g:837:3: rule__ConfiguratorModel__FeatureAssignment_5
             	    {
             	    pushFollow(FOLLOW_8);
             	    rule__ConfiguratorModel__FeatureAssignment_5();
@@ -2359,7 +2599,7 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
             	    break;
 
             	default :
-            	    break loop6;
+            	    break loop7;
                 }
             } while (true);
 
@@ -2386,16 +2626,16 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ConfiguratorModel__Group__6"
-    // InternalConfiguratorLang.g:774:1: rule__ConfiguratorModel__Group__6 : rule__ConfiguratorModel__Group__6__Impl rule__ConfiguratorModel__Group__7 ;
+    // InternalConfiguratorLang.g:845:1: rule__ConfiguratorModel__Group__6 : rule__ConfiguratorModel__Group__6__Impl rule__ConfiguratorModel__Group__7 ;
     public final void rule__ConfiguratorModel__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:778:1: ( rule__ConfiguratorModel__Group__6__Impl rule__ConfiguratorModel__Group__7 )
-            // InternalConfiguratorLang.g:779:2: rule__ConfiguratorModel__Group__6__Impl rule__ConfiguratorModel__Group__7
+            // InternalConfiguratorLang.g:849:1: ( rule__ConfiguratorModel__Group__6__Impl rule__ConfiguratorModel__Group__7 )
+            // InternalConfiguratorLang.g:850:2: rule__ConfiguratorModel__Group__6__Impl rule__ConfiguratorModel__Group__7
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_6);
             rule__ConfiguratorModel__Group__6__Impl();
 
             state._fsp--;
@@ -2424,17 +2664,17 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ConfiguratorModel__Group__6__Impl"
-    // InternalConfiguratorLang.g:786:1: rule__ConfiguratorModel__Group__6__Impl : ( 'Rules' ) ;
+    // InternalConfiguratorLang.g:857:1: rule__ConfiguratorModel__Group__6__Impl : ( 'Rules' ) ;
     public final void rule__ConfiguratorModel__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:790:1: ( ( 'Rules' ) )
-            // InternalConfiguratorLang.g:791:1: ( 'Rules' )
+            // InternalConfiguratorLang.g:861:1: ( ( 'Rules' ) )
+            // InternalConfiguratorLang.g:862:1: ( 'Rules' )
             {
-            // InternalConfiguratorLang.g:791:1: ( 'Rules' )
-            // InternalConfiguratorLang.g:792:2: 'Rules'
+            // InternalConfiguratorLang.g:862:1: ( 'Rules' )
+            // InternalConfiguratorLang.g:863:2: 'Rules'
             {
              before(grammarAccess.getConfiguratorModelAccess().getRulesKeyword_6()); 
             match(input,19,FOLLOW_2); 
@@ -2461,14 +2701,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ConfiguratorModel__Group__7"
-    // InternalConfiguratorLang.g:801:1: rule__ConfiguratorModel__Group__7 : rule__ConfiguratorModel__Group__7__Impl ;
+    // InternalConfiguratorLang.g:872:1: rule__ConfiguratorModel__Group__7 : rule__ConfiguratorModel__Group__7__Impl ;
     public final void rule__ConfiguratorModel__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:805:1: ( rule__ConfiguratorModel__Group__7__Impl )
-            // InternalConfiguratorLang.g:806:2: rule__ConfiguratorModel__Group__7__Impl
+            // InternalConfiguratorLang.g:876:1: ( rule__ConfiguratorModel__Group__7__Impl )
+            // InternalConfiguratorLang.g:877:2: rule__ConfiguratorModel__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ConfiguratorModel__Group__7__Impl();
@@ -2494,21 +2734,21 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ConfiguratorModel__Group__7__Impl"
-    // InternalConfiguratorLang.g:812:1: rule__ConfiguratorModel__Group__7__Impl : ( ( rule__ConfiguratorModel__RulesetAssignment_7 ) ) ;
+    // InternalConfiguratorLang.g:883:1: rule__ConfiguratorModel__Group__7__Impl : ( ( rule__ConfiguratorModel__RulesetAssignment_7 ) ) ;
     public final void rule__ConfiguratorModel__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:816:1: ( ( ( rule__ConfiguratorModel__RulesetAssignment_7 ) ) )
-            // InternalConfiguratorLang.g:817:1: ( ( rule__ConfiguratorModel__RulesetAssignment_7 ) )
+            // InternalConfiguratorLang.g:887:1: ( ( ( rule__ConfiguratorModel__RulesetAssignment_7 ) ) )
+            // InternalConfiguratorLang.g:888:1: ( ( rule__ConfiguratorModel__RulesetAssignment_7 ) )
             {
-            // InternalConfiguratorLang.g:817:1: ( ( rule__ConfiguratorModel__RulesetAssignment_7 ) )
-            // InternalConfiguratorLang.g:818:2: ( rule__ConfiguratorModel__RulesetAssignment_7 )
+            // InternalConfiguratorLang.g:888:1: ( ( rule__ConfiguratorModel__RulesetAssignment_7 ) )
+            // InternalConfiguratorLang.g:889:2: ( rule__ConfiguratorModel__RulesetAssignment_7 )
             {
              before(grammarAccess.getConfiguratorModelAccess().getRulesetAssignment_7()); 
-            // InternalConfiguratorLang.g:819:2: ( rule__ConfiguratorModel__RulesetAssignment_7 )
-            // InternalConfiguratorLang.g:819:3: rule__ConfiguratorModel__RulesetAssignment_7
+            // InternalConfiguratorLang.g:890:2: ( rule__ConfiguratorModel__RulesetAssignment_7 )
+            // InternalConfiguratorLang.g:890:3: rule__ConfiguratorModel__RulesetAssignment_7
             {
             pushFollow(FOLLOW_2);
             rule__ConfiguratorModel__RulesetAssignment_7();
@@ -2541,14 +2781,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Feature__Group__0"
-    // InternalConfiguratorLang.g:828:1: rule__Feature__Group__0 : rule__Feature__Group__0__Impl rule__Feature__Group__1 ;
+    // InternalConfiguratorLang.g:899:1: rule__Feature__Group__0 : rule__Feature__Group__0__Impl rule__Feature__Group__1 ;
     public final void rule__Feature__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:832:1: ( rule__Feature__Group__0__Impl rule__Feature__Group__1 )
-            // InternalConfiguratorLang.g:833:2: rule__Feature__Group__0__Impl rule__Feature__Group__1
+            // InternalConfiguratorLang.g:903:1: ( rule__Feature__Group__0__Impl rule__Feature__Group__1 )
+            // InternalConfiguratorLang.g:904:2: rule__Feature__Group__0__Impl rule__Feature__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Feature__Group__0__Impl();
@@ -2579,21 +2819,21 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Feature__Group__0__Impl"
-    // InternalConfiguratorLang.g:840:1: rule__Feature__Group__0__Impl : ( ( rule__Feature__NameAssignment_0 ) ) ;
+    // InternalConfiguratorLang.g:911:1: rule__Feature__Group__0__Impl : ( ( rule__Feature__NameAssignment_0 ) ) ;
     public final void rule__Feature__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:844:1: ( ( ( rule__Feature__NameAssignment_0 ) ) )
-            // InternalConfiguratorLang.g:845:1: ( ( rule__Feature__NameAssignment_0 ) )
+            // InternalConfiguratorLang.g:915:1: ( ( ( rule__Feature__NameAssignment_0 ) ) )
+            // InternalConfiguratorLang.g:916:1: ( ( rule__Feature__NameAssignment_0 ) )
             {
-            // InternalConfiguratorLang.g:845:1: ( ( rule__Feature__NameAssignment_0 ) )
-            // InternalConfiguratorLang.g:846:2: ( rule__Feature__NameAssignment_0 )
+            // InternalConfiguratorLang.g:916:1: ( ( rule__Feature__NameAssignment_0 ) )
+            // InternalConfiguratorLang.g:917:2: ( rule__Feature__NameAssignment_0 )
             {
              before(grammarAccess.getFeatureAccess().getNameAssignment_0()); 
-            // InternalConfiguratorLang.g:847:2: ( rule__Feature__NameAssignment_0 )
-            // InternalConfiguratorLang.g:847:3: rule__Feature__NameAssignment_0
+            // InternalConfiguratorLang.g:918:2: ( rule__Feature__NameAssignment_0 )
+            // InternalConfiguratorLang.g:918:3: rule__Feature__NameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Feature__NameAssignment_0();
@@ -2626,16 +2866,16 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Feature__Group__1"
-    // InternalConfiguratorLang.g:855:1: rule__Feature__Group__1 : rule__Feature__Group__1__Impl rule__Feature__Group__2 ;
+    // InternalConfiguratorLang.g:926:1: rule__Feature__Group__1 : rule__Feature__Group__1__Impl rule__Feature__Group__2 ;
     public final void rule__Feature__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:859:1: ( rule__Feature__Group__1__Impl rule__Feature__Group__2 )
-            // InternalConfiguratorLang.g:860:2: rule__Feature__Group__1__Impl rule__Feature__Group__2
+            // InternalConfiguratorLang.g:930:1: ( rule__Feature__Group__1__Impl rule__Feature__Group__2 )
+            // InternalConfiguratorLang.g:931:2: rule__Feature__Group__1__Impl rule__Feature__Group__2
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_9);
             rule__Feature__Group__1__Impl();
 
             state._fsp--;
@@ -2664,17 +2904,17 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Feature__Group__1__Impl"
-    // InternalConfiguratorLang.g:867:1: rule__Feature__Group__1__Impl : ( ':' ) ;
+    // InternalConfiguratorLang.g:938:1: rule__Feature__Group__1__Impl : ( ':' ) ;
     public final void rule__Feature__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:871:1: ( ( ':' ) )
-            // InternalConfiguratorLang.g:872:1: ( ':' )
+            // InternalConfiguratorLang.g:942:1: ( ( ':' ) )
+            // InternalConfiguratorLang.g:943:1: ( ':' )
             {
-            // InternalConfiguratorLang.g:872:1: ( ':' )
-            // InternalConfiguratorLang.g:873:2: ':'
+            // InternalConfiguratorLang.g:943:1: ( ':' )
+            // InternalConfiguratorLang.g:944:2: ':'
             {
              before(grammarAccess.getFeatureAccess().getColonKeyword_1()); 
             match(input,17,FOLLOW_2); 
@@ -2701,14 +2941,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Feature__Group__2"
-    // InternalConfiguratorLang.g:882:1: rule__Feature__Group__2 : rule__Feature__Group__2__Impl rule__Feature__Group__3 ;
+    // InternalConfiguratorLang.g:953:1: rule__Feature__Group__2 : rule__Feature__Group__2__Impl rule__Feature__Group__3 ;
     public final void rule__Feature__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:886:1: ( rule__Feature__Group__2__Impl rule__Feature__Group__3 )
-            // InternalConfiguratorLang.g:887:2: rule__Feature__Group__2__Impl rule__Feature__Group__3
+            // InternalConfiguratorLang.g:957:1: ( rule__Feature__Group__2__Impl rule__Feature__Group__3 )
+            // InternalConfiguratorLang.g:958:2: rule__Feature__Group__2__Impl rule__Feature__Group__3
             {
             pushFollow(FOLLOW_4);
             rule__Feature__Group__2__Impl();
@@ -2739,21 +2979,21 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Feature__Group__2__Impl"
-    // InternalConfiguratorLang.g:894:1: rule__Feature__Group__2__Impl : ( ( rule__Feature__TypeAssignment_2 ) ) ;
+    // InternalConfiguratorLang.g:965:1: rule__Feature__Group__2__Impl : ( ( rule__Feature__TypeAssignment_2 ) ) ;
     public final void rule__Feature__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:898:1: ( ( ( rule__Feature__TypeAssignment_2 ) ) )
-            // InternalConfiguratorLang.g:899:1: ( ( rule__Feature__TypeAssignment_2 ) )
+            // InternalConfiguratorLang.g:969:1: ( ( ( rule__Feature__TypeAssignment_2 ) ) )
+            // InternalConfiguratorLang.g:970:1: ( ( rule__Feature__TypeAssignment_2 ) )
             {
-            // InternalConfiguratorLang.g:899:1: ( ( rule__Feature__TypeAssignment_2 ) )
-            // InternalConfiguratorLang.g:900:2: ( rule__Feature__TypeAssignment_2 )
+            // InternalConfiguratorLang.g:970:1: ( ( rule__Feature__TypeAssignment_2 ) )
+            // InternalConfiguratorLang.g:971:2: ( rule__Feature__TypeAssignment_2 )
             {
              before(grammarAccess.getFeatureAccess().getTypeAssignment_2()); 
-            // InternalConfiguratorLang.g:901:2: ( rule__Feature__TypeAssignment_2 )
-            // InternalConfiguratorLang.g:901:3: rule__Feature__TypeAssignment_2
+            // InternalConfiguratorLang.g:972:2: ( rule__Feature__TypeAssignment_2 )
+            // InternalConfiguratorLang.g:972:3: rule__Feature__TypeAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Feature__TypeAssignment_2();
@@ -2786,14 +3026,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Feature__Group__3"
-    // InternalConfiguratorLang.g:909:1: rule__Feature__Group__3 : rule__Feature__Group__3__Impl ;
+    // InternalConfiguratorLang.g:980:1: rule__Feature__Group__3 : rule__Feature__Group__3__Impl ;
     public final void rule__Feature__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:913:1: ( rule__Feature__Group__3__Impl )
-            // InternalConfiguratorLang.g:914:2: rule__Feature__Group__3__Impl
+            // InternalConfiguratorLang.g:984:1: ( rule__Feature__Group__3__Impl )
+            // InternalConfiguratorLang.g:985:2: rule__Feature__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Feature__Group__3__Impl();
@@ -2819,29 +3059,29 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Feature__Group__3__Impl"
-    // InternalConfiguratorLang.g:920:1: rule__Feature__Group__3__Impl : ( ( rule__Feature__TextAssignment_3 )? ) ;
+    // InternalConfiguratorLang.g:991:1: rule__Feature__Group__3__Impl : ( ( rule__Feature__TextAssignment_3 )? ) ;
     public final void rule__Feature__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:924:1: ( ( ( rule__Feature__TextAssignment_3 )? ) )
-            // InternalConfiguratorLang.g:925:1: ( ( rule__Feature__TextAssignment_3 )? )
+            // InternalConfiguratorLang.g:995:1: ( ( ( rule__Feature__TextAssignment_3 )? ) )
+            // InternalConfiguratorLang.g:996:1: ( ( rule__Feature__TextAssignment_3 )? )
             {
-            // InternalConfiguratorLang.g:925:1: ( ( rule__Feature__TextAssignment_3 )? )
-            // InternalConfiguratorLang.g:926:2: ( rule__Feature__TextAssignment_3 )?
+            // InternalConfiguratorLang.g:996:1: ( ( rule__Feature__TextAssignment_3 )? )
+            // InternalConfiguratorLang.g:997:2: ( rule__Feature__TextAssignment_3 )?
             {
              before(grammarAccess.getFeatureAccess().getTextAssignment_3()); 
-            // InternalConfiguratorLang.g:927:2: ( rule__Feature__TextAssignment_3 )?
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // InternalConfiguratorLang.g:998:2: ( rule__Feature__TextAssignment_3 )?
+            int alt8=2;
+            int LA8_0 = input.LA(1);
 
-            if ( (LA7_0==RULE_STRING) ) {
-                alt7=1;
+            if ( (LA8_0==RULE_STRING) ) {
+                alt8=1;
             }
-            switch (alt7) {
+            switch (alt8) {
                 case 1 :
-                    // InternalConfiguratorLang.g:927:3: rule__Feature__TextAssignment_3
+                    // InternalConfiguratorLang.g:998:3: rule__Feature__TextAssignment_3
                     {
                     pushFollow(FOLLOW_2);
                     rule__Feature__TextAssignment_3();
@@ -2877,16 +3117,16 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Operator__Group__0"
-    // InternalConfiguratorLang.g:936:1: rule__Operator__Group__0 : rule__Operator__Group__0__Impl rule__Operator__Group__1 ;
+    // InternalConfiguratorLang.g:1007:1: rule__Operator__Group__0 : rule__Operator__Group__0__Impl rule__Operator__Group__1 ;
     public final void rule__Operator__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:940:1: ( rule__Operator__Group__0__Impl rule__Operator__Group__1 )
-            // InternalConfiguratorLang.g:941:2: rule__Operator__Group__0__Impl rule__Operator__Group__1
+            // InternalConfiguratorLang.g:1011:1: ( rule__Operator__Group__0__Impl rule__Operator__Group__1 )
+            // InternalConfiguratorLang.g:1012:2: rule__Operator__Group__0__Impl rule__Operator__Group__1
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_10);
             rule__Operator__Group__0__Impl();
 
             state._fsp--;
@@ -2915,21 +3155,21 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Operator__Group__0__Impl"
-    // InternalConfiguratorLang.g:948:1: rule__Operator__Group__0__Impl : ( ( rule__Operator__FeatureAssignment_0 ) ) ;
+    // InternalConfiguratorLang.g:1019:1: rule__Operator__Group__0__Impl : ( ( rule__Operator__FeatureAssignment_0 ) ) ;
     public final void rule__Operator__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:952:1: ( ( ( rule__Operator__FeatureAssignment_0 ) ) )
-            // InternalConfiguratorLang.g:953:1: ( ( rule__Operator__FeatureAssignment_0 ) )
+            // InternalConfiguratorLang.g:1023:1: ( ( ( rule__Operator__FeatureAssignment_0 ) ) )
+            // InternalConfiguratorLang.g:1024:1: ( ( rule__Operator__FeatureAssignment_0 ) )
             {
-            // InternalConfiguratorLang.g:953:1: ( ( rule__Operator__FeatureAssignment_0 ) )
-            // InternalConfiguratorLang.g:954:2: ( rule__Operator__FeatureAssignment_0 )
+            // InternalConfiguratorLang.g:1024:1: ( ( rule__Operator__FeatureAssignment_0 ) )
+            // InternalConfiguratorLang.g:1025:2: ( rule__Operator__FeatureAssignment_0 )
             {
              before(grammarAccess.getOperatorAccess().getFeatureAssignment_0()); 
-            // InternalConfiguratorLang.g:955:2: ( rule__Operator__FeatureAssignment_0 )
-            // InternalConfiguratorLang.g:955:3: rule__Operator__FeatureAssignment_0
+            // InternalConfiguratorLang.g:1026:2: ( rule__Operator__FeatureAssignment_0 )
+            // InternalConfiguratorLang.g:1026:3: rule__Operator__FeatureAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Operator__FeatureAssignment_0();
@@ -2962,16 +3202,16 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Operator__Group__1"
-    // InternalConfiguratorLang.g:963:1: rule__Operator__Group__1 : rule__Operator__Group__1__Impl rule__Operator__Group__2 ;
+    // InternalConfiguratorLang.g:1034:1: rule__Operator__Group__1 : rule__Operator__Group__1__Impl rule__Operator__Group__2 ;
     public final void rule__Operator__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:967:1: ( rule__Operator__Group__1__Impl rule__Operator__Group__2 )
-            // InternalConfiguratorLang.g:968:2: rule__Operator__Group__1__Impl rule__Operator__Group__2
+            // InternalConfiguratorLang.g:1038:1: ( rule__Operator__Group__1__Impl rule__Operator__Group__2 )
+            // InternalConfiguratorLang.g:1039:2: rule__Operator__Group__1__Impl rule__Operator__Group__2
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_11);
             rule__Operator__Group__1__Impl();
 
             state._fsp--;
@@ -3000,21 +3240,21 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Operator__Group__1__Impl"
-    // InternalConfiguratorLang.g:975:1: rule__Operator__Group__1__Impl : ( ( rule__Operator__OpAssignment_1 ) ) ;
+    // InternalConfiguratorLang.g:1046:1: rule__Operator__Group__1__Impl : ( ( rule__Operator__OpAssignment_1 ) ) ;
     public final void rule__Operator__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:979:1: ( ( ( rule__Operator__OpAssignment_1 ) ) )
-            // InternalConfiguratorLang.g:980:1: ( ( rule__Operator__OpAssignment_1 ) )
+            // InternalConfiguratorLang.g:1050:1: ( ( ( rule__Operator__OpAssignment_1 ) ) )
+            // InternalConfiguratorLang.g:1051:1: ( ( rule__Operator__OpAssignment_1 ) )
             {
-            // InternalConfiguratorLang.g:980:1: ( ( rule__Operator__OpAssignment_1 ) )
-            // InternalConfiguratorLang.g:981:2: ( rule__Operator__OpAssignment_1 )
+            // InternalConfiguratorLang.g:1051:1: ( ( rule__Operator__OpAssignment_1 ) )
+            // InternalConfiguratorLang.g:1052:2: ( rule__Operator__OpAssignment_1 )
             {
              before(grammarAccess.getOperatorAccess().getOpAssignment_1()); 
-            // InternalConfiguratorLang.g:982:2: ( rule__Operator__OpAssignment_1 )
-            // InternalConfiguratorLang.g:982:3: rule__Operator__OpAssignment_1
+            // InternalConfiguratorLang.g:1053:2: ( rule__Operator__OpAssignment_1 )
+            // InternalConfiguratorLang.g:1053:3: rule__Operator__OpAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Operator__OpAssignment_1();
@@ -3047,14 +3287,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Operator__Group__2"
-    // InternalConfiguratorLang.g:990:1: rule__Operator__Group__2 : rule__Operator__Group__2__Impl ;
+    // InternalConfiguratorLang.g:1061:1: rule__Operator__Group__2 : rule__Operator__Group__2__Impl ;
     public final void rule__Operator__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:994:1: ( rule__Operator__Group__2__Impl )
-            // InternalConfiguratorLang.g:995:2: rule__Operator__Group__2__Impl
+            // InternalConfiguratorLang.g:1065:1: ( rule__Operator__Group__2__Impl )
+            // InternalConfiguratorLang.g:1066:2: rule__Operator__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Operator__Group__2__Impl();
@@ -3080,21 +3320,21 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Operator__Group__2__Impl"
-    // InternalConfiguratorLang.g:1001:1: rule__Operator__Group__2__Impl : ( ( rule__Operator__ValueAssignment_2 ) ) ;
+    // InternalConfiguratorLang.g:1072:1: rule__Operator__Group__2__Impl : ( ( rule__Operator__ValueAssignment_2 ) ) ;
     public final void rule__Operator__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1005:1: ( ( ( rule__Operator__ValueAssignment_2 ) ) )
-            // InternalConfiguratorLang.g:1006:1: ( ( rule__Operator__ValueAssignment_2 ) )
+            // InternalConfiguratorLang.g:1076:1: ( ( ( rule__Operator__ValueAssignment_2 ) ) )
+            // InternalConfiguratorLang.g:1077:1: ( ( rule__Operator__ValueAssignment_2 ) )
             {
-            // InternalConfiguratorLang.g:1006:1: ( ( rule__Operator__ValueAssignment_2 ) )
-            // InternalConfiguratorLang.g:1007:2: ( rule__Operator__ValueAssignment_2 )
+            // InternalConfiguratorLang.g:1077:1: ( ( rule__Operator__ValueAssignment_2 ) )
+            // InternalConfiguratorLang.g:1078:2: ( rule__Operator__ValueAssignment_2 )
             {
              before(grammarAccess.getOperatorAccess().getValueAssignment_2()); 
-            // InternalConfiguratorLang.g:1008:2: ( rule__Operator__ValueAssignment_2 )
-            // InternalConfiguratorLang.g:1008:3: rule__Operator__ValueAssignment_2
+            // InternalConfiguratorLang.g:1079:2: ( rule__Operator__ValueAssignment_2 )
+            // InternalConfiguratorLang.g:1079:3: rule__Operator__ValueAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Operator__ValueAssignment_2();
@@ -3127,14 +3367,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__BoolType__Group__0"
-    // InternalConfiguratorLang.g:1017:1: rule__BoolType__Group__0 : rule__BoolType__Group__0__Impl rule__BoolType__Group__1 ;
+    // InternalConfiguratorLang.g:1088:1: rule__BoolType__Group__0 : rule__BoolType__Group__0__Impl rule__BoolType__Group__1 ;
     public final void rule__BoolType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1021:1: ( rule__BoolType__Group__0__Impl rule__BoolType__Group__1 )
-            // InternalConfiguratorLang.g:1022:2: rule__BoolType__Group__0__Impl rule__BoolType__Group__1
+            // InternalConfiguratorLang.g:1092:1: ( rule__BoolType__Group__0__Impl rule__BoolType__Group__1 )
+            // InternalConfiguratorLang.g:1093:2: rule__BoolType__Group__0__Impl rule__BoolType__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__BoolType__Group__0__Impl();
@@ -3165,21 +3405,21 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__BoolType__Group__0__Impl"
-    // InternalConfiguratorLang.g:1029:1: rule__BoolType__Group__0__Impl : ( () ) ;
+    // InternalConfiguratorLang.g:1100:1: rule__BoolType__Group__0__Impl : ( () ) ;
     public final void rule__BoolType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1033:1: ( ( () ) )
-            // InternalConfiguratorLang.g:1034:1: ( () )
+            // InternalConfiguratorLang.g:1104:1: ( ( () ) )
+            // InternalConfiguratorLang.g:1105:1: ( () )
             {
-            // InternalConfiguratorLang.g:1034:1: ( () )
-            // InternalConfiguratorLang.g:1035:2: ()
+            // InternalConfiguratorLang.g:1105:1: ( () )
+            // InternalConfiguratorLang.g:1106:2: ()
             {
              before(grammarAccess.getBoolTypeAccess().getBoolAction_0()); 
-            // InternalConfiguratorLang.g:1036:2: ()
-            // InternalConfiguratorLang.g:1036:3: 
+            // InternalConfiguratorLang.g:1107:2: ()
+            // InternalConfiguratorLang.g:1107:3: 
             {
             }
 
@@ -3202,14 +3442,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__BoolType__Group__1"
-    // InternalConfiguratorLang.g:1044:1: rule__BoolType__Group__1 : rule__BoolType__Group__1__Impl ;
+    // InternalConfiguratorLang.g:1115:1: rule__BoolType__Group__1 : rule__BoolType__Group__1__Impl ;
     public final void rule__BoolType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1048:1: ( rule__BoolType__Group__1__Impl )
-            // InternalConfiguratorLang.g:1049:2: rule__BoolType__Group__1__Impl
+            // InternalConfiguratorLang.g:1119:1: ( rule__BoolType__Group__1__Impl )
+            // InternalConfiguratorLang.g:1120:2: rule__BoolType__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BoolType__Group__1__Impl();
@@ -3235,17 +3475,17 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__BoolType__Group__1__Impl"
-    // InternalConfiguratorLang.g:1055:1: rule__BoolType__Group__1__Impl : ( 'bool' ) ;
+    // InternalConfiguratorLang.g:1126:1: rule__BoolType__Group__1__Impl : ( 'bool' ) ;
     public final void rule__BoolType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1059:1: ( ( 'bool' ) )
-            // InternalConfiguratorLang.g:1060:1: ( 'bool' )
+            // InternalConfiguratorLang.g:1130:1: ( ( 'bool' ) )
+            // InternalConfiguratorLang.g:1131:1: ( 'bool' )
             {
-            // InternalConfiguratorLang.g:1060:1: ( 'bool' )
-            // InternalConfiguratorLang.g:1061:2: 'bool'
+            // InternalConfiguratorLang.g:1131:1: ( 'bool' )
+            // InternalConfiguratorLang.g:1132:2: 'bool'
             {
              before(grammarAccess.getBoolTypeAccess().getBoolKeyword_1()); 
             match(input,20,FOLLOW_2); 
@@ -3272,14 +3512,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__IntType__Group__0"
-    // InternalConfiguratorLang.g:1071:1: rule__IntType__Group__0 : rule__IntType__Group__0__Impl rule__IntType__Group__1 ;
+    // InternalConfiguratorLang.g:1142:1: rule__IntType__Group__0 : rule__IntType__Group__0__Impl rule__IntType__Group__1 ;
     public final void rule__IntType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1075:1: ( rule__IntType__Group__0__Impl rule__IntType__Group__1 )
-            // InternalConfiguratorLang.g:1076:2: rule__IntType__Group__0__Impl rule__IntType__Group__1
+            // InternalConfiguratorLang.g:1146:1: ( rule__IntType__Group__0__Impl rule__IntType__Group__1 )
+            // InternalConfiguratorLang.g:1147:2: rule__IntType__Group__0__Impl rule__IntType__Group__1
             {
             pushFollow(FOLLOW_13);
             rule__IntType__Group__0__Impl();
@@ -3310,21 +3550,21 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__IntType__Group__0__Impl"
-    // InternalConfiguratorLang.g:1083:1: rule__IntType__Group__0__Impl : ( () ) ;
+    // InternalConfiguratorLang.g:1154:1: rule__IntType__Group__0__Impl : ( () ) ;
     public final void rule__IntType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1087:1: ( ( () ) )
-            // InternalConfiguratorLang.g:1088:1: ( () )
+            // InternalConfiguratorLang.g:1158:1: ( ( () ) )
+            // InternalConfiguratorLang.g:1159:1: ( () )
             {
-            // InternalConfiguratorLang.g:1088:1: ( () )
-            // InternalConfiguratorLang.g:1089:2: ()
+            // InternalConfiguratorLang.g:1159:1: ( () )
+            // InternalConfiguratorLang.g:1160:2: ()
             {
              before(grammarAccess.getIntTypeAccess().getIntAction_0()); 
-            // InternalConfiguratorLang.g:1090:2: ()
-            // InternalConfiguratorLang.g:1090:3: 
+            // InternalConfiguratorLang.g:1161:2: ()
+            // InternalConfiguratorLang.g:1161:3: 
             {
             }
 
@@ -3347,14 +3587,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__IntType__Group__1"
-    // InternalConfiguratorLang.g:1098:1: rule__IntType__Group__1 : rule__IntType__Group__1__Impl ;
+    // InternalConfiguratorLang.g:1169:1: rule__IntType__Group__1 : rule__IntType__Group__1__Impl ;
     public final void rule__IntType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1102:1: ( rule__IntType__Group__1__Impl )
-            // InternalConfiguratorLang.g:1103:2: rule__IntType__Group__1__Impl
+            // InternalConfiguratorLang.g:1173:1: ( rule__IntType__Group__1__Impl )
+            // InternalConfiguratorLang.g:1174:2: rule__IntType__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__IntType__Group__1__Impl();
@@ -3380,17 +3620,17 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__IntType__Group__1__Impl"
-    // InternalConfiguratorLang.g:1109:1: rule__IntType__Group__1__Impl : ( 'int' ) ;
+    // InternalConfiguratorLang.g:1180:1: rule__IntType__Group__1__Impl : ( 'int' ) ;
     public final void rule__IntType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1113:1: ( ( 'int' ) )
-            // InternalConfiguratorLang.g:1114:1: ( 'int' )
+            // InternalConfiguratorLang.g:1184:1: ( ( 'int' ) )
+            // InternalConfiguratorLang.g:1185:1: ( 'int' )
             {
-            // InternalConfiguratorLang.g:1114:1: ( 'int' )
-            // InternalConfiguratorLang.g:1115:2: 'int'
+            // InternalConfiguratorLang.g:1185:1: ( 'int' )
+            // InternalConfiguratorLang.g:1186:2: 'int'
             {
              before(grammarAccess.getIntTypeAccess().getIntKeyword_1()); 
             match(input,21,FOLLOW_2); 
@@ -3417,16 +3657,16 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EnumType__Group__0"
-    // InternalConfiguratorLang.g:1125:1: rule__EnumType__Group__0 : rule__EnumType__Group__0__Impl rule__EnumType__Group__1 ;
+    // InternalConfiguratorLang.g:1196:1: rule__EnumType__Group__0 : rule__EnumType__Group__0__Impl rule__EnumType__Group__1 ;
     public final void rule__EnumType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1129:1: ( rule__EnumType__Group__0__Impl rule__EnumType__Group__1 )
-            // InternalConfiguratorLang.g:1130:2: rule__EnumType__Group__0__Impl rule__EnumType__Group__1
+            // InternalConfiguratorLang.g:1200:1: ( rule__EnumType__Group__0__Impl rule__EnumType__Group__1 )
+            // InternalConfiguratorLang.g:1201:2: rule__EnumType__Group__0__Impl rule__EnumType__Group__1
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_9);
             rule__EnumType__Group__0__Impl();
 
             state._fsp--;
@@ -3455,21 +3695,21 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EnumType__Group__0__Impl"
-    // InternalConfiguratorLang.g:1137:1: rule__EnumType__Group__0__Impl : ( () ) ;
+    // InternalConfiguratorLang.g:1208:1: rule__EnumType__Group__0__Impl : ( () ) ;
     public final void rule__EnumType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1141:1: ( ( () ) )
-            // InternalConfiguratorLang.g:1142:1: ( () )
+            // InternalConfiguratorLang.g:1212:1: ( ( () ) )
+            // InternalConfiguratorLang.g:1213:1: ( () )
             {
-            // InternalConfiguratorLang.g:1142:1: ( () )
-            // InternalConfiguratorLang.g:1143:2: ()
+            // InternalConfiguratorLang.g:1213:1: ( () )
+            // InternalConfiguratorLang.g:1214:2: ()
             {
              before(grammarAccess.getEnumTypeAccess().getEnumAction_0()); 
-            // InternalConfiguratorLang.g:1144:2: ()
-            // InternalConfiguratorLang.g:1144:3: 
+            // InternalConfiguratorLang.g:1215:2: ()
+            // InternalConfiguratorLang.g:1215:3: 
             {
             }
 
@@ -3492,14 +3732,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EnumType__Group__1"
-    // InternalConfiguratorLang.g:1152:1: rule__EnumType__Group__1 : rule__EnumType__Group__1__Impl rule__EnumType__Group__2 ;
+    // InternalConfiguratorLang.g:1223:1: rule__EnumType__Group__1 : rule__EnumType__Group__1__Impl rule__EnumType__Group__2 ;
     public final void rule__EnumType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1156:1: ( rule__EnumType__Group__1__Impl rule__EnumType__Group__2 )
-            // InternalConfiguratorLang.g:1157:2: rule__EnumType__Group__1__Impl rule__EnumType__Group__2
+            // InternalConfiguratorLang.g:1227:1: ( rule__EnumType__Group__1__Impl rule__EnumType__Group__2 )
+            // InternalConfiguratorLang.g:1228:2: rule__EnumType__Group__1__Impl rule__EnumType__Group__2
             {
             pushFollow(FOLLOW_14);
             rule__EnumType__Group__1__Impl();
@@ -3530,17 +3770,17 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EnumType__Group__1__Impl"
-    // InternalConfiguratorLang.g:1164:1: rule__EnumType__Group__1__Impl : ( '[' ) ;
+    // InternalConfiguratorLang.g:1235:1: rule__EnumType__Group__1__Impl : ( '[' ) ;
     public final void rule__EnumType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1168:1: ( ( '[' ) )
-            // InternalConfiguratorLang.g:1169:1: ( '[' )
+            // InternalConfiguratorLang.g:1239:1: ( ( '[' ) )
+            // InternalConfiguratorLang.g:1240:1: ( '[' )
             {
-            // InternalConfiguratorLang.g:1169:1: ( '[' )
-            // InternalConfiguratorLang.g:1170:2: '['
+            // InternalConfiguratorLang.g:1240:1: ( '[' )
+            // InternalConfiguratorLang.g:1241:2: '['
             {
              before(grammarAccess.getEnumTypeAccess().getLeftSquareBracketKeyword_1()); 
             match(input,22,FOLLOW_2); 
@@ -3567,14 +3807,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EnumType__Group__2"
-    // InternalConfiguratorLang.g:1179:1: rule__EnumType__Group__2 : rule__EnumType__Group__2__Impl rule__EnumType__Group__3 ;
+    // InternalConfiguratorLang.g:1250:1: rule__EnumType__Group__2 : rule__EnumType__Group__2__Impl rule__EnumType__Group__3 ;
     public final void rule__EnumType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1183:1: ( rule__EnumType__Group__2__Impl rule__EnumType__Group__3 )
-            // InternalConfiguratorLang.g:1184:2: rule__EnumType__Group__2__Impl rule__EnumType__Group__3
+            // InternalConfiguratorLang.g:1254:1: ( rule__EnumType__Group__2__Impl rule__EnumType__Group__3 )
+            // InternalConfiguratorLang.g:1255:2: rule__EnumType__Group__2__Impl rule__EnumType__Group__3
             {
             pushFollow(FOLLOW_14);
             rule__EnumType__Group__2__Impl();
@@ -3605,29 +3845,29 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EnumType__Group__2__Impl"
-    // InternalConfiguratorLang.g:1191:1: rule__EnumType__Group__2__Impl : ( ( rule__EnumType__Group_2__0 )? ) ;
+    // InternalConfiguratorLang.g:1262:1: rule__EnumType__Group__2__Impl : ( ( rule__EnumType__Group_2__0 )? ) ;
     public final void rule__EnumType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1195:1: ( ( ( rule__EnumType__Group_2__0 )? ) )
-            // InternalConfiguratorLang.g:1196:1: ( ( rule__EnumType__Group_2__0 )? )
+            // InternalConfiguratorLang.g:1266:1: ( ( ( rule__EnumType__Group_2__0 )? ) )
+            // InternalConfiguratorLang.g:1267:1: ( ( rule__EnumType__Group_2__0 )? )
             {
-            // InternalConfiguratorLang.g:1196:1: ( ( rule__EnumType__Group_2__0 )? )
-            // InternalConfiguratorLang.g:1197:2: ( rule__EnumType__Group_2__0 )?
+            // InternalConfiguratorLang.g:1267:1: ( ( rule__EnumType__Group_2__0 )? )
+            // InternalConfiguratorLang.g:1268:2: ( rule__EnumType__Group_2__0 )?
             {
              before(grammarAccess.getEnumTypeAccess().getGroup_2()); 
-            // InternalConfiguratorLang.g:1198:2: ( rule__EnumType__Group_2__0 )?
-            int alt8=2;
-            int LA8_0 = input.LA(1);
+            // InternalConfiguratorLang.g:1269:2: ( rule__EnumType__Group_2__0 )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            if ( (LA8_0==RULE_ID) ) {
-                alt8=1;
+            if ( (LA9_0==RULE_ID) ) {
+                alt9=1;
             }
-            switch (alt8) {
+            switch (alt9) {
                 case 1 :
-                    // InternalConfiguratorLang.g:1198:3: rule__EnumType__Group_2__0
+                    // InternalConfiguratorLang.g:1269:3: rule__EnumType__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__EnumType__Group_2__0();
@@ -3663,14 +3903,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EnumType__Group__3"
-    // InternalConfiguratorLang.g:1206:1: rule__EnumType__Group__3 : rule__EnumType__Group__3__Impl ;
+    // InternalConfiguratorLang.g:1277:1: rule__EnumType__Group__3 : rule__EnumType__Group__3__Impl ;
     public final void rule__EnumType__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1210:1: ( rule__EnumType__Group__3__Impl )
-            // InternalConfiguratorLang.g:1211:2: rule__EnumType__Group__3__Impl
+            // InternalConfiguratorLang.g:1281:1: ( rule__EnumType__Group__3__Impl )
+            // InternalConfiguratorLang.g:1282:2: rule__EnumType__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EnumType__Group__3__Impl();
@@ -3696,17 +3936,17 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EnumType__Group__3__Impl"
-    // InternalConfiguratorLang.g:1217:1: rule__EnumType__Group__3__Impl : ( ']' ) ;
+    // InternalConfiguratorLang.g:1288:1: rule__EnumType__Group__3__Impl : ( ']' ) ;
     public final void rule__EnumType__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1221:1: ( ( ']' ) )
-            // InternalConfiguratorLang.g:1222:1: ( ']' )
+            // InternalConfiguratorLang.g:1292:1: ( ( ']' ) )
+            // InternalConfiguratorLang.g:1293:1: ( ']' )
             {
-            // InternalConfiguratorLang.g:1222:1: ( ']' )
-            // InternalConfiguratorLang.g:1223:2: ']'
+            // InternalConfiguratorLang.g:1293:1: ( ']' )
+            // InternalConfiguratorLang.g:1294:2: ']'
             {
              before(grammarAccess.getEnumTypeAccess().getRightSquareBracketKeyword_3()); 
             match(input,23,FOLLOW_2); 
@@ -3733,14 +3973,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EnumType__Group_2__0"
-    // InternalConfiguratorLang.g:1233:1: rule__EnumType__Group_2__0 : rule__EnumType__Group_2__0__Impl rule__EnumType__Group_2__1 ;
+    // InternalConfiguratorLang.g:1304:1: rule__EnumType__Group_2__0 : rule__EnumType__Group_2__0__Impl rule__EnumType__Group_2__1 ;
     public final void rule__EnumType__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1237:1: ( rule__EnumType__Group_2__0__Impl rule__EnumType__Group_2__1 )
-            // InternalConfiguratorLang.g:1238:2: rule__EnumType__Group_2__0__Impl rule__EnumType__Group_2__1
+            // InternalConfiguratorLang.g:1308:1: ( rule__EnumType__Group_2__0__Impl rule__EnumType__Group_2__1 )
+            // InternalConfiguratorLang.g:1309:2: rule__EnumType__Group_2__0__Impl rule__EnumType__Group_2__1
             {
             pushFollow(FOLLOW_15);
             rule__EnumType__Group_2__0__Impl();
@@ -3771,21 +4011,21 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EnumType__Group_2__0__Impl"
-    // InternalConfiguratorLang.g:1245:1: rule__EnumType__Group_2__0__Impl : ( ( rule__EnumType__ValuesAssignment_2_0 ) ) ;
+    // InternalConfiguratorLang.g:1316:1: rule__EnumType__Group_2__0__Impl : ( ( rule__EnumType__ValuesAssignment_2_0 ) ) ;
     public final void rule__EnumType__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1249:1: ( ( ( rule__EnumType__ValuesAssignment_2_0 ) ) )
-            // InternalConfiguratorLang.g:1250:1: ( ( rule__EnumType__ValuesAssignment_2_0 ) )
+            // InternalConfiguratorLang.g:1320:1: ( ( ( rule__EnumType__ValuesAssignment_2_0 ) ) )
+            // InternalConfiguratorLang.g:1321:1: ( ( rule__EnumType__ValuesAssignment_2_0 ) )
             {
-            // InternalConfiguratorLang.g:1250:1: ( ( rule__EnumType__ValuesAssignment_2_0 ) )
-            // InternalConfiguratorLang.g:1251:2: ( rule__EnumType__ValuesAssignment_2_0 )
+            // InternalConfiguratorLang.g:1321:1: ( ( rule__EnumType__ValuesAssignment_2_0 ) )
+            // InternalConfiguratorLang.g:1322:2: ( rule__EnumType__ValuesAssignment_2_0 )
             {
              before(grammarAccess.getEnumTypeAccess().getValuesAssignment_2_0()); 
-            // InternalConfiguratorLang.g:1252:2: ( rule__EnumType__ValuesAssignment_2_0 )
-            // InternalConfiguratorLang.g:1252:3: rule__EnumType__ValuesAssignment_2_0
+            // InternalConfiguratorLang.g:1323:2: ( rule__EnumType__ValuesAssignment_2_0 )
+            // InternalConfiguratorLang.g:1323:3: rule__EnumType__ValuesAssignment_2_0
             {
             pushFollow(FOLLOW_2);
             rule__EnumType__ValuesAssignment_2_0();
@@ -3818,14 +4058,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EnumType__Group_2__1"
-    // InternalConfiguratorLang.g:1260:1: rule__EnumType__Group_2__1 : rule__EnumType__Group_2__1__Impl ;
+    // InternalConfiguratorLang.g:1331:1: rule__EnumType__Group_2__1 : rule__EnumType__Group_2__1__Impl ;
     public final void rule__EnumType__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1264:1: ( rule__EnumType__Group_2__1__Impl )
-            // InternalConfiguratorLang.g:1265:2: rule__EnumType__Group_2__1__Impl
+            // InternalConfiguratorLang.g:1335:1: ( rule__EnumType__Group_2__1__Impl )
+            // InternalConfiguratorLang.g:1336:2: rule__EnumType__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EnumType__Group_2__1__Impl();
@@ -3851,33 +4091,33 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EnumType__Group_2__1__Impl"
-    // InternalConfiguratorLang.g:1271:1: rule__EnumType__Group_2__1__Impl : ( ( rule__EnumType__Group_2_1__0 )* ) ;
+    // InternalConfiguratorLang.g:1342:1: rule__EnumType__Group_2__1__Impl : ( ( rule__EnumType__Group_2_1__0 )* ) ;
     public final void rule__EnumType__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1275:1: ( ( ( rule__EnumType__Group_2_1__0 )* ) )
-            // InternalConfiguratorLang.g:1276:1: ( ( rule__EnumType__Group_2_1__0 )* )
+            // InternalConfiguratorLang.g:1346:1: ( ( ( rule__EnumType__Group_2_1__0 )* ) )
+            // InternalConfiguratorLang.g:1347:1: ( ( rule__EnumType__Group_2_1__0 )* )
             {
-            // InternalConfiguratorLang.g:1276:1: ( ( rule__EnumType__Group_2_1__0 )* )
-            // InternalConfiguratorLang.g:1277:2: ( rule__EnumType__Group_2_1__0 )*
+            // InternalConfiguratorLang.g:1347:1: ( ( rule__EnumType__Group_2_1__0 )* )
+            // InternalConfiguratorLang.g:1348:2: ( rule__EnumType__Group_2_1__0 )*
             {
              before(grammarAccess.getEnumTypeAccess().getGroup_2_1()); 
-            // InternalConfiguratorLang.g:1278:2: ( rule__EnumType__Group_2_1__0 )*
-            loop9:
+            // InternalConfiguratorLang.g:1349:2: ( rule__EnumType__Group_2_1__0 )*
+            loop10:
             do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-                if ( (LA9_0==24) ) {
-                    alt9=1;
+                if ( (LA10_0==24) ) {
+                    alt10=1;
                 }
 
 
-                switch (alt9) {
+                switch (alt10) {
             	case 1 :
-            	    // InternalConfiguratorLang.g:1278:3: rule__EnumType__Group_2_1__0
+            	    // InternalConfiguratorLang.g:1349:3: rule__EnumType__Group_2_1__0
             	    {
             	    pushFollow(FOLLOW_16);
             	    rule__EnumType__Group_2_1__0();
@@ -3889,7 +4129,7 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
             	    break;
 
             	default :
-            	    break loop9;
+            	    break loop10;
                 }
             } while (true);
 
@@ -3916,14 +4156,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EnumType__Group_2_1__0"
-    // InternalConfiguratorLang.g:1287:1: rule__EnumType__Group_2_1__0 : rule__EnumType__Group_2_1__0__Impl rule__EnumType__Group_2_1__1 ;
+    // InternalConfiguratorLang.g:1358:1: rule__EnumType__Group_2_1__0 : rule__EnumType__Group_2_1__0__Impl rule__EnumType__Group_2_1__1 ;
     public final void rule__EnumType__Group_2_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1291:1: ( rule__EnumType__Group_2_1__0__Impl rule__EnumType__Group_2_1__1 )
-            // InternalConfiguratorLang.g:1292:2: rule__EnumType__Group_2_1__0__Impl rule__EnumType__Group_2_1__1
+            // InternalConfiguratorLang.g:1362:1: ( rule__EnumType__Group_2_1__0__Impl rule__EnumType__Group_2_1__1 )
+            // InternalConfiguratorLang.g:1363:2: rule__EnumType__Group_2_1__0__Impl rule__EnumType__Group_2_1__1
             {
             pushFollow(FOLLOW_6);
             rule__EnumType__Group_2_1__0__Impl();
@@ -3954,17 +4194,17 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EnumType__Group_2_1__0__Impl"
-    // InternalConfiguratorLang.g:1299:1: rule__EnumType__Group_2_1__0__Impl : ( ',' ) ;
+    // InternalConfiguratorLang.g:1370:1: rule__EnumType__Group_2_1__0__Impl : ( ',' ) ;
     public final void rule__EnumType__Group_2_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1303:1: ( ( ',' ) )
-            // InternalConfiguratorLang.g:1304:1: ( ',' )
+            // InternalConfiguratorLang.g:1374:1: ( ( ',' ) )
+            // InternalConfiguratorLang.g:1375:1: ( ',' )
             {
-            // InternalConfiguratorLang.g:1304:1: ( ',' )
-            // InternalConfiguratorLang.g:1305:2: ','
+            // InternalConfiguratorLang.g:1375:1: ( ',' )
+            // InternalConfiguratorLang.g:1376:2: ','
             {
              before(grammarAccess.getEnumTypeAccess().getCommaKeyword_2_1_0()); 
             match(input,24,FOLLOW_2); 
@@ -3991,14 +4231,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EnumType__Group_2_1__1"
-    // InternalConfiguratorLang.g:1314:1: rule__EnumType__Group_2_1__1 : rule__EnumType__Group_2_1__1__Impl ;
+    // InternalConfiguratorLang.g:1385:1: rule__EnumType__Group_2_1__1 : rule__EnumType__Group_2_1__1__Impl ;
     public final void rule__EnumType__Group_2_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1318:1: ( rule__EnumType__Group_2_1__1__Impl )
-            // InternalConfiguratorLang.g:1319:2: rule__EnumType__Group_2_1__1__Impl
+            // InternalConfiguratorLang.g:1389:1: ( rule__EnumType__Group_2_1__1__Impl )
+            // InternalConfiguratorLang.g:1390:2: rule__EnumType__Group_2_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EnumType__Group_2_1__1__Impl();
@@ -4024,21 +4264,21 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EnumType__Group_2_1__1__Impl"
-    // InternalConfiguratorLang.g:1325:1: rule__EnumType__Group_2_1__1__Impl : ( ( rule__EnumType__ValuesAssignment_2_1_1 ) ) ;
+    // InternalConfiguratorLang.g:1396:1: rule__EnumType__Group_2_1__1__Impl : ( ( rule__EnumType__ValuesAssignment_2_1_1 ) ) ;
     public final void rule__EnumType__Group_2_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1329:1: ( ( ( rule__EnumType__ValuesAssignment_2_1_1 ) ) )
-            // InternalConfiguratorLang.g:1330:1: ( ( rule__EnumType__ValuesAssignment_2_1_1 ) )
+            // InternalConfiguratorLang.g:1400:1: ( ( ( rule__EnumType__ValuesAssignment_2_1_1 ) ) )
+            // InternalConfiguratorLang.g:1401:1: ( ( rule__EnumType__ValuesAssignment_2_1_1 ) )
             {
-            // InternalConfiguratorLang.g:1330:1: ( ( rule__EnumType__ValuesAssignment_2_1_1 ) )
-            // InternalConfiguratorLang.g:1331:2: ( rule__EnumType__ValuesAssignment_2_1_1 )
+            // InternalConfiguratorLang.g:1401:1: ( ( rule__EnumType__ValuesAssignment_2_1_1 ) )
+            // InternalConfiguratorLang.g:1402:2: ( rule__EnumType__ValuesAssignment_2_1_1 )
             {
              before(grammarAccess.getEnumTypeAccess().getValuesAssignment_2_1_1()); 
-            // InternalConfiguratorLang.g:1332:2: ( rule__EnumType__ValuesAssignment_2_1_1 )
-            // InternalConfiguratorLang.g:1332:3: rule__EnumType__ValuesAssignment_2_1_1
+            // InternalConfiguratorLang.g:1403:2: ( rule__EnumType__ValuesAssignment_2_1_1 )
+            // InternalConfiguratorLang.g:1403:3: rule__EnumType__ValuesAssignment_2_1_1
             {
             pushFollow(FOLLOW_2);
             rule__EnumType__ValuesAssignment_2_1_1();
@@ -4071,16 +4311,16 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__RuleSet__Group__0"
-    // InternalConfiguratorLang.g:1341:1: rule__RuleSet__Group__0 : rule__RuleSet__Group__0__Impl rule__RuleSet__Group__1 ;
+    // InternalConfiguratorLang.g:1412:1: rule__RuleSet__Group__0 : rule__RuleSet__Group__0__Impl rule__RuleSet__Group__1 ;
     public final void rule__RuleSet__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1345:1: ( rule__RuleSet__Group__0__Impl rule__RuleSet__Group__1 )
-            // InternalConfiguratorLang.g:1346:2: rule__RuleSet__Group__0__Impl rule__RuleSet__Group__1
+            // InternalConfiguratorLang.g:1416:1: ( rule__RuleSet__Group__0__Impl rule__RuleSet__Group__1 )
+            // InternalConfiguratorLang.g:1417:2: rule__RuleSet__Group__0__Impl rule__RuleSet__Group__1
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_6);
             rule__RuleSet__Group__0__Impl();
 
             state._fsp--;
@@ -4109,21 +4349,21 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__RuleSet__Group__0__Impl"
-    // InternalConfiguratorLang.g:1353:1: rule__RuleSet__Group__0__Impl : ( () ) ;
+    // InternalConfiguratorLang.g:1424:1: rule__RuleSet__Group__0__Impl : ( () ) ;
     public final void rule__RuleSet__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1357:1: ( ( () ) )
-            // InternalConfiguratorLang.g:1358:1: ( () )
+            // InternalConfiguratorLang.g:1428:1: ( ( () ) )
+            // InternalConfiguratorLang.g:1429:1: ( () )
             {
-            // InternalConfiguratorLang.g:1358:1: ( () )
-            // InternalConfiguratorLang.g:1359:2: ()
+            // InternalConfiguratorLang.g:1429:1: ( () )
+            // InternalConfiguratorLang.g:1430:2: ()
             {
              before(grammarAccess.getRuleSetAccess().getRuleSetAction_0()); 
-            // InternalConfiguratorLang.g:1360:2: ()
-            // InternalConfiguratorLang.g:1360:3: 
+            // InternalConfiguratorLang.g:1431:2: ()
+            // InternalConfiguratorLang.g:1431:3: 
             {
             }
 
@@ -4146,14 +4386,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__RuleSet__Group__1"
-    // InternalConfiguratorLang.g:1368:1: rule__RuleSet__Group__1 : rule__RuleSet__Group__1__Impl ;
+    // InternalConfiguratorLang.g:1439:1: rule__RuleSet__Group__1 : rule__RuleSet__Group__1__Impl ;
     public final void rule__RuleSet__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1372:1: ( rule__RuleSet__Group__1__Impl )
-            // InternalConfiguratorLang.g:1373:2: rule__RuleSet__Group__1__Impl
+            // InternalConfiguratorLang.g:1443:1: ( rule__RuleSet__Group__1__Impl )
+            // InternalConfiguratorLang.g:1444:2: rule__RuleSet__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__RuleSet__Group__1__Impl();
@@ -4179,35 +4419,35 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__RuleSet__Group__1__Impl"
-    // InternalConfiguratorLang.g:1379:1: rule__RuleSet__Group__1__Impl : ( ( rule__RuleSet__RuleAssignment_1 )* ) ;
+    // InternalConfiguratorLang.g:1450:1: rule__RuleSet__Group__1__Impl : ( ( rule__RuleSet__RuleAssignment_1 )* ) ;
     public final void rule__RuleSet__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1383:1: ( ( ( rule__RuleSet__RuleAssignment_1 )* ) )
-            // InternalConfiguratorLang.g:1384:1: ( ( rule__RuleSet__RuleAssignment_1 )* )
+            // InternalConfiguratorLang.g:1454:1: ( ( ( rule__RuleSet__RuleAssignment_1 )* ) )
+            // InternalConfiguratorLang.g:1455:1: ( ( rule__RuleSet__RuleAssignment_1 )* )
             {
-            // InternalConfiguratorLang.g:1384:1: ( ( rule__RuleSet__RuleAssignment_1 )* )
-            // InternalConfiguratorLang.g:1385:2: ( rule__RuleSet__RuleAssignment_1 )*
+            // InternalConfiguratorLang.g:1455:1: ( ( rule__RuleSet__RuleAssignment_1 )* )
+            // InternalConfiguratorLang.g:1456:2: ( rule__RuleSet__RuleAssignment_1 )*
             {
              before(grammarAccess.getRuleSetAccess().getRuleAssignment_1()); 
-            // InternalConfiguratorLang.g:1386:2: ( rule__RuleSet__RuleAssignment_1 )*
-            loop10:
+            // InternalConfiguratorLang.g:1457:2: ( rule__RuleSet__RuleAssignment_1 )*
+            loop11:
             do {
-                int alt10=2;
-                int LA10_0 = input.LA(1);
+                int alt11=2;
+                int LA11_0 = input.LA(1);
 
-                if ( (LA10_0==RULE_ID||(LA10_0>=14 && LA10_0<=15)||LA10_0==26) ) {
-                    alt10=1;
+                if ( (LA11_0==RULE_ID) ) {
+                    alt11=1;
                 }
 
 
-                switch (alt10) {
+                switch (alt11) {
             	case 1 :
-            	    // InternalConfiguratorLang.g:1386:3: rule__RuleSet__RuleAssignment_1
+            	    // InternalConfiguratorLang.g:1457:3: rule__RuleSet__RuleAssignment_1
             	    {
-            	    pushFollow(FOLLOW_17);
+            	    pushFollow(FOLLOW_8);
             	    rule__RuleSet__RuleAssignment_1();
 
             	    state._fsp--;
@@ -4217,7 +4457,7 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
             	    break;
 
             	default :
-            	    break loop10;
+            	    break loop11;
                 }
             } while (true);
 
@@ -4244,16 +4484,16 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Rule__Group__0"
-    // InternalConfiguratorLang.g:1395:1: rule__Rule__Group__0 : rule__Rule__Group__0__Impl rule__Rule__Group__1 ;
+    // InternalConfiguratorLang.g:1466:1: rule__Rule__Group__0 : rule__Rule__Group__0__Impl rule__Rule__Group__1 ;
     public final void rule__Rule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1399:1: ( rule__Rule__Group__0__Impl rule__Rule__Group__1 )
-            // InternalConfiguratorLang.g:1400:2: rule__Rule__Group__0__Impl rule__Rule__Group__1
+            // InternalConfiguratorLang.g:1470:1: ( rule__Rule__Group__0__Impl rule__Rule__Group__1 )
+            // InternalConfiguratorLang.g:1471:2: rule__Rule__Group__0__Impl rule__Rule__Group__1
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_3);
             rule__Rule__Group__0__Impl();
 
             state._fsp--;
@@ -4282,46 +4522,31 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Rule__Group__0__Impl"
-    // InternalConfiguratorLang.g:1407:1: rule__Rule__Group__0__Impl : ( ( rule__Rule__Group_0__0 )? ) ;
+    // InternalConfiguratorLang.g:1478:1: rule__Rule__Group__0__Impl : ( ( rule__Rule__NameAssignment_0 ) ) ;
     public final void rule__Rule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1411:1: ( ( ( rule__Rule__Group_0__0 )? ) )
-            // InternalConfiguratorLang.g:1412:1: ( ( rule__Rule__Group_0__0 )? )
+            // InternalConfiguratorLang.g:1482:1: ( ( ( rule__Rule__NameAssignment_0 ) ) )
+            // InternalConfiguratorLang.g:1483:1: ( ( rule__Rule__NameAssignment_0 ) )
             {
-            // InternalConfiguratorLang.g:1412:1: ( ( rule__Rule__Group_0__0 )? )
-            // InternalConfiguratorLang.g:1413:2: ( rule__Rule__Group_0__0 )?
+            // InternalConfiguratorLang.g:1483:1: ( ( rule__Rule__NameAssignment_0 ) )
+            // InternalConfiguratorLang.g:1484:2: ( rule__Rule__NameAssignment_0 )
             {
-             before(grammarAccess.getRuleAccess().getGroup_0()); 
-            // InternalConfiguratorLang.g:1414:2: ( rule__Rule__Group_0__0 )?
-            int alt11=2;
-            int LA11_0 = input.LA(1);
+             before(grammarAccess.getRuleAccess().getNameAssignment_0()); 
+            // InternalConfiguratorLang.g:1485:2: ( rule__Rule__NameAssignment_0 )
+            // InternalConfiguratorLang.g:1485:3: rule__Rule__NameAssignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Rule__NameAssignment_0();
 
-            if ( (LA11_0==RULE_ID) ) {
-                int LA11_1 = input.LA(2);
+            state._fsp--;
 
-                if ( (LA11_1==17) ) {
-                    alt11=1;
-                }
-            }
-            switch (alt11) {
-                case 1 :
-                    // InternalConfiguratorLang.g:1414:3: rule__Rule__Group_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Rule__Group_0__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getRuleAccess().getGroup_0()); 
+             after(grammarAccess.getRuleAccess().getNameAssignment_0()); 
 
             }
 
@@ -4344,16 +4569,16 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Rule__Group__1"
-    // InternalConfiguratorLang.g:1422:1: rule__Rule__Group__1 : rule__Rule__Group__1__Impl rule__Rule__Group__2 ;
+    // InternalConfiguratorLang.g:1493:1: rule__Rule__Group__1 : rule__Rule__Group__1__Impl rule__Rule__Group__2 ;
     public final void rule__Rule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1426:1: ( rule__Rule__Group__1__Impl rule__Rule__Group__2 )
-            // InternalConfiguratorLang.g:1427:2: rule__Rule__Group__1__Impl rule__Rule__Group__2
+            // InternalConfiguratorLang.g:1497:1: ( rule__Rule__Group__1__Impl rule__Rule__Group__2 )
+            // InternalConfiguratorLang.g:1498:2: rule__Rule__Group__1__Impl rule__Rule__Group__2
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_17);
             rule__Rule__Group__1__Impl();
 
             state._fsp--;
@@ -4382,31 +4607,21 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Rule__Group__1__Impl"
-    // InternalConfiguratorLang.g:1434:1: rule__Rule__Group__1__Impl : ( ( rule__Rule__IfAssignment_1 ) ) ;
+    // InternalConfiguratorLang.g:1505:1: rule__Rule__Group__1__Impl : ( ':' ) ;
     public final void rule__Rule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1438:1: ( ( ( rule__Rule__IfAssignment_1 ) ) )
-            // InternalConfiguratorLang.g:1439:1: ( ( rule__Rule__IfAssignment_1 ) )
+            // InternalConfiguratorLang.g:1509:1: ( ( ':' ) )
+            // InternalConfiguratorLang.g:1510:1: ( ':' )
             {
-            // InternalConfiguratorLang.g:1439:1: ( ( rule__Rule__IfAssignment_1 ) )
-            // InternalConfiguratorLang.g:1440:2: ( rule__Rule__IfAssignment_1 )
+            // InternalConfiguratorLang.g:1510:1: ( ':' )
+            // InternalConfiguratorLang.g:1511:2: ':'
             {
-             before(grammarAccess.getRuleAccess().getIfAssignment_1()); 
-            // InternalConfiguratorLang.g:1441:2: ( rule__Rule__IfAssignment_1 )
-            // InternalConfiguratorLang.g:1441:3: rule__Rule__IfAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Rule__IfAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getRuleAccess().getIfAssignment_1()); 
+             before(grammarAccess.getRuleAccess().getColonKeyword_1()); 
+            match(input,17,FOLLOW_2); 
+             after(grammarAccess.getRuleAccess().getColonKeyword_1()); 
 
             }
 
@@ -4429,16 +4644,16 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Rule__Group__2"
-    // InternalConfiguratorLang.g:1449:1: rule__Rule__Group__2 : rule__Rule__Group__2__Impl rule__Rule__Group__3 ;
+    // InternalConfiguratorLang.g:1520:1: rule__Rule__Group__2 : rule__Rule__Group__2__Impl rule__Rule__Group__3 ;
     public final void rule__Rule__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1453:1: ( rule__Rule__Group__2__Impl rule__Rule__Group__3 )
-            // InternalConfiguratorLang.g:1454:2: rule__Rule__Group__2__Impl rule__Rule__Group__3
+            // InternalConfiguratorLang.g:1524:1: ( rule__Rule__Group__2__Impl rule__Rule__Group__3 )
+            // InternalConfiguratorLang.g:1525:2: rule__Rule__Group__2__Impl rule__Rule__Group__3
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_18);
             rule__Rule__Group__2__Impl();
 
             state._fsp--;
@@ -4467,21 +4682,31 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Rule__Group__2__Impl"
-    // InternalConfiguratorLang.g:1461:1: rule__Rule__Group__2__Impl : ( '->' ) ;
+    // InternalConfiguratorLang.g:1532:1: rule__Rule__Group__2__Impl : ( ( rule__Rule__IfAssignment_2 ) ) ;
     public final void rule__Rule__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1465:1: ( ( '->' ) )
-            // InternalConfiguratorLang.g:1466:1: ( '->' )
+            // InternalConfiguratorLang.g:1536:1: ( ( ( rule__Rule__IfAssignment_2 ) ) )
+            // InternalConfiguratorLang.g:1537:1: ( ( rule__Rule__IfAssignment_2 ) )
             {
-            // InternalConfiguratorLang.g:1466:1: ( '->' )
-            // InternalConfiguratorLang.g:1467:2: '->'
+            // InternalConfiguratorLang.g:1537:1: ( ( rule__Rule__IfAssignment_2 ) )
+            // InternalConfiguratorLang.g:1538:2: ( rule__Rule__IfAssignment_2 )
             {
-             before(grammarAccess.getRuleAccess().getHyphenMinusGreaterThanSignKeyword_2()); 
-            match(input,25,FOLLOW_2); 
-             after(grammarAccess.getRuleAccess().getHyphenMinusGreaterThanSignKeyword_2()); 
+             before(grammarAccess.getRuleAccess().getIfAssignment_2()); 
+            // InternalConfiguratorLang.g:1539:2: ( rule__Rule__IfAssignment_2 )
+            // InternalConfiguratorLang.g:1539:3: rule__Rule__IfAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__Rule__IfAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getRuleAccess().getIfAssignment_2()); 
 
             }
 
@@ -4504,16 +4729,16 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Rule__Group__3"
-    // InternalConfiguratorLang.g:1476:1: rule__Rule__Group__3 : rule__Rule__Group__3__Impl rule__Rule__Group__4 ;
+    // InternalConfiguratorLang.g:1547:1: rule__Rule__Group__3 : rule__Rule__Group__3__Impl rule__Rule__Group__4 ;
     public final void rule__Rule__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1480:1: ( rule__Rule__Group__3__Impl rule__Rule__Group__4 )
-            // InternalConfiguratorLang.g:1481:2: rule__Rule__Group__3__Impl rule__Rule__Group__4
+            // InternalConfiguratorLang.g:1551:1: ( rule__Rule__Group__3__Impl rule__Rule__Group__4 )
+            // InternalConfiguratorLang.g:1552:2: rule__Rule__Group__3__Impl rule__Rule__Group__4
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_17);
             rule__Rule__Group__3__Impl();
 
             state._fsp--;
@@ -4542,31 +4767,21 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Rule__Group__3__Impl"
-    // InternalConfiguratorLang.g:1488:1: rule__Rule__Group__3__Impl : ( ( rule__Rule__ThenAssignment_3 ) ) ;
+    // InternalConfiguratorLang.g:1559:1: rule__Rule__Group__3__Impl : ( '->' ) ;
     public final void rule__Rule__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1492:1: ( ( ( rule__Rule__ThenAssignment_3 ) ) )
-            // InternalConfiguratorLang.g:1493:1: ( ( rule__Rule__ThenAssignment_3 ) )
+            // InternalConfiguratorLang.g:1563:1: ( ( '->' ) )
+            // InternalConfiguratorLang.g:1564:1: ( '->' )
             {
-            // InternalConfiguratorLang.g:1493:1: ( ( rule__Rule__ThenAssignment_3 ) )
-            // InternalConfiguratorLang.g:1494:2: ( rule__Rule__ThenAssignment_3 )
+            // InternalConfiguratorLang.g:1564:1: ( '->' )
+            // InternalConfiguratorLang.g:1565:2: '->'
             {
-             before(grammarAccess.getRuleAccess().getThenAssignment_3()); 
-            // InternalConfiguratorLang.g:1495:2: ( rule__Rule__ThenAssignment_3 )
-            // InternalConfiguratorLang.g:1495:3: rule__Rule__ThenAssignment_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__Rule__ThenAssignment_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getRuleAccess().getThenAssignment_3()); 
+             before(grammarAccess.getRuleAccess().getHyphenMinusGreaterThanSignKeyword_3()); 
+            match(input,25,FOLLOW_2); 
+             after(grammarAccess.getRuleAccess().getHyphenMinusGreaterThanSignKeyword_3()); 
 
             }
 
@@ -4589,17 +4804,22 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Rule__Group__4"
-    // InternalConfiguratorLang.g:1503:1: rule__Rule__Group__4 : rule__Rule__Group__4__Impl ;
+    // InternalConfiguratorLang.g:1574:1: rule__Rule__Group__4 : rule__Rule__Group__4__Impl rule__Rule__Group__5 ;
     public final void rule__Rule__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1507:1: ( rule__Rule__Group__4__Impl )
-            // InternalConfiguratorLang.g:1508:2: rule__Rule__Group__4__Impl
+            // InternalConfiguratorLang.g:1578:1: ( rule__Rule__Group__4__Impl rule__Rule__Group__5 )
+            // InternalConfiguratorLang.g:1579:2: rule__Rule__Group__4__Impl rule__Rule__Group__5
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_4);
             rule__Rule__Group__4__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Rule__Group__5();
 
             state._fsp--;
 
@@ -4622,42 +4842,31 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Rule__Group__4__Impl"
-    // InternalConfiguratorLang.g:1514:1: rule__Rule__Group__4__Impl : ( ( rule__Rule__TextAssignment_4 )? ) ;
+    // InternalConfiguratorLang.g:1586:1: rule__Rule__Group__4__Impl : ( ( rule__Rule__ThenAssignment_4 ) ) ;
     public final void rule__Rule__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1518:1: ( ( ( rule__Rule__TextAssignment_4 )? ) )
-            // InternalConfiguratorLang.g:1519:1: ( ( rule__Rule__TextAssignment_4 )? )
+            // InternalConfiguratorLang.g:1590:1: ( ( ( rule__Rule__ThenAssignment_4 ) ) )
+            // InternalConfiguratorLang.g:1591:1: ( ( rule__Rule__ThenAssignment_4 ) )
             {
-            // InternalConfiguratorLang.g:1519:1: ( ( rule__Rule__TextAssignment_4 )? )
-            // InternalConfiguratorLang.g:1520:2: ( rule__Rule__TextAssignment_4 )?
+            // InternalConfiguratorLang.g:1591:1: ( ( rule__Rule__ThenAssignment_4 ) )
+            // InternalConfiguratorLang.g:1592:2: ( rule__Rule__ThenAssignment_4 )
             {
-             before(grammarAccess.getRuleAccess().getTextAssignment_4()); 
-            // InternalConfiguratorLang.g:1521:2: ( rule__Rule__TextAssignment_4 )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+             before(grammarAccess.getRuleAccess().getThenAssignment_4()); 
+            // InternalConfiguratorLang.g:1593:2: ( rule__Rule__ThenAssignment_4 )
+            // InternalConfiguratorLang.g:1593:3: rule__Rule__ThenAssignment_4
+            {
+            pushFollow(FOLLOW_2);
+            rule__Rule__ThenAssignment_4();
 
-            if ( (LA12_0==RULE_STRING) ) {
-                alt12=1;
-            }
-            switch (alt12) {
-                case 1 :
-                    // InternalConfiguratorLang.g:1521:3: rule__Rule__TextAssignment_4
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Rule__TextAssignment_4();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getRuleAccess().getTextAssignment_4()); 
+             after(grammarAccess.getRuleAccess().getThenAssignment_4()); 
 
             }
 
@@ -4679,103 +4888,18 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
     // $ANTLR end "rule__Rule__Group__4__Impl"
 
 
-    // $ANTLR start "rule__Rule__Group_0__0"
-    // InternalConfiguratorLang.g:1530:1: rule__Rule__Group_0__0 : rule__Rule__Group_0__0__Impl rule__Rule__Group_0__1 ;
-    public final void rule__Rule__Group_0__0() throws RecognitionException {
+    // $ANTLR start "rule__Rule__Group__5"
+    // InternalConfiguratorLang.g:1601:1: rule__Rule__Group__5 : rule__Rule__Group__5__Impl ;
+    public final void rule__Rule__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1534:1: ( rule__Rule__Group_0__0__Impl rule__Rule__Group_0__1 )
-            // InternalConfiguratorLang.g:1535:2: rule__Rule__Group_0__0__Impl rule__Rule__Group_0__1
-            {
-            pushFollow(FOLLOW_3);
-            rule__Rule__Group_0__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Rule__Group_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Rule__Group_0__0"
-
-
-    // $ANTLR start "rule__Rule__Group_0__0__Impl"
-    // InternalConfiguratorLang.g:1542:1: rule__Rule__Group_0__0__Impl : ( ( rule__Rule__NameAssignment_0_0 ) ) ;
-    public final void rule__Rule__Group_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalConfiguratorLang.g:1546:1: ( ( ( rule__Rule__NameAssignment_0_0 ) ) )
-            // InternalConfiguratorLang.g:1547:1: ( ( rule__Rule__NameAssignment_0_0 ) )
-            {
-            // InternalConfiguratorLang.g:1547:1: ( ( rule__Rule__NameAssignment_0_0 ) )
-            // InternalConfiguratorLang.g:1548:2: ( rule__Rule__NameAssignment_0_0 )
-            {
-             before(grammarAccess.getRuleAccess().getNameAssignment_0_0()); 
-            // InternalConfiguratorLang.g:1549:2: ( rule__Rule__NameAssignment_0_0 )
-            // InternalConfiguratorLang.g:1549:3: rule__Rule__NameAssignment_0_0
+            // InternalConfiguratorLang.g:1605:1: ( rule__Rule__Group__5__Impl )
+            // InternalConfiguratorLang.g:1606:2: rule__Rule__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Rule__NameAssignment_0_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getRuleAccess().getNameAssignment_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Rule__Group_0__0__Impl"
-
-
-    // $ANTLR start "rule__Rule__Group_0__1"
-    // InternalConfiguratorLang.g:1557:1: rule__Rule__Group_0__1 : rule__Rule__Group_0__1__Impl ;
-    public final void rule__Rule__Group_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalConfiguratorLang.g:1561:1: ( rule__Rule__Group_0__1__Impl )
-            // InternalConfiguratorLang.g:1562:2: rule__Rule__Group_0__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Rule__Group_0__1__Impl();
+            rule__Rule__Group__5__Impl();
 
             state._fsp--;
 
@@ -4794,25 +4918,46 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__Group_0__1"
+    // $ANTLR end "rule__Rule__Group__5"
 
 
-    // $ANTLR start "rule__Rule__Group_0__1__Impl"
-    // InternalConfiguratorLang.g:1568:1: rule__Rule__Group_0__1__Impl : ( ':' ) ;
-    public final void rule__Rule__Group_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Rule__Group__5__Impl"
+    // InternalConfiguratorLang.g:1612:1: rule__Rule__Group__5__Impl : ( ( rule__Rule__TextAssignment_5 )? ) ;
+    public final void rule__Rule__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1572:1: ( ( ':' ) )
-            // InternalConfiguratorLang.g:1573:1: ( ':' )
+            // InternalConfiguratorLang.g:1616:1: ( ( ( rule__Rule__TextAssignment_5 )? ) )
+            // InternalConfiguratorLang.g:1617:1: ( ( rule__Rule__TextAssignment_5 )? )
             {
-            // InternalConfiguratorLang.g:1573:1: ( ':' )
-            // InternalConfiguratorLang.g:1574:2: ':'
+            // InternalConfiguratorLang.g:1617:1: ( ( rule__Rule__TextAssignment_5 )? )
+            // InternalConfiguratorLang.g:1618:2: ( rule__Rule__TextAssignment_5 )?
             {
-             before(grammarAccess.getRuleAccess().getColonKeyword_0_1()); 
-            match(input,17,FOLLOW_2); 
-             after(grammarAccess.getRuleAccess().getColonKeyword_0_1()); 
+             before(grammarAccess.getRuleAccess().getTextAssignment_5()); 
+            // InternalConfiguratorLang.g:1619:2: ( rule__Rule__TextAssignment_5 )?
+            int alt12=2;
+            int LA12_0 = input.LA(1);
+
+            if ( (LA12_0==RULE_STRING) ) {
+                alt12=1;
+            }
+            switch (alt12) {
+                case 1 :
+                    // InternalConfiguratorLang.g:1619:3: rule__Rule__TextAssignment_5
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Rule__TextAssignment_5();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getRuleAccess().getTextAssignment_5()); 
 
             }
 
@@ -4831,26 +4976,26 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__Group_0__1__Impl"
+    // $ANTLR end "rule__Rule__Group__5__Impl"
 
 
-    // $ANTLR start "rule__SimpleBoolean__Group_2__0"
-    // InternalConfiguratorLang.g:1584:1: rule__SimpleBoolean__Group_2__0 : rule__SimpleBoolean__Group_2__0__Impl rule__SimpleBoolean__Group_2__1 ;
-    public final void rule__SimpleBoolean__Group_2__0() throws RecognitionException {
+    // $ANTLR start "rule__BooleanExpression__Group__0"
+    // InternalConfiguratorLang.g:1628:1: rule__BooleanExpression__Group__0 : rule__BooleanExpression__Group__0__Impl rule__BooleanExpression__Group__1 ;
+    public final void rule__BooleanExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1588:1: ( rule__SimpleBoolean__Group_2__0__Impl rule__SimpleBoolean__Group_2__1 )
-            // InternalConfiguratorLang.g:1589:2: rule__SimpleBoolean__Group_2__0__Impl rule__SimpleBoolean__Group_2__1
+            // InternalConfiguratorLang.g:1632:1: ( rule__BooleanExpression__Group__0__Impl rule__BooleanExpression__Group__1 )
+            // InternalConfiguratorLang.g:1633:2: rule__BooleanExpression__Group__0__Impl rule__BooleanExpression__Group__1
             {
             pushFollow(FOLLOW_19);
-            rule__SimpleBoolean__Group_2__0__Impl();
+            rule__BooleanExpression__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__SimpleBoolean__Group_2__1();
+            rule__BooleanExpression__Group__1();
 
             state._fsp--;
 
@@ -4869,25 +5014,277 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
         }
         return ;
     }
-    // $ANTLR end "rule__SimpleBoolean__Group_2__0"
+    // $ANTLR end "rule__BooleanExpression__Group__0"
 
 
-    // $ANTLR start "rule__SimpleBoolean__Group_2__0__Impl"
-    // InternalConfiguratorLang.g:1596:1: rule__SimpleBoolean__Group_2__0__Impl : ( '(' ) ;
-    public final void rule__SimpleBoolean__Group_2__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__BooleanExpression__Group__0__Impl"
+    // InternalConfiguratorLang.g:1640:1: rule__BooleanExpression__Group__0__Impl : ( ruleAndBool ) ;
+    public final void rule__BooleanExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1600:1: ( ( '(' ) )
-            // InternalConfiguratorLang.g:1601:1: ( '(' )
+            // InternalConfiguratorLang.g:1644:1: ( ( ruleAndBool ) )
+            // InternalConfiguratorLang.g:1645:1: ( ruleAndBool )
             {
-            // InternalConfiguratorLang.g:1601:1: ( '(' )
-            // InternalConfiguratorLang.g:1602:2: '('
+            // InternalConfiguratorLang.g:1645:1: ( ruleAndBool )
+            // InternalConfiguratorLang.g:1646:2: ruleAndBool
             {
-             before(grammarAccess.getSimpleBooleanAccess().getLeftParenthesisKeyword_2_0()); 
+             before(grammarAccess.getBooleanExpressionAccess().getAndBoolParserRuleCall_0()); 
+            pushFollow(FOLLOW_2);
+            ruleAndBool();
+
+            state._fsp--;
+
+             after(grammarAccess.getBooleanExpressionAccess().getAndBoolParserRuleCall_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__BooleanExpression__Group__0__Impl"
+
+
+    // $ANTLR start "rule__BooleanExpression__Group__1"
+    // InternalConfiguratorLang.g:1655:1: rule__BooleanExpression__Group__1 : rule__BooleanExpression__Group__1__Impl ;
+    public final void rule__BooleanExpression__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:1659:1: ( rule__BooleanExpression__Group__1__Impl )
+            // InternalConfiguratorLang.g:1660:2: rule__BooleanExpression__Group__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__BooleanExpression__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__BooleanExpression__Group__1"
+
+
+    // $ANTLR start "rule__BooleanExpression__Group__1__Impl"
+    // InternalConfiguratorLang.g:1666:1: rule__BooleanExpression__Group__1__Impl : ( ( rule__BooleanExpression__Group_1__0 )* ) ;
+    public final void rule__BooleanExpression__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:1670:1: ( ( ( rule__BooleanExpression__Group_1__0 )* ) )
+            // InternalConfiguratorLang.g:1671:1: ( ( rule__BooleanExpression__Group_1__0 )* )
+            {
+            // InternalConfiguratorLang.g:1671:1: ( ( rule__BooleanExpression__Group_1__0 )* )
+            // InternalConfiguratorLang.g:1672:2: ( rule__BooleanExpression__Group_1__0 )*
+            {
+             before(grammarAccess.getBooleanExpressionAccess().getGroup_1()); 
+            // InternalConfiguratorLang.g:1673:2: ( rule__BooleanExpression__Group_1__0 )*
+            loop13:
+            do {
+                int alt13=2;
+                int LA13_0 = input.LA(1);
+
+                if ( (LA13_0==26) ) {
+                    alt13=1;
+                }
+
+
+                switch (alt13) {
+            	case 1 :
+            	    // InternalConfiguratorLang.g:1673:3: rule__BooleanExpression__Group_1__0
+            	    {
+            	    pushFollow(FOLLOW_20);
+            	    rule__BooleanExpression__Group_1__0();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop13;
+                }
+            } while (true);
+
+             after(grammarAccess.getBooleanExpressionAccess().getGroup_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__BooleanExpression__Group__1__Impl"
+
+
+    // $ANTLR start "rule__BooleanExpression__Group_1__0"
+    // InternalConfiguratorLang.g:1682:1: rule__BooleanExpression__Group_1__0 : rule__BooleanExpression__Group_1__0__Impl rule__BooleanExpression__Group_1__1 ;
+    public final void rule__BooleanExpression__Group_1__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:1686:1: ( rule__BooleanExpression__Group_1__0__Impl rule__BooleanExpression__Group_1__1 )
+            // InternalConfiguratorLang.g:1687:2: rule__BooleanExpression__Group_1__0__Impl rule__BooleanExpression__Group_1__1
+            {
+            pushFollow(FOLLOW_19);
+            rule__BooleanExpression__Group_1__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__BooleanExpression__Group_1__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__BooleanExpression__Group_1__0"
+
+
+    // $ANTLR start "rule__BooleanExpression__Group_1__0__Impl"
+    // InternalConfiguratorLang.g:1694:1: rule__BooleanExpression__Group_1__0__Impl : ( () ) ;
+    public final void rule__BooleanExpression__Group_1__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:1698:1: ( ( () ) )
+            // InternalConfiguratorLang.g:1699:1: ( () )
+            {
+            // InternalConfiguratorLang.g:1699:1: ( () )
+            // InternalConfiguratorLang.g:1700:2: ()
+            {
+             before(grammarAccess.getBooleanExpressionAccess().getOrBooleanexpressionAction_1_0()); 
+            // InternalConfiguratorLang.g:1701:2: ()
+            // InternalConfiguratorLang.g:1701:3: 
+            {
+            }
+
+             after(grammarAccess.getBooleanExpressionAccess().getOrBooleanexpressionAction_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__BooleanExpression__Group_1__0__Impl"
+
+
+    // $ANTLR start "rule__BooleanExpression__Group_1__1"
+    // InternalConfiguratorLang.g:1709:1: rule__BooleanExpression__Group_1__1 : rule__BooleanExpression__Group_1__1__Impl rule__BooleanExpression__Group_1__2 ;
+    public final void rule__BooleanExpression__Group_1__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:1713:1: ( rule__BooleanExpression__Group_1__1__Impl rule__BooleanExpression__Group_1__2 )
+            // InternalConfiguratorLang.g:1714:2: rule__BooleanExpression__Group_1__1__Impl rule__BooleanExpression__Group_1__2
+            {
+            pushFollow(FOLLOW_17);
+            rule__BooleanExpression__Group_1__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__BooleanExpression__Group_1__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__BooleanExpression__Group_1__1"
+
+
+    // $ANTLR start "rule__BooleanExpression__Group_1__1__Impl"
+    // InternalConfiguratorLang.g:1721:1: rule__BooleanExpression__Group_1__1__Impl : ( 'or' ) ;
+    public final void rule__BooleanExpression__Group_1__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:1725:1: ( ( 'or' ) )
+            // InternalConfiguratorLang.g:1726:1: ( 'or' )
+            {
+            // InternalConfiguratorLang.g:1726:1: ( 'or' )
+            // InternalConfiguratorLang.g:1727:2: 'or'
+            {
+             before(grammarAccess.getBooleanExpressionAccess().getOrKeyword_1_1()); 
             match(input,26,FOLLOW_2); 
-             after(grammarAccess.getSimpleBooleanAccess().getLeftParenthesisKeyword_2_0()); 
+             after(grammarAccess.getBooleanExpressionAccess().getOrKeyword_1_1()); 
 
             }
 
@@ -4906,26 +5303,106 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
         }
         return ;
     }
-    // $ANTLR end "rule__SimpleBoolean__Group_2__0__Impl"
+    // $ANTLR end "rule__BooleanExpression__Group_1__1__Impl"
 
 
-    // $ANTLR start "rule__SimpleBoolean__Group_2__1"
-    // InternalConfiguratorLang.g:1611:1: rule__SimpleBoolean__Group_2__1 : rule__SimpleBoolean__Group_2__1__Impl rule__SimpleBoolean__Group_2__2 ;
-    public final void rule__SimpleBoolean__Group_2__1() throws RecognitionException {
+    // $ANTLR start "rule__BooleanExpression__Group_1__2"
+    // InternalConfiguratorLang.g:1736:1: rule__BooleanExpression__Group_1__2 : rule__BooleanExpression__Group_1__2__Impl ;
+    public final void rule__BooleanExpression__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1615:1: ( rule__SimpleBoolean__Group_2__1__Impl rule__SimpleBoolean__Group_2__2 )
-            // InternalConfiguratorLang.g:1616:2: rule__SimpleBoolean__Group_2__1__Impl rule__SimpleBoolean__Group_2__2
+            // InternalConfiguratorLang.g:1740:1: ( rule__BooleanExpression__Group_1__2__Impl )
+            // InternalConfiguratorLang.g:1741:2: rule__BooleanExpression__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_20);
-            rule__SimpleBoolean__Group_2__1__Impl();
+            pushFollow(FOLLOW_2);
+            rule__BooleanExpression__Group_1__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__BooleanExpression__Group_1__2"
+
+
+    // $ANTLR start "rule__BooleanExpression__Group_1__2__Impl"
+    // InternalConfiguratorLang.g:1747:1: rule__BooleanExpression__Group_1__2__Impl : ( ( rule__BooleanExpression__BooleanexpressionAssignment_1_2 ) ) ;
+    public final void rule__BooleanExpression__Group_1__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:1751:1: ( ( ( rule__BooleanExpression__BooleanexpressionAssignment_1_2 ) ) )
+            // InternalConfiguratorLang.g:1752:1: ( ( rule__BooleanExpression__BooleanexpressionAssignment_1_2 ) )
+            {
+            // InternalConfiguratorLang.g:1752:1: ( ( rule__BooleanExpression__BooleanexpressionAssignment_1_2 ) )
+            // InternalConfiguratorLang.g:1753:2: ( rule__BooleanExpression__BooleanexpressionAssignment_1_2 )
+            {
+             before(grammarAccess.getBooleanExpressionAccess().getBooleanexpressionAssignment_1_2()); 
+            // InternalConfiguratorLang.g:1754:2: ( rule__BooleanExpression__BooleanexpressionAssignment_1_2 )
+            // InternalConfiguratorLang.g:1754:3: rule__BooleanExpression__BooleanexpressionAssignment_1_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__BooleanExpression__BooleanexpressionAssignment_1_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getBooleanExpressionAccess().getBooleanexpressionAssignment_1_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__BooleanExpression__Group_1__2__Impl"
+
+
+    // $ANTLR start "rule__AndBool__Group__0"
+    // InternalConfiguratorLang.g:1763:1: rule__AndBool__Group__0 : rule__AndBool__Group__0__Impl rule__AndBool__Group__1 ;
+    public final void rule__AndBool__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:1767:1: ( rule__AndBool__Group__0__Impl rule__AndBool__Group__1 )
+            // InternalConfiguratorLang.g:1768:2: rule__AndBool__Group__0__Impl rule__AndBool__Group__1
+            {
+            pushFollow(FOLLOW_21);
+            rule__AndBool__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__SimpleBoolean__Group_2__2();
+            rule__AndBool__Group__1();
 
             state._fsp--;
 
@@ -4944,29 +5421,511 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
         }
         return ;
     }
-    // $ANTLR end "rule__SimpleBoolean__Group_2__1"
+    // $ANTLR end "rule__AndBool__Group__0"
 
 
-    // $ANTLR start "rule__SimpleBoolean__Group_2__1__Impl"
-    // InternalConfiguratorLang.g:1623:1: rule__SimpleBoolean__Group_2__1__Impl : ( ruleBooleanExpression ) ;
-    public final void rule__SimpleBoolean__Group_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__AndBool__Group__0__Impl"
+    // InternalConfiguratorLang.g:1775:1: rule__AndBool__Group__0__Impl : ( ruleSimpleBoolean ) ;
+    public final void rule__AndBool__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1627:1: ( ( ruleBooleanExpression ) )
-            // InternalConfiguratorLang.g:1628:1: ( ruleBooleanExpression )
+            // InternalConfiguratorLang.g:1779:1: ( ( ruleSimpleBoolean ) )
+            // InternalConfiguratorLang.g:1780:1: ( ruleSimpleBoolean )
             {
-            // InternalConfiguratorLang.g:1628:1: ( ruleBooleanExpression )
-            // InternalConfiguratorLang.g:1629:2: ruleBooleanExpression
+            // InternalConfiguratorLang.g:1780:1: ( ruleSimpleBoolean )
+            // InternalConfiguratorLang.g:1781:2: ruleSimpleBoolean
             {
-             before(grammarAccess.getSimpleBooleanAccess().getBooleanExpressionParserRuleCall_2_1()); 
+             before(grammarAccess.getAndBoolAccess().getSimpleBooleanParserRuleCall_0()); 
+            pushFollow(FOLLOW_2);
+            ruleSimpleBoolean();
+
+            state._fsp--;
+
+             after(grammarAccess.getAndBoolAccess().getSimpleBooleanParserRuleCall_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AndBool__Group__0__Impl"
+
+
+    // $ANTLR start "rule__AndBool__Group__1"
+    // InternalConfiguratorLang.g:1790:1: rule__AndBool__Group__1 : rule__AndBool__Group__1__Impl ;
+    public final void rule__AndBool__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:1794:1: ( rule__AndBool__Group__1__Impl )
+            // InternalConfiguratorLang.g:1795:2: rule__AndBool__Group__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__AndBool__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AndBool__Group__1"
+
+
+    // $ANTLR start "rule__AndBool__Group__1__Impl"
+    // InternalConfiguratorLang.g:1801:1: rule__AndBool__Group__1__Impl : ( ( rule__AndBool__Group_1__0 )* ) ;
+    public final void rule__AndBool__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:1805:1: ( ( ( rule__AndBool__Group_1__0 )* ) )
+            // InternalConfiguratorLang.g:1806:1: ( ( rule__AndBool__Group_1__0 )* )
+            {
+            // InternalConfiguratorLang.g:1806:1: ( ( rule__AndBool__Group_1__0 )* )
+            // InternalConfiguratorLang.g:1807:2: ( rule__AndBool__Group_1__0 )*
+            {
+             before(grammarAccess.getAndBoolAccess().getGroup_1()); 
+            // InternalConfiguratorLang.g:1808:2: ( rule__AndBool__Group_1__0 )*
+            loop14:
+            do {
+                int alt14=2;
+                int LA14_0 = input.LA(1);
+
+                if ( (LA14_0==27) ) {
+                    alt14=1;
+                }
+
+
+                switch (alt14) {
+            	case 1 :
+            	    // InternalConfiguratorLang.g:1808:3: rule__AndBool__Group_1__0
+            	    {
+            	    pushFollow(FOLLOW_22);
+            	    rule__AndBool__Group_1__0();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop14;
+                }
+            } while (true);
+
+             after(grammarAccess.getAndBoolAccess().getGroup_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AndBool__Group__1__Impl"
+
+
+    // $ANTLR start "rule__AndBool__Group_1__0"
+    // InternalConfiguratorLang.g:1817:1: rule__AndBool__Group_1__0 : rule__AndBool__Group_1__0__Impl rule__AndBool__Group_1__1 ;
+    public final void rule__AndBool__Group_1__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:1821:1: ( rule__AndBool__Group_1__0__Impl rule__AndBool__Group_1__1 )
+            // InternalConfiguratorLang.g:1822:2: rule__AndBool__Group_1__0__Impl rule__AndBool__Group_1__1
+            {
+            pushFollow(FOLLOW_21);
+            rule__AndBool__Group_1__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__AndBool__Group_1__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AndBool__Group_1__0"
+
+
+    // $ANTLR start "rule__AndBool__Group_1__0__Impl"
+    // InternalConfiguratorLang.g:1829:1: rule__AndBool__Group_1__0__Impl : ( () ) ;
+    public final void rule__AndBool__Group_1__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:1833:1: ( ( () ) )
+            // InternalConfiguratorLang.g:1834:1: ( () )
+            {
+            // InternalConfiguratorLang.g:1834:1: ( () )
+            // InternalConfiguratorLang.g:1835:2: ()
+            {
+             before(grammarAccess.getAndBoolAccess().getAndBooleanexpressionAction_1_0()); 
+            // InternalConfiguratorLang.g:1836:2: ()
+            // InternalConfiguratorLang.g:1836:3: 
+            {
+            }
+
+             after(grammarAccess.getAndBoolAccess().getAndBooleanexpressionAction_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AndBool__Group_1__0__Impl"
+
+
+    // $ANTLR start "rule__AndBool__Group_1__1"
+    // InternalConfiguratorLang.g:1844:1: rule__AndBool__Group_1__1 : rule__AndBool__Group_1__1__Impl rule__AndBool__Group_1__2 ;
+    public final void rule__AndBool__Group_1__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:1848:1: ( rule__AndBool__Group_1__1__Impl rule__AndBool__Group_1__2 )
+            // InternalConfiguratorLang.g:1849:2: rule__AndBool__Group_1__1__Impl rule__AndBool__Group_1__2
+            {
+            pushFollow(FOLLOW_17);
+            rule__AndBool__Group_1__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__AndBool__Group_1__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AndBool__Group_1__1"
+
+
+    // $ANTLR start "rule__AndBool__Group_1__1__Impl"
+    // InternalConfiguratorLang.g:1856:1: rule__AndBool__Group_1__1__Impl : ( 'and' ) ;
+    public final void rule__AndBool__Group_1__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:1860:1: ( ( 'and' ) )
+            // InternalConfiguratorLang.g:1861:1: ( 'and' )
+            {
+            // InternalConfiguratorLang.g:1861:1: ( 'and' )
+            // InternalConfiguratorLang.g:1862:2: 'and'
+            {
+             before(grammarAccess.getAndBoolAccess().getAndKeyword_1_1()); 
+            match(input,27,FOLLOW_2); 
+             after(grammarAccess.getAndBoolAccess().getAndKeyword_1_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AndBool__Group_1__1__Impl"
+
+
+    // $ANTLR start "rule__AndBool__Group_1__2"
+    // InternalConfiguratorLang.g:1871:1: rule__AndBool__Group_1__2 : rule__AndBool__Group_1__2__Impl ;
+    public final void rule__AndBool__Group_1__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:1875:1: ( rule__AndBool__Group_1__2__Impl )
+            // InternalConfiguratorLang.g:1876:2: rule__AndBool__Group_1__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__AndBool__Group_1__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AndBool__Group_1__2"
+
+
+    // $ANTLR start "rule__AndBool__Group_1__2__Impl"
+    // InternalConfiguratorLang.g:1882:1: rule__AndBool__Group_1__2__Impl : ( ( rule__AndBool__BooleanexpressionAssignment_1_2 ) ) ;
+    public final void rule__AndBool__Group_1__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:1886:1: ( ( ( rule__AndBool__BooleanexpressionAssignment_1_2 ) ) )
+            // InternalConfiguratorLang.g:1887:1: ( ( rule__AndBool__BooleanexpressionAssignment_1_2 ) )
+            {
+            // InternalConfiguratorLang.g:1887:1: ( ( rule__AndBool__BooleanexpressionAssignment_1_2 ) )
+            // InternalConfiguratorLang.g:1888:2: ( rule__AndBool__BooleanexpressionAssignment_1_2 )
+            {
+             before(grammarAccess.getAndBoolAccess().getBooleanexpressionAssignment_1_2()); 
+            // InternalConfiguratorLang.g:1889:2: ( rule__AndBool__BooleanexpressionAssignment_1_2 )
+            // InternalConfiguratorLang.g:1889:3: rule__AndBool__BooleanexpressionAssignment_1_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__AndBool__BooleanexpressionAssignment_1_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getAndBoolAccess().getBooleanexpressionAssignment_1_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AndBool__Group_1__2__Impl"
+
+
+    // $ANTLR start "rule__SimpleBoolean__Group_3__0"
+    // InternalConfiguratorLang.g:1898:1: rule__SimpleBoolean__Group_3__0 : rule__SimpleBoolean__Group_3__0__Impl rule__SimpleBoolean__Group_3__1 ;
+    public final void rule__SimpleBoolean__Group_3__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:1902:1: ( rule__SimpleBoolean__Group_3__0__Impl rule__SimpleBoolean__Group_3__1 )
+            // InternalConfiguratorLang.g:1903:2: rule__SimpleBoolean__Group_3__0__Impl rule__SimpleBoolean__Group_3__1
+            {
+            pushFollow(FOLLOW_17);
+            rule__SimpleBoolean__Group_3__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__SimpleBoolean__Group_3__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SimpleBoolean__Group_3__0"
+
+
+    // $ANTLR start "rule__SimpleBoolean__Group_3__0__Impl"
+    // InternalConfiguratorLang.g:1910:1: rule__SimpleBoolean__Group_3__0__Impl : ( '(' ) ;
+    public final void rule__SimpleBoolean__Group_3__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:1914:1: ( ( '(' ) )
+            // InternalConfiguratorLang.g:1915:1: ( '(' )
+            {
+            // InternalConfiguratorLang.g:1915:1: ( '(' )
+            // InternalConfiguratorLang.g:1916:2: '('
+            {
+             before(grammarAccess.getSimpleBooleanAccess().getLeftParenthesisKeyword_3_0()); 
+            match(input,28,FOLLOW_2); 
+             after(grammarAccess.getSimpleBooleanAccess().getLeftParenthesisKeyword_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SimpleBoolean__Group_3__0__Impl"
+
+
+    // $ANTLR start "rule__SimpleBoolean__Group_3__1"
+    // InternalConfiguratorLang.g:1925:1: rule__SimpleBoolean__Group_3__1 : rule__SimpleBoolean__Group_3__1__Impl rule__SimpleBoolean__Group_3__2 ;
+    public final void rule__SimpleBoolean__Group_3__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:1929:1: ( rule__SimpleBoolean__Group_3__1__Impl rule__SimpleBoolean__Group_3__2 )
+            // InternalConfiguratorLang.g:1930:2: rule__SimpleBoolean__Group_3__1__Impl rule__SimpleBoolean__Group_3__2
+            {
+            pushFollow(FOLLOW_23);
+            rule__SimpleBoolean__Group_3__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__SimpleBoolean__Group_3__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SimpleBoolean__Group_3__1"
+
+
+    // $ANTLR start "rule__SimpleBoolean__Group_3__1__Impl"
+    // InternalConfiguratorLang.g:1937:1: rule__SimpleBoolean__Group_3__1__Impl : ( ruleBooleanExpression ) ;
+    public final void rule__SimpleBoolean__Group_3__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:1941:1: ( ( ruleBooleanExpression ) )
+            // InternalConfiguratorLang.g:1942:1: ( ruleBooleanExpression )
+            {
+            // InternalConfiguratorLang.g:1942:1: ( ruleBooleanExpression )
+            // InternalConfiguratorLang.g:1943:2: ruleBooleanExpression
+            {
+             before(grammarAccess.getSimpleBooleanAccess().getBooleanExpressionParserRuleCall_3_1()); 
             pushFollow(FOLLOW_2);
             ruleBooleanExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getSimpleBooleanAccess().getBooleanExpressionParserRuleCall_2_1()); 
+             after(grammarAccess.getSimpleBooleanAccess().getBooleanExpressionParserRuleCall_3_1()); 
 
             }
 
@@ -4985,21 +5944,21 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
         }
         return ;
     }
-    // $ANTLR end "rule__SimpleBoolean__Group_2__1__Impl"
+    // $ANTLR end "rule__SimpleBoolean__Group_3__1__Impl"
 
 
-    // $ANTLR start "rule__SimpleBoolean__Group_2__2"
-    // InternalConfiguratorLang.g:1638:1: rule__SimpleBoolean__Group_2__2 : rule__SimpleBoolean__Group_2__2__Impl ;
-    public final void rule__SimpleBoolean__Group_2__2() throws RecognitionException {
+    // $ANTLR start "rule__SimpleBoolean__Group_3__2"
+    // InternalConfiguratorLang.g:1952:1: rule__SimpleBoolean__Group_3__2 : rule__SimpleBoolean__Group_3__2__Impl ;
+    public final void rule__SimpleBoolean__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1642:1: ( rule__SimpleBoolean__Group_2__2__Impl )
-            // InternalConfiguratorLang.g:1643:2: rule__SimpleBoolean__Group_2__2__Impl
+            // InternalConfiguratorLang.g:1956:1: ( rule__SimpleBoolean__Group_3__2__Impl )
+            // InternalConfiguratorLang.g:1957:2: rule__SimpleBoolean__Group_3__2__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__SimpleBoolean__Group_2__2__Impl();
+            rule__SimpleBoolean__Group_3__2__Impl();
 
             state._fsp--;
 
@@ -5018,25 +5977,25 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
         }
         return ;
     }
-    // $ANTLR end "rule__SimpleBoolean__Group_2__2"
+    // $ANTLR end "rule__SimpleBoolean__Group_3__2"
 
 
-    // $ANTLR start "rule__SimpleBoolean__Group_2__2__Impl"
-    // InternalConfiguratorLang.g:1649:1: rule__SimpleBoolean__Group_2__2__Impl : ( ')' ) ;
-    public final void rule__SimpleBoolean__Group_2__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SimpleBoolean__Group_3__2__Impl"
+    // InternalConfiguratorLang.g:1963:1: rule__SimpleBoolean__Group_3__2__Impl : ( ')' ) ;
+    public final void rule__SimpleBoolean__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1653:1: ( ( ')' ) )
-            // InternalConfiguratorLang.g:1654:1: ( ')' )
+            // InternalConfiguratorLang.g:1967:1: ( ( ')' ) )
+            // InternalConfiguratorLang.g:1968:1: ( ')' )
             {
-            // InternalConfiguratorLang.g:1654:1: ( ')' )
-            // InternalConfiguratorLang.g:1655:2: ')'
+            // InternalConfiguratorLang.g:1968:1: ( ')' )
+            // InternalConfiguratorLang.g:1969:2: ')'
             {
-             before(grammarAccess.getSimpleBooleanAccess().getRightParenthesisKeyword_2_2()); 
-            match(input,27,FOLLOW_2); 
-             after(grammarAccess.getSimpleBooleanAccess().getRightParenthesisKeyword_2_2()); 
+             before(grammarAccess.getSimpleBooleanAccess().getRightParenthesisKeyword_3_2()); 
+            match(input,29,FOLLOW_2); 
+             after(grammarAccess.getSimpleBooleanAccess().getRightParenthesisKeyword_3_2()); 
 
             }
 
@@ -5055,20 +6014,20 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
         }
         return ;
     }
-    // $ANTLR end "rule__SimpleBoolean__Group_2__2__Impl"
+    // $ANTLR end "rule__SimpleBoolean__Group_3__2__Impl"
 
 
     // $ANTLR start "rule__Negation__Group__0"
-    // InternalConfiguratorLang.g:1665:1: rule__Negation__Group__0 : rule__Negation__Group__0__Impl rule__Negation__Group__1 ;
+    // InternalConfiguratorLang.g:1979:1: rule__Negation__Group__0 : rule__Negation__Group__0__Impl rule__Negation__Group__1 ;
     public final void rule__Negation__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1669:1: ( rule__Negation__Group__0__Impl rule__Negation__Group__1 )
-            // InternalConfiguratorLang.g:1670:2: rule__Negation__Group__0__Impl rule__Negation__Group__1
+            // InternalConfiguratorLang.g:1983:1: ( rule__Negation__Group__0__Impl rule__Negation__Group__1 )
+            // InternalConfiguratorLang.g:1984:2: rule__Negation__Group__0__Impl rule__Negation__Group__1
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_17);
             rule__Negation__Group__0__Impl();
 
             state._fsp--;
@@ -5097,20 +6056,20 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Negation__Group__0__Impl"
-    // InternalConfiguratorLang.g:1677:1: rule__Negation__Group__0__Impl : ( 'not' ) ;
+    // InternalConfiguratorLang.g:1991:1: rule__Negation__Group__0__Impl : ( 'not' ) ;
     public final void rule__Negation__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1681:1: ( ( 'not' ) )
-            // InternalConfiguratorLang.g:1682:1: ( 'not' )
+            // InternalConfiguratorLang.g:1995:1: ( ( 'not' ) )
+            // InternalConfiguratorLang.g:1996:1: ( 'not' )
             {
-            // InternalConfiguratorLang.g:1682:1: ( 'not' )
-            // InternalConfiguratorLang.g:1683:2: 'not'
+            // InternalConfiguratorLang.g:1996:1: ( 'not' )
+            // InternalConfiguratorLang.g:1997:2: 'not'
             {
              before(grammarAccess.getNegationAccess().getNotKeyword_0()); 
-            match(input,28,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getNegationAccess().getNotKeyword_0()); 
 
             }
@@ -5134,14 +6093,14 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Negation__Group__1"
-    // InternalConfiguratorLang.g:1692:1: rule__Negation__Group__1 : rule__Negation__Group__1__Impl ;
+    // InternalConfiguratorLang.g:2006:1: rule__Negation__Group__1 : rule__Negation__Group__1__Impl ;
     public final void rule__Negation__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1696:1: ( rule__Negation__Group__1__Impl )
-            // InternalConfiguratorLang.g:1697:2: rule__Negation__Group__1__Impl
+            // InternalConfiguratorLang.g:2010:1: ( rule__Negation__Group__1__Impl )
+            // InternalConfiguratorLang.g:2011:2: rule__Negation__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Negation__Group__1__Impl();
@@ -5167,21 +6126,21 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Negation__Group__1__Impl"
-    // InternalConfiguratorLang.g:1703:1: rule__Negation__Group__1__Impl : ( ( rule__Negation__BooleanexpressionAssignment_1 ) ) ;
+    // InternalConfiguratorLang.g:2017:1: rule__Negation__Group__1__Impl : ( ( rule__Negation__BooleanexpressionAssignment_1 ) ) ;
     public final void rule__Negation__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1707:1: ( ( ( rule__Negation__BooleanexpressionAssignment_1 ) ) )
-            // InternalConfiguratorLang.g:1708:1: ( ( rule__Negation__BooleanexpressionAssignment_1 ) )
+            // InternalConfiguratorLang.g:2021:1: ( ( ( rule__Negation__BooleanexpressionAssignment_1 ) ) )
+            // InternalConfiguratorLang.g:2022:1: ( ( rule__Negation__BooleanexpressionAssignment_1 ) )
             {
-            // InternalConfiguratorLang.g:1708:1: ( ( rule__Negation__BooleanexpressionAssignment_1 ) )
-            // InternalConfiguratorLang.g:1709:2: ( rule__Negation__BooleanexpressionAssignment_1 )
+            // InternalConfiguratorLang.g:2022:1: ( ( rule__Negation__BooleanexpressionAssignment_1 ) )
+            // InternalConfiguratorLang.g:2023:2: ( rule__Negation__BooleanexpressionAssignment_1 )
             {
              before(grammarAccess.getNegationAccess().getBooleanexpressionAssignment_1()); 
-            // InternalConfiguratorLang.g:1710:2: ( rule__Negation__BooleanexpressionAssignment_1 )
-            // InternalConfiguratorLang.g:1710:3: rule__Negation__BooleanexpressionAssignment_1
+            // InternalConfiguratorLang.g:2024:2: ( rule__Negation__BooleanexpressionAssignment_1 )
+            // InternalConfiguratorLang.g:2024:3: rule__Negation__BooleanexpressionAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Negation__BooleanexpressionAssignment_1();
@@ -5213,258 +6172,18 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
     // $ANTLR end "rule__Negation__Group__1__Impl"
 
 
-    // $ANTLR start "rule__And__Group__0"
-    // InternalConfiguratorLang.g:1719:1: rule__And__Group__0 : rule__And__Group__0__Impl rule__And__Group__1 ;
-    public final void rule__And__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalConfiguratorLang.g:1723:1: ( rule__And__Group__0__Impl rule__And__Group__1 )
-            // InternalConfiguratorLang.g:1724:2: rule__And__Group__0__Impl rule__And__Group__1
-            {
-            pushFollow(FOLLOW_21);
-            rule__And__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__And__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__And__Group__0"
-
-
-    // $ANTLR start "rule__And__Group__0__Impl"
-    // InternalConfiguratorLang.g:1731:1: rule__And__Group__0__Impl : ( ( rule__And__BooleanexpressionAssignment_0 ) ) ;
-    public final void rule__And__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalConfiguratorLang.g:1735:1: ( ( ( rule__And__BooleanexpressionAssignment_0 ) ) )
-            // InternalConfiguratorLang.g:1736:1: ( ( rule__And__BooleanexpressionAssignment_0 ) )
-            {
-            // InternalConfiguratorLang.g:1736:1: ( ( rule__And__BooleanexpressionAssignment_0 ) )
-            // InternalConfiguratorLang.g:1737:2: ( rule__And__BooleanexpressionAssignment_0 )
-            {
-             before(grammarAccess.getAndAccess().getBooleanexpressionAssignment_0()); 
-            // InternalConfiguratorLang.g:1738:2: ( rule__And__BooleanexpressionAssignment_0 )
-            // InternalConfiguratorLang.g:1738:3: rule__And__BooleanexpressionAssignment_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__And__BooleanexpressionAssignment_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getAndAccess().getBooleanexpressionAssignment_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__And__Group__0__Impl"
-
-
-    // $ANTLR start "rule__And__Group__1"
-    // InternalConfiguratorLang.g:1746:1: rule__And__Group__1 : rule__And__Group__1__Impl rule__And__Group__2 ;
-    public final void rule__And__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalConfiguratorLang.g:1750:1: ( rule__And__Group__1__Impl rule__And__Group__2 )
-            // InternalConfiguratorLang.g:1751:2: rule__And__Group__1__Impl rule__And__Group__2
-            {
-            pushFollow(FOLLOW_9);
-            rule__And__Group__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__And__Group__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__And__Group__1"
-
-
-    // $ANTLR start "rule__And__Group__1__Impl"
-    // InternalConfiguratorLang.g:1758:1: rule__And__Group__1__Impl : ( 'and' ) ;
-    public final void rule__And__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalConfiguratorLang.g:1762:1: ( ( 'and' ) )
-            // InternalConfiguratorLang.g:1763:1: ( 'and' )
-            {
-            // InternalConfiguratorLang.g:1763:1: ( 'and' )
-            // InternalConfiguratorLang.g:1764:2: 'and'
-            {
-             before(grammarAccess.getAndAccess().getAndKeyword_1()); 
-            match(input,29,FOLLOW_2); 
-             after(grammarAccess.getAndAccess().getAndKeyword_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__And__Group__1__Impl"
-
-
-    // $ANTLR start "rule__And__Group__2"
-    // InternalConfiguratorLang.g:1773:1: rule__And__Group__2 : rule__And__Group__2__Impl ;
-    public final void rule__And__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalConfiguratorLang.g:1777:1: ( rule__And__Group__2__Impl )
-            // InternalConfiguratorLang.g:1778:2: rule__And__Group__2__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__And__Group__2__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__And__Group__2"
-
-
-    // $ANTLR start "rule__And__Group__2__Impl"
-    // InternalConfiguratorLang.g:1784:1: rule__And__Group__2__Impl : ( ( rule__And__BooleanexpressionAssignment_2 ) ) ;
-    public final void rule__And__Group__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalConfiguratorLang.g:1788:1: ( ( ( rule__And__BooleanexpressionAssignment_2 ) ) )
-            // InternalConfiguratorLang.g:1789:1: ( ( rule__And__BooleanexpressionAssignment_2 ) )
-            {
-            // InternalConfiguratorLang.g:1789:1: ( ( rule__And__BooleanexpressionAssignment_2 ) )
-            // InternalConfiguratorLang.g:1790:2: ( rule__And__BooleanexpressionAssignment_2 )
-            {
-             before(grammarAccess.getAndAccess().getBooleanexpressionAssignment_2()); 
-            // InternalConfiguratorLang.g:1791:2: ( rule__And__BooleanexpressionAssignment_2 )
-            // InternalConfiguratorLang.g:1791:3: rule__And__BooleanexpressionAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__And__BooleanexpressionAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getAndAccess().getBooleanexpressionAssignment_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__And__Group__2__Impl"
-
-
     // $ANTLR start "rule__ConfiguratorModel__NameAssignment_2"
-    // InternalConfiguratorLang.g:1800:1: rule__ConfiguratorModel__NameAssignment_2 : ( RULE_STRING ) ;
+    // InternalConfiguratorLang.g:2033:1: rule__ConfiguratorModel__NameAssignment_2 : ( RULE_STRING ) ;
     public final void rule__ConfiguratorModel__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1804:1: ( ( RULE_STRING ) )
-            // InternalConfiguratorLang.g:1805:2: ( RULE_STRING )
+            // InternalConfiguratorLang.g:2037:1: ( ( RULE_STRING ) )
+            // InternalConfiguratorLang.g:2038:2: ( RULE_STRING )
             {
-            // InternalConfiguratorLang.g:1805:2: ( RULE_STRING )
-            // InternalConfiguratorLang.g:1806:3: RULE_STRING
+            // InternalConfiguratorLang.g:2038:2: ( RULE_STRING )
+            // InternalConfiguratorLang.g:2039:3: RULE_STRING
             {
              before(grammarAccess.getConfiguratorModelAccess().getNameSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -5491,17 +6210,17 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ConfiguratorModel__FeatureAssignment_4"
-    // InternalConfiguratorLang.g:1815:1: rule__ConfiguratorModel__FeatureAssignment_4 : ( ruleFeature ) ;
+    // InternalConfiguratorLang.g:2048:1: rule__ConfiguratorModel__FeatureAssignment_4 : ( ruleFeature ) ;
     public final void rule__ConfiguratorModel__FeatureAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1819:1: ( ( ruleFeature ) )
-            // InternalConfiguratorLang.g:1820:2: ( ruleFeature )
+            // InternalConfiguratorLang.g:2052:1: ( ( ruleFeature ) )
+            // InternalConfiguratorLang.g:2053:2: ( ruleFeature )
             {
-            // InternalConfiguratorLang.g:1820:2: ( ruleFeature )
-            // InternalConfiguratorLang.g:1821:3: ruleFeature
+            // InternalConfiguratorLang.g:2053:2: ( ruleFeature )
+            // InternalConfiguratorLang.g:2054:3: ruleFeature
             {
              before(grammarAccess.getConfiguratorModelAccess().getFeatureFeatureParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -5532,17 +6251,17 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ConfiguratorModel__FeatureAssignment_5"
-    // InternalConfiguratorLang.g:1830:1: rule__ConfiguratorModel__FeatureAssignment_5 : ( ruleFeature ) ;
+    // InternalConfiguratorLang.g:2063:1: rule__ConfiguratorModel__FeatureAssignment_5 : ( ruleFeature ) ;
     public final void rule__ConfiguratorModel__FeatureAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1834:1: ( ( ruleFeature ) )
-            // InternalConfiguratorLang.g:1835:2: ( ruleFeature )
+            // InternalConfiguratorLang.g:2067:1: ( ( ruleFeature ) )
+            // InternalConfiguratorLang.g:2068:2: ( ruleFeature )
             {
-            // InternalConfiguratorLang.g:1835:2: ( ruleFeature )
-            // InternalConfiguratorLang.g:1836:3: ruleFeature
+            // InternalConfiguratorLang.g:2068:2: ( ruleFeature )
+            // InternalConfiguratorLang.g:2069:3: ruleFeature
             {
              before(grammarAccess.getConfiguratorModelAccess().getFeatureFeatureParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -5573,17 +6292,17 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__ConfiguratorModel__RulesetAssignment_7"
-    // InternalConfiguratorLang.g:1845:1: rule__ConfiguratorModel__RulesetAssignment_7 : ( ruleRuleSet ) ;
+    // InternalConfiguratorLang.g:2078:1: rule__ConfiguratorModel__RulesetAssignment_7 : ( ruleRuleSet ) ;
     public final void rule__ConfiguratorModel__RulesetAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1849:1: ( ( ruleRuleSet ) )
-            // InternalConfiguratorLang.g:1850:2: ( ruleRuleSet )
+            // InternalConfiguratorLang.g:2082:1: ( ( ruleRuleSet ) )
+            // InternalConfiguratorLang.g:2083:2: ( ruleRuleSet )
             {
-            // InternalConfiguratorLang.g:1850:2: ( ruleRuleSet )
-            // InternalConfiguratorLang.g:1851:3: ruleRuleSet
+            // InternalConfiguratorLang.g:2083:2: ( ruleRuleSet )
+            // InternalConfiguratorLang.g:2084:3: ruleRuleSet
             {
              before(grammarAccess.getConfiguratorModelAccess().getRulesetRuleSetParserRuleCall_7_0()); 
             pushFollow(FOLLOW_2);
@@ -5614,17 +6333,17 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Feature__NameAssignment_0"
-    // InternalConfiguratorLang.g:1860:1: rule__Feature__NameAssignment_0 : ( RULE_ID ) ;
+    // InternalConfiguratorLang.g:2093:1: rule__Feature__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__Feature__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1864:1: ( ( RULE_ID ) )
-            // InternalConfiguratorLang.g:1865:2: ( RULE_ID )
+            // InternalConfiguratorLang.g:2097:1: ( ( RULE_ID ) )
+            // InternalConfiguratorLang.g:2098:2: ( RULE_ID )
             {
-            // InternalConfiguratorLang.g:1865:2: ( RULE_ID )
-            // InternalConfiguratorLang.g:1866:3: RULE_ID
+            // InternalConfiguratorLang.g:2098:2: ( RULE_ID )
+            // InternalConfiguratorLang.g:2099:3: RULE_ID
             {
              before(grammarAccess.getFeatureAccess().getNameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5651,17 +6370,17 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Feature__TypeAssignment_2"
-    // InternalConfiguratorLang.g:1875:1: rule__Feature__TypeAssignment_2 : ( ruleType ) ;
+    // InternalConfiguratorLang.g:2108:1: rule__Feature__TypeAssignment_2 : ( ruleType ) ;
     public final void rule__Feature__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1879:1: ( ( ruleType ) )
-            // InternalConfiguratorLang.g:1880:2: ( ruleType )
+            // InternalConfiguratorLang.g:2112:1: ( ( ruleType ) )
+            // InternalConfiguratorLang.g:2113:2: ( ruleType )
             {
-            // InternalConfiguratorLang.g:1880:2: ( ruleType )
-            // InternalConfiguratorLang.g:1881:3: ruleType
+            // InternalConfiguratorLang.g:2113:2: ( ruleType )
+            // InternalConfiguratorLang.g:2114:3: ruleType
             {
              before(grammarAccess.getFeatureAccess().getTypeTypeParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -5692,17 +6411,17 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Feature__TextAssignment_3"
-    // InternalConfiguratorLang.g:1890:1: rule__Feature__TextAssignment_3 : ( RULE_STRING ) ;
+    // InternalConfiguratorLang.g:2123:1: rule__Feature__TextAssignment_3 : ( RULE_STRING ) ;
     public final void rule__Feature__TextAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1894:1: ( ( RULE_STRING ) )
-            // InternalConfiguratorLang.g:1895:2: ( RULE_STRING )
+            // InternalConfiguratorLang.g:2127:1: ( ( RULE_STRING ) )
+            // InternalConfiguratorLang.g:2128:2: ( RULE_STRING )
             {
-            // InternalConfiguratorLang.g:1895:2: ( RULE_STRING )
-            // InternalConfiguratorLang.g:1896:3: RULE_STRING
+            // InternalConfiguratorLang.g:2128:2: ( RULE_STRING )
+            // InternalConfiguratorLang.g:2129:3: RULE_STRING
             {
              before(grammarAccess.getFeatureAccess().getTextSTRINGTerminalRuleCall_3_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -5729,21 +6448,21 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Operator__FeatureAssignment_0"
-    // InternalConfiguratorLang.g:1905:1: rule__Operator__FeatureAssignment_0 : ( ( RULE_ID ) ) ;
+    // InternalConfiguratorLang.g:2138:1: rule__Operator__FeatureAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__Operator__FeatureAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1909:1: ( ( ( RULE_ID ) ) )
-            // InternalConfiguratorLang.g:1910:2: ( ( RULE_ID ) )
+            // InternalConfiguratorLang.g:2142:1: ( ( ( RULE_ID ) ) )
+            // InternalConfiguratorLang.g:2143:2: ( ( RULE_ID ) )
             {
-            // InternalConfiguratorLang.g:1910:2: ( ( RULE_ID ) )
-            // InternalConfiguratorLang.g:1911:3: ( RULE_ID )
+            // InternalConfiguratorLang.g:2143:2: ( ( RULE_ID ) )
+            // InternalConfiguratorLang.g:2144:3: ( RULE_ID )
             {
              before(grammarAccess.getOperatorAccess().getFeatureFeatureCrossReference_0_0()); 
-            // InternalConfiguratorLang.g:1912:3: ( RULE_ID )
-            // InternalConfiguratorLang.g:1913:4: RULE_ID
+            // InternalConfiguratorLang.g:2145:3: ( RULE_ID )
+            // InternalConfiguratorLang.g:2146:4: RULE_ID
             {
              before(grammarAccess.getOperatorAccess().getFeatureFeatureIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5774,17 +6493,17 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Operator__OpAssignment_1"
-    // InternalConfiguratorLang.g:1924:1: rule__Operator__OpAssignment_1 : ( ruleOpSymbol ) ;
+    // InternalConfiguratorLang.g:2157:1: rule__Operator__OpAssignment_1 : ( ruleOpSymbol ) ;
     public final void rule__Operator__OpAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1928:1: ( ( ruleOpSymbol ) )
-            // InternalConfiguratorLang.g:1929:2: ( ruleOpSymbol )
+            // InternalConfiguratorLang.g:2161:1: ( ( ruleOpSymbol ) )
+            // InternalConfiguratorLang.g:2162:2: ( ruleOpSymbol )
             {
-            // InternalConfiguratorLang.g:1929:2: ( ruleOpSymbol )
-            // InternalConfiguratorLang.g:1930:3: ruleOpSymbol
+            // InternalConfiguratorLang.g:2162:2: ( ruleOpSymbol )
+            // InternalConfiguratorLang.g:2163:3: ruleOpSymbol
             {
              before(grammarAccess.getOperatorAccess().getOpOpSymbolParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5815,21 +6534,31 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Operator__ValueAssignment_2"
-    // InternalConfiguratorLang.g:1939:1: rule__Operator__ValueAssignment_2 : ( RULE_ID ) ;
+    // InternalConfiguratorLang.g:2172:1: rule__Operator__ValueAssignment_2 : ( ( rule__Operator__ValueAlternatives_2_0 ) ) ;
     public final void rule__Operator__ValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1943:1: ( ( RULE_ID ) )
-            // InternalConfiguratorLang.g:1944:2: ( RULE_ID )
+            // InternalConfiguratorLang.g:2176:1: ( ( ( rule__Operator__ValueAlternatives_2_0 ) ) )
+            // InternalConfiguratorLang.g:2177:2: ( ( rule__Operator__ValueAlternatives_2_0 ) )
             {
-            // InternalConfiguratorLang.g:1944:2: ( RULE_ID )
-            // InternalConfiguratorLang.g:1945:3: RULE_ID
+            // InternalConfiguratorLang.g:2177:2: ( ( rule__Operator__ValueAlternatives_2_0 ) )
+            // InternalConfiguratorLang.g:2178:3: ( rule__Operator__ValueAlternatives_2_0 )
             {
-             before(grammarAccess.getOperatorAccess().getValueIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getOperatorAccess().getValueIDTerminalRuleCall_2_0()); 
+             before(grammarAccess.getOperatorAccess().getValueAlternatives_2_0()); 
+            // InternalConfiguratorLang.g:2179:3: ( rule__Operator__ValueAlternatives_2_0 )
+            // InternalConfiguratorLang.g:2179:4: rule__Operator__ValueAlternatives_2_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Operator__ValueAlternatives_2_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getOperatorAccess().getValueAlternatives_2_0()); 
 
             }
 
@@ -5852,17 +6581,17 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EnumType__ValuesAssignment_2_0"
-    // InternalConfiguratorLang.g:1954:1: rule__EnumType__ValuesAssignment_2_0 : ( RULE_ID ) ;
+    // InternalConfiguratorLang.g:2187:1: rule__EnumType__ValuesAssignment_2_0 : ( RULE_ID ) ;
     public final void rule__EnumType__ValuesAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1958:1: ( ( RULE_ID ) )
-            // InternalConfiguratorLang.g:1959:2: ( RULE_ID )
+            // InternalConfiguratorLang.g:2191:1: ( ( RULE_ID ) )
+            // InternalConfiguratorLang.g:2192:2: ( RULE_ID )
             {
-            // InternalConfiguratorLang.g:1959:2: ( RULE_ID )
-            // InternalConfiguratorLang.g:1960:3: RULE_ID
+            // InternalConfiguratorLang.g:2192:2: ( RULE_ID )
+            // InternalConfiguratorLang.g:2193:3: RULE_ID
             {
              before(grammarAccess.getEnumTypeAccess().getValuesIDTerminalRuleCall_2_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5889,17 +6618,17 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__EnumType__ValuesAssignment_2_1_1"
-    // InternalConfiguratorLang.g:1969:1: rule__EnumType__ValuesAssignment_2_1_1 : ( RULE_ID ) ;
+    // InternalConfiguratorLang.g:2202:1: rule__EnumType__ValuesAssignment_2_1_1 : ( RULE_ID ) ;
     public final void rule__EnumType__ValuesAssignment_2_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1973:1: ( ( RULE_ID ) )
-            // InternalConfiguratorLang.g:1974:2: ( RULE_ID )
+            // InternalConfiguratorLang.g:2206:1: ( ( RULE_ID ) )
+            // InternalConfiguratorLang.g:2207:2: ( RULE_ID )
             {
-            // InternalConfiguratorLang.g:1974:2: ( RULE_ID )
-            // InternalConfiguratorLang.g:1975:3: RULE_ID
+            // InternalConfiguratorLang.g:2207:2: ( RULE_ID )
+            // InternalConfiguratorLang.g:2208:3: RULE_ID
             {
              before(grammarAccess.getEnumTypeAccess().getValuesIDTerminalRuleCall_2_1_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -5926,17 +6655,17 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__RuleSet__RuleAssignment_1"
-    // InternalConfiguratorLang.g:1984:1: rule__RuleSet__RuleAssignment_1 : ( ruleRule ) ;
+    // InternalConfiguratorLang.g:2217:1: rule__RuleSet__RuleAssignment_1 : ( ruleRule ) ;
     public final void rule__RuleSet__RuleAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:1988:1: ( ( ruleRule ) )
-            // InternalConfiguratorLang.g:1989:2: ( ruleRule )
+            // InternalConfiguratorLang.g:2221:1: ( ( ruleRule ) )
+            // InternalConfiguratorLang.g:2222:2: ( ruleRule )
             {
-            // InternalConfiguratorLang.g:1989:2: ( ruleRule )
-            // InternalConfiguratorLang.g:1990:3: ruleRule
+            // InternalConfiguratorLang.g:2222:2: ( ruleRule )
+            // InternalConfiguratorLang.g:2223:3: ruleRule
             {
              before(grammarAccess.getRuleSetAccess().getRuleRuleParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -5966,22 +6695,22 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
     // $ANTLR end "rule__RuleSet__RuleAssignment_1"
 
 
-    // $ANTLR start "rule__Rule__NameAssignment_0_0"
-    // InternalConfiguratorLang.g:1999:1: rule__Rule__NameAssignment_0_0 : ( RULE_ID ) ;
-    public final void rule__Rule__NameAssignment_0_0() throws RecognitionException {
+    // $ANTLR start "rule__Rule__NameAssignment_0"
+    // InternalConfiguratorLang.g:2232:1: rule__Rule__NameAssignment_0 : ( RULE_ID ) ;
+    public final void rule__Rule__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:2003:1: ( ( RULE_ID ) )
-            // InternalConfiguratorLang.g:2004:2: ( RULE_ID )
+            // InternalConfiguratorLang.g:2236:1: ( ( RULE_ID ) )
+            // InternalConfiguratorLang.g:2237:2: ( RULE_ID )
             {
-            // InternalConfiguratorLang.g:2004:2: ( RULE_ID )
-            // InternalConfiguratorLang.g:2005:3: RULE_ID
+            // InternalConfiguratorLang.g:2237:2: ( RULE_ID )
+            // InternalConfiguratorLang.g:2238:3: RULE_ID
             {
-             before(grammarAccess.getRuleAccess().getNameIDTerminalRuleCall_0_0_0()); 
+             before(grammarAccess.getRuleAccess().getNameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getRuleAccess().getNameIDTerminalRuleCall_0_0_0()); 
+             after(grammarAccess.getRuleAccess().getNameIDTerminalRuleCall_0_0()); 
 
             }
 
@@ -6000,29 +6729,29 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__NameAssignment_0_0"
+    // $ANTLR end "rule__Rule__NameAssignment_0"
 
 
-    // $ANTLR start "rule__Rule__IfAssignment_1"
-    // InternalConfiguratorLang.g:2014:1: rule__Rule__IfAssignment_1 : ( ruleSimpleBoolean ) ;
-    public final void rule__Rule__IfAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Rule__IfAssignment_2"
+    // InternalConfiguratorLang.g:2247:1: rule__Rule__IfAssignment_2 : ( ruleSimpleBoolean ) ;
+    public final void rule__Rule__IfAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:2018:1: ( ( ruleSimpleBoolean ) )
-            // InternalConfiguratorLang.g:2019:2: ( ruleSimpleBoolean )
+            // InternalConfiguratorLang.g:2251:1: ( ( ruleSimpleBoolean ) )
+            // InternalConfiguratorLang.g:2252:2: ( ruleSimpleBoolean )
             {
-            // InternalConfiguratorLang.g:2019:2: ( ruleSimpleBoolean )
-            // InternalConfiguratorLang.g:2020:3: ruleSimpleBoolean
+            // InternalConfiguratorLang.g:2252:2: ( ruleSimpleBoolean )
+            // InternalConfiguratorLang.g:2253:3: ruleSimpleBoolean
             {
-             before(grammarAccess.getRuleAccess().getIfSimpleBooleanParserRuleCall_1_0()); 
+             before(grammarAccess.getRuleAccess().getIfSimpleBooleanParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             ruleSimpleBoolean();
 
             state._fsp--;
 
-             after(grammarAccess.getRuleAccess().getIfSimpleBooleanParserRuleCall_1_0()); 
+             after(grammarAccess.getRuleAccess().getIfSimpleBooleanParserRuleCall_2_0()); 
 
             }
 
@@ -6041,29 +6770,29 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__IfAssignment_1"
+    // $ANTLR end "rule__Rule__IfAssignment_2"
 
 
-    // $ANTLR start "rule__Rule__ThenAssignment_3"
-    // InternalConfiguratorLang.g:2029:1: rule__Rule__ThenAssignment_3 : ( ruleSimpleBoolean ) ;
-    public final void rule__Rule__ThenAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Rule__ThenAssignment_4"
+    // InternalConfiguratorLang.g:2262:1: rule__Rule__ThenAssignment_4 : ( ruleSimpleBoolean ) ;
+    public final void rule__Rule__ThenAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:2033:1: ( ( ruleSimpleBoolean ) )
-            // InternalConfiguratorLang.g:2034:2: ( ruleSimpleBoolean )
+            // InternalConfiguratorLang.g:2266:1: ( ( ruleSimpleBoolean ) )
+            // InternalConfiguratorLang.g:2267:2: ( ruleSimpleBoolean )
             {
-            // InternalConfiguratorLang.g:2034:2: ( ruleSimpleBoolean )
-            // InternalConfiguratorLang.g:2035:3: ruleSimpleBoolean
+            // InternalConfiguratorLang.g:2267:2: ( ruleSimpleBoolean )
+            // InternalConfiguratorLang.g:2268:3: ruleSimpleBoolean
             {
-             before(grammarAccess.getRuleAccess().getThenSimpleBooleanParserRuleCall_3_0()); 
+             before(grammarAccess.getRuleAccess().getThenSimpleBooleanParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
             ruleSimpleBoolean();
 
             state._fsp--;
 
-             after(grammarAccess.getRuleAccess().getThenSimpleBooleanParserRuleCall_3_0()); 
+             after(grammarAccess.getRuleAccess().getThenSimpleBooleanParserRuleCall_4_0()); 
 
             }
 
@@ -6082,25 +6811,25 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__ThenAssignment_3"
+    // $ANTLR end "rule__Rule__ThenAssignment_4"
 
 
-    // $ANTLR start "rule__Rule__TextAssignment_4"
-    // InternalConfiguratorLang.g:2044:1: rule__Rule__TextAssignment_4 : ( RULE_STRING ) ;
-    public final void rule__Rule__TextAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__Rule__TextAssignment_5"
+    // InternalConfiguratorLang.g:2277:1: rule__Rule__TextAssignment_5 : ( RULE_STRING ) ;
+    public final void rule__Rule__TextAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:2048:1: ( ( RULE_STRING ) )
-            // InternalConfiguratorLang.g:2049:2: ( RULE_STRING )
+            // InternalConfiguratorLang.g:2281:1: ( ( RULE_STRING ) )
+            // InternalConfiguratorLang.g:2282:2: ( RULE_STRING )
             {
-            // InternalConfiguratorLang.g:2049:2: ( RULE_STRING )
-            // InternalConfiguratorLang.g:2050:3: RULE_STRING
+            // InternalConfiguratorLang.g:2282:2: ( RULE_STRING )
+            // InternalConfiguratorLang.g:2283:3: RULE_STRING
             {
-             before(grammarAccess.getRuleAccess().getTextSTRINGTerminalRuleCall_4_0()); 
+             before(grammarAccess.getRuleAccess().getTextSTRINGTerminalRuleCall_5_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getRuleAccess().getTextSTRINGTerminalRuleCall_4_0()); 
+             after(grammarAccess.getRuleAccess().getTextSTRINGTerminalRuleCall_5_0()); 
 
             }
 
@@ -6119,21 +6848,103 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
         }
         return ;
     }
-    // $ANTLR end "rule__Rule__TextAssignment_4"
+    // $ANTLR end "rule__Rule__TextAssignment_5"
+
+
+    // $ANTLR start "rule__BooleanExpression__BooleanexpressionAssignment_1_2"
+    // InternalConfiguratorLang.g:2292:1: rule__BooleanExpression__BooleanexpressionAssignment_1_2 : ( ruleAndBool ) ;
+    public final void rule__BooleanExpression__BooleanexpressionAssignment_1_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:2296:1: ( ( ruleAndBool ) )
+            // InternalConfiguratorLang.g:2297:2: ( ruleAndBool )
+            {
+            // InternalConfiguratorLang.g:2297:2: ( ruleAndBool )
+            // InternalConfiguratorLang.g:2298:3: ruleAndBool
+            {
+             before(grammarAccess.getBooleanExpressionAccess().getBooleanexpressionAndBoolParserRuleCall_1_2_0()); 
+            pushFollow(FOLLOW_2);
+            ruleAndBool();
+
+            state._fsp--;
+
+             after(grammarAccess.getBooleanExpressionAccess().getBooleanexpressionAndBoolParserRuleCall_1_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__BooleanExpression__BooleanexpressionAssignment_1_2"
+
+
+    // $ANTLR start "rule__AndBool__BooleanexpressionAssignment_1_2"
+    // InternalConfiguratorLang.g:2307:1: rule__AndBool__BooleanexpressionAssignment_1_2 : ( ruleSimpleBoolean ) ;
+    public final void rule__AndBool__BooleanexpressionAssignment_1_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalConfiguratorLang.g:2311:1: ( ( ruleSimpleBoolean ) )
+            // InternalConfiguratorLang.g:2312:2: ( ruleSimpleBoolean )
+            {
+            // InternalConfiguratorLang.g:2312:2: ( ruleSimpleBoolean )
+            // InternalConfiguratorLang.g:2313:3: ruleSimpleBoolean
+            {
+             before(grammarAccess.getAndBoolAccess().getBooleanexpressionSimpleBooleanParserRuleCall_1_2_0()); 
+            pushFollow(FOLLOW_2);
+            ruleSimpleBoolean();
+
+            state._fsp--;
+
+             after(grammarAccess.getAndBoolAccess().getBooleanexpressionSimpleBooleanParserRuleCall_1_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__AndBool__BooleanexpressionAssignment_1_2"
 
 
     // $ANTLR start "rule__Const__ValueAssignment"
-    // InternalConfiguratorLang.g:2059:1: rule__Const__ValueAssignment : ( ruleEBoolean ) ;
+    // InternalConfiguratorLang.g:2322:1: rule__Const__ValueAssignment : ( ruleEBoolean ) ;
     public final void rule__Const__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:2063:1: ( ( ruleEBoolean ) )
-            // InternalConfiguratorLang.g:2064:2: ( ruleEBoolean )
+            // InternalConfiguratorLang.g:2326:1: ( ( ruleEBoolean ) )
+            // InternalConfiguratorLang.g:2327:2: ( ruleEBoolean )
             {
-            // InternalConfiguratorLang.g:2064:2: ( ruleEBoolean )
-            // InternalConfiguratorLang.g:2065:3: ruleEBoolean
+            // InternalConfiguratorLang.g:2327:2: ( ruleEBoolean )
+            // InternalConfiguratorLang.g:2328:3: ruleEBoolean
             {
              before(grammarAccess.getConstAccess().getValueEBooleanParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -6164,17 +6975,17 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Atom__OperatorAssignment"
-    // InternalConfiguratorLang.g:2074:1: rule__Atom__OperatorAssignment : ( ruleOperator ) ;
+    // InternalConfiguratorLang.g:2337:1: rule__Atom__OperatorAssignment : ( ruleOperator ) ;
     public final void rule__Atom__OperatorAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:2078:1: ( ( ruleOperator ) )
-            // InternalConfiguratorLang.g:2079:2: ( ruleOperator )
+            // InternalConfiguratorLang.g:2341:1: ( ( ruleOperator ) )
+            // InternalConfiguratorLang.g:2342:2: ( ruleOperator )
             {
-            // InternalConfiguratorLang.g:2079:2: ( ruleOperator )
-            // InternalConfiguratorLang.g:2080:3: ruleOperator
+            // InternalConfiguratorLang.g:2342:2: ( ruleOperator )
+            // InternalConfiguratorLang.g:2343:3: ruleOperator
             {
              before(grammarAccess.getAtomAccess().getOperatorOperatorParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -6205,17 +7016,17 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
 
 
     // $ANTLR start "rule__Negation__BooleanexpressionAssignment_1"
-    // InternalConfiguratorLang.g:2089:1: rule__Negation__BooleanexpressionAssignment_1 : ( ruleSimpleBoolean ) ;
+    // InternalConfiguratorLang.g:2352:1: rule__Negation__BooleanexpressionAssignment_1 : ( ruleSimpleBoolean ) ;
     public final void rule__Negation__BooleanexpressionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalConfiguratorLang.g:2093:1: ( ( ruleSimpleBoolean ) )
-            // InternalConfiguratorLang.g:2094:2: ( ruleSimpleBoolean )
+            // InternalConfiguratorLang.g:2356:1: ( ( ruleSimpleBoolean ) )
+            // InternalConfiguratorLang.g:2357:2: ( ruleSimpleBoolean )
             {
-            // InternalConfiguratorLang.g:2094:2: ( ruleSimpleBoolean )
-            // InternalConfiguratorLang.g:2095:3: ruleSimpleBoolean
+            // InternalConfiguratorLang.g:2357:2: ( ruleSimpleBoolean )
+            // InternalConfiguratorLang.g:2358:3: ruleSimpleBoolean
             {
              before(grammarAccess.getNegationAccess().getBooleanexpressionSimpleBooleanParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -6244,160 +7055,33 @@ public class InternalConfiguratorLangParser extends AbstractInternalContentAssis
     }
     // $ANTLR end "rule__Negation__BooleanexpressionAssignment_1"
 
-
-    // $ANTLR start "rule__And__BooleanexpressionAssignment_0"
-    // InternalConfiguratorLang.g:2104:1: rule__And__BooleanexpressionAssignment_0 : ( ruleSimpleBoolean ) ;
-    public final void rule__And__BooleanexpressionAssignment_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalConfiguratorLang.g:2108:1: ( ( ruleSimpleBoolean ) )
-            // InternalConfiguratorLang.g:2109:2: ( ruleSimpleBoolean )
-            {
-            // InternalConfiguratorLang.g:2109:2: ( ruleSimpleBoolean )
-            // InternalConfiguratorLang.g:2110:3: ruleSimpleBoolean
-            {
-             before(grammarAccess.getAndAccess().getBooleanexpressionSimpleBooleanParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_2);
-            ruleSimpleBoolean();
-
-            state._fsp--;
-
-             after(grammarAccess.getAndAccess().getBooleanexpressionSimpleBooleanParserRuleCall_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__And__BooleanexpressionAssignment_0"
-
-
-    // $ANTLR start "rule__And__BooleanexpressionAssignment_2"
-    // InternalConfiguratorLang.g:2119:1: rule__And__BooleanexpressionAssignment_2 : ( ruleSimpleBoolean ) ;
-    public final void rule__And__BooleanexpressionAssignment_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalConfiguratorLang.g:2123:1: ( ( ruleSimpleBoolean ) )
-            // InternalConfiguratorLang.g:2124:2: ( ruleSimpleBoolean )
-            {
-            // InternalConfiguratorLang.g:2124:2: ( ruleSimpleBoolean )
-            // InternalConfiguratorLang.g:2125:3: ruleSimpleBoolean
-            {
-             before(grammarAccess.getAndAccess().getBooleanexpressionSimpleBooleanParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_2);
-            ruleSimpleBoolean();
-
-            state._fsp--;
-
-             after(grammarAccess.getAndAccess().getBooleanexpressionSimpleBooleanParserRuleCall_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__And__BooleanexpressionAssignment_2"
-
     // Delegated rules
 
 
-    protected DFA3 dfa3 = new DFA3(this);
-    static final String dfa_1s = "\14\uffff";
-    static final String dfa_2s = "\1\uffff\2\6\7\uffff\1\13\1\uffff";
-    static final String dfa_3s = "\1\5\2\33\1\13\3\uffff\3\5\1\33\1\uffff";
-    static final String dfa_4s = "\1\34\2\35\1\15\3\uffff\3\5\1\35\1\uffff";
-    static final String dfa_5s = "\4\uffff\1\3\1\4\1\1\4\uffff\1\2";
-    static final String dfa_6s = "\14\uffff}>";
-    static final String[] dfa_7s = {
-            "\1\3\10\uffff\1\1\1\2\12\uffff\1\4\1\uffff\1\5",
-            "\1\6\1\uffff\1\4",
-            "\1\6\1\uffff\1\4",
-            "\1\7\1\10\1\11",
-            "",
-            "",
-            "",
-            "\1\12",
-            "\1\12",
-            "\1\12",
-            "\1\13\1\uffff\1\4",
-            ""
-    };
-
-    static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
-    static final short[] dfa_2 = DFA.unpackEncodedString(dfa_2s);
-    static final char[] dfa_3 = DFA.unpackEncodedStringToUnsignedChars(dfa_3s);
-    static final char[] dfa_4 = DFA.unpackEncodedStringToUnsignedChars(dfa_4s);
-    static final short[] dfa_5 = DFA.unpackEncodedString(dfa_5s);
-    static final short[] dfa_6 = DFA.unpackEncodedString(dfa_6s);
-    static final short[][] dfa_7 = unpackEncodedStringArray(dfa_7s);
-
-    class DFA3 extends DFA {
-
-        public DFA3(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 3;
-            this.eot = dfa_1;
-            this.eof = dfa_2;
-            this.min = dfa_3;
-            this.max = dfa_4;
-            this.accept = dfa_5;
-            this.special = dfa_6;
-            this.transition = dfa_7;
-        }
-        public String getDescription() {
-            return "531:1: rule__BooleanExpression__Alternatives : ( ( ruleConst ) | ( ruleAtom ) | ( ruleAnd ) | ( ruleNegation ) );";
-        }
-    }
  
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000080020L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x000000000400C020L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000700000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000003800L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000700000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000003800L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x000000000000C030L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000800020L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x000000000400C022L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x000000005000C020L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x000000001400C020L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000004000002L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000008000002L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000020000000L});
 
 }

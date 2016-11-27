@@ -12,8 +12,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -34,7 +32,7 @@ import org.xtext.branselic.domainmodel.Or;
  *
  * @generated
  */
-public class OrImpl extends MinimalEObjectImpl.Container implements Or
+public class OrImpl extends BooleanExpressionImpl implements Or
 {
   /**
    * The cached value of the '{@link #getBooleanexpression() <em>Booleanexpression</em>}' containment reference list.

@@ -449,7 +449,7 @@ public interface DomainmodelPackage extends EPackage
   int NEGATION = 12;
 
   /**
-   * The feature id for the '<em><b>Booleanexpression</b></em>' containment reference.
+   * The feature id for the '<em><b>Booleanexpression</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -467,6 +467,34 @@ public interface DomainmodelPackage extends EPackage
   int NEGATION_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.branselic.domainmodel.impl.OrImpl <em>Or</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.branselic.domainmodel.impl.OrImpl
+   * @see org.xtext.branselic.domainmodel.impl.DomainmodelPackageImpl#getOr()
+   * @generated
+   */
+  int OR = 13;
+
+  /**
+   * The feature id for the '<em><b>Booleanexpression</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR__BOOLEANEXPRESSION = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Or</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OR_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.branselic.domainmodel.impl.AndImpl <em>And</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -474,7 +502,7 @@ public interface DomainmodelPackage extends EPackage
    * @see org.xtext.branselic.domainmodel.impl.DomainmodelPackageImpl#getAnd()
    * @generated
    */
-  int AND = 13;
+  int AND = 14;
 
   /**
    * The feature id for the '<em><b>Booleanexpression</b></em>' containment reference list.
@@ -493,34 +521,6 @@ public interface DomainmodelPackage extends EPackage
    * @ordered
    */
   int AND_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.branselic.domainmodel.impl.OrImpl <em>Or</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.branselic.domainmodel.impl.OrImpl
-   * @see org.xtext.branselic.domainmodel.impl.DomainmodelPackageImpl#getOr()
-   * @generated
-   */
-  int OR = 14;
-
-  /**
-   * The feature id for the '<em><b>Booleanexpression</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR__BOOLEANEXPRESSION = 0;
-
-  /**
-   * The number of structural features of the '<em>Or</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_FEATURE_COUNT = 1;
 
 
   /**
@@ -841,36 +841,15 @@ public interface DomainmodelPackage extends EPackage
   EClass getNegation();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.branselic.domainmodel.Negation#getBooleanexpression <em>Booleanexpression</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.branselic.domainmodel.Negation#getBooleanexpression <em>Booleanexpression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Booleanexpression</em>'.
+   * @return the meta object for the containment reference list '<em>Booleanexpression</em>'.
    * @see org.xtext.branselic.domainmodel.Negation#getBooleanexpression()
    * @see #getNegation()
    * @generated
    */
   EReference getNegation_Booleanexpression();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.branselic.domainmodel.And <em>And</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>And</em>'.
-   * @see org.xtext.branselic.domainmodel.And
-   * @generated
-   */
-  EClass getAnd();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.branselic.domainmodel.And#getBooleanexpression <em>Booleanexpression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Booleanexpression</em>'.
-   * @see org.xtext.branselic.domainmodel.And#getBooleanexpression()
-   * @see #getAnd()
-   * @generated
-   */
-  EReference getAnd_Booleanexpression();
 
   /**
    * Returns the meta object for class '{@link org.xtext.branselic.domainmodel.Or <em>Or</em>}'.
@@ -892,6 +871,27 @@ public interface DomainmodelPackage extends EPackage
    * @generated
    */
   EReference getOr_Booleanexpression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.branselic.domainmodel.And <em>And</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>And</em>'.
+   * @see org.xtext.branselic.domainmodel.And
+   * @generated
+   */
+  EClass getAnd();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.branselic.domainmodel.And#getBooleanexpression <em>Booleanexpression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Booleanexpression</em>'.
+   * @see org.xtext.branselic.domainmodel.And#getBooleanexpression()
+   * @see #getAnd()
+   * @generated
+   */
+  EReference getAnd_Booleanexpression();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1183,30 +1183,12 @@ public interface DomainmodelPackage extends EPackage
     EClass NEGATION = eINSTANCE.getNegation();
 
     /**
-     * The meta object literal for the '<em><b>Booleanexpression</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NEGATION__BOOLEANEXPRESSION = eINSTANCE.getNegation_Booleanexpression();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.branselic.domainmodel.impl.AndImpl <em>And</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.branselic.domainmodel.impl.AndImpl
-     * @see org.xtext.branselic.domainmodel.impl.DomainmodelPackageImpl#getAnd()
-     * @generated
-     */
-    EClass AND = eINSTANCE.getAnd();
-
-    /**
      * The meta object literal for the '<em><b>Booleanexpression</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference AND__BOOLEANEXPRESSION = eINSTANCE.getAnd_Booleanexpression();
+    EReference NEGATION__BOOLEANEXPRESSION = eINSTANCE.getNegation_Booleanexpression();
 
     /**
      * The meta object literal for the '{@link org.xtext.branselic.domainmodel.impl.OrImpl <em>Or</em>}' class.
@@ -1225,6 +1207,24 @@ public interface DomainmodelPackage extends EPackage
      * @generated
      */
     EReference OR__BOOLEANEXPRESSION = eINSTANCE.getOr_Booleanexpression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.branselic.domainmodel.impl.AndImpl <em>And</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.branselic.domainmodel.impl.AndImpl
+     * @see org.xtext.branselic.domainmodel.impl.DomainmodelPackageImpl#getAnd()
+     * @generated
+     */
+    EClass AND = eINSTANCE.getAnd();
+
+    /**
+     * The meta object literal for the '<em><b>Booleanexpression</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference AND__BOOLEANEXPRESSION = eINSTANCE.getAnd_Booleanexpression();
 
   }
 

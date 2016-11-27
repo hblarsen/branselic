@@ -3,6 +3,7 @@
  */
 package org.xtext.branselic.domainmodel;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,29 +24,19 @@ package org.xtext.branselic.domainmodel;
 public interface Negation extends BooleanExpression
 {
   /**
-   * Returns the value of the '<em><b>Booleanexpression</b></em>' containment reference.
+   * Returns the value of the '<em><b>Booleanexpression</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.branselic.domainmodel.BooleanExpression}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Booleanexpression</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Booleanexpression</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Booleanexpression</em>' containment reference.
-   * @see #setBooleanexpression(BooleanExpression)
+   * @return the value of the '<em>Booleanexpression</em>' containment reference list.
    * @see org.xtext.branselic.domainmodel.DomainmodelPackage#getNegation_Booleanexpression()
    * @model containment="true"
    * @generated
    */
-  BooleanExpression getBooleanexpression();
-
-  /**
-   * Sets the value of the '{@link org.xtext.branselic.domainmodel.Negation#getBooleanexpression <em>Booleanexpression</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Booleanexpression</em>' containment reference.
-   * @see #getBooleanexpression()
-   * @generated
-   */
-  void setBooleanexpression(BooleanExpression value);
+  EList<BooleanExpression> getBooleanexpression();
 
 } // Negation

@@ -3,13 +3,17 @@
  */
 package org.xtext.branselic.domainmodel.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.branselic.domainmodel.BooleanExpression;
 import org.xtext.branselic.domainmodel.DomainmodelPackage;
@@ -31,14 +35,14 @@ import org.xtext.branselic.domainmodel.Negation;
 public class NegationImpl extends BooleanExpressionImpl implements Negation
 {
   /**
-   * The cached value of the '{@link #getBooleanexpression() <em>Booleanexpression</em>}' containment reference.
+   * The cached value of the '{@link #getBooleanexpression() <em>Booleanexpression</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getBooleanexpression()
    * @generated
    * @ordered
    */
-  protected BooleanExpression booleanexpression;
+  protected EList<BooleanExpression> booleanexpression;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,47 +70,13 @@ public class NegationImpl extends BooleanExpressionImpl implements Negation
    * <!-- end-user-doc -->
    * @generated
    */
-  public BooleanExpression getBooleanexpression()
+  public EList<BooleanExpression> getBooleanexpression()
   {
+    if (booleanexpression == null)
+    {
+      booleanexpression = new EObjectContainmentEList<BooleanExpression>(BooleanExpression.class, this, DomainmodelPackage.NEGATION__BOOLEANEXPRESSION);
+    }
     return booleanexpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetBooleanexpression(BooleanExpression newBooleanexpression, NotificationChain msgs)
-  {
-    BooleanExpression oldBooleanexpression = booleanexpression;
-    booleanexpression = newBooleanexpression;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DomainmodelPackage.NEGATION__BOOLEANEXPRESSION, oldBooleanexpression, newBooleanexpression);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setBooleanexpression(BooleanExpression newBooleanexpression)
-  {
-    if (newBooleanexpression != booleanexpression)
-    {
-      NotificationChain msgs = null;
-      if (booleanexpression != null)
-        msgs = ((InternalEObject)booleanexpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomainmodelPackage.NEGATION__BOOLEANEXPRESSION, null, msgs);
-      if (newBooleanexpression != null)
-        msgs = ((InternalEObject)newBooleanexpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DomainmodelPackage.NEGATION__BOOLEANEXPRESSION, null, msgs);
-      msgs = basicSetBooleanexpression(newBooleanexpression, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainmodelPackage.NEGATION__BOOLEANEXPRESSION, newBooleanexpression, newBooleanexpression));
   }
 
   /**
@@ -120,7 +90,7 @@ public class NegationImpl extends BooleanExpressionImpl implements Negation
     switch (featureID)
     {
       case DomainmodelPackage.NEGATION__BOOLEANEXPRESSION:
-        return basicSetBooleanexpression(null, msgs);
+        return ((InternalEList<?>)getBooleanexpression()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -146,13 +116,15 @@ public class NegationImpl extends BooleanExpressionImpl implements Negation
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case DomainmodelPackage.NEGATION__BOOLEANEXPRESSION:
-        setBooleanexpression((BooleanExpression)newValue);
+        getBooleanexpression().clear();
+        getBooleanexpression().addAll((Collection<? extends BooleanExpression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -169,7 +141,7 @@ public class NegationImpl extends BooleanExpressionImpl implements Negation
     switch (featureID)
     {
       case DomainmodelPackage.NEGATION__BOOLEANEXPRESSION:
-        setBooleanexpression((BooleanExpression)null);
+        getBooleanexpression().clear();
         return;
     }
     super.eUnset(featureID);
@@ -186,7 +158,7 @@ public class NegationImpl extends BooleanExpressionImpl implements Negation
     switch (featureID)
     {
       case DomainmodelPackage.NEGATION__BOOLEANEXPRESSION:
-        return booleanexpression != null;
+        return booleanexpression != null && !booleanexpression.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -20,12 +20,14 @@ import org.xtext.branselic.services.ConfiguratorLangGrammarAccess;
 public class ConfiguratorLangSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected ConfiguratorLangGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_SimpleBoolean_LeftParenthesisKeyword_2_0_q;
+	protected AbstractElementAlias match_SimpleBoolean_LeftParenthesisKeyword_3_0_a;
+	protected AbstractElementAlias match_SimpleBoolean_LeftParenthesisKeyword_3_0_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (ConfiguratorLangGrammarAccess) access;
-		match_SimpleBoolean_LeftParenthesisKeyword_2_0_q = new TokenAlias(false, true, grammarAccess.getSimpleBooleanAccess().getLeftParenthesisKeyword_2_0());
+		match_SimpleBoolean_LeftParenthesisKeyword_3_0_a = new TokenAlias(true, true, grammarAccess.getSimpleBooleanAccess().getLeftParenthesisKeyword_3_0());
+		match_SimpleBoolean_LeftParenthesisKeyword_3_0_p = new TokenAlias(true, false, grammarAccess.getSimpleBooleanAccess().getLeftParenthesisKeyword_3_0());
 	}
 	
 	@Override
@@ -40,21 +42,38 @@ public class ConfiguratorLangSyntacticSequencer extends AbstractSyntacticSequenc
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_SimpleBoolean_LeftParenthesisKeyword_2_0_q.equals(syntax))
-				emit_SimpleBoolean_LeftParenthesisKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_SimpleBoolean_LeftParenthesisKeyword_3_0_a.equals(syntax))
+				emit_SimpleBoolean_LeftParenthesisKeyword_3_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_SimpleBoolean_LeftParenthesisKeyword_3_0_p.equals(syntax))
+				emit_SimpleBoolean_LeftParenthesisKeyword_3_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
 	/**
 	 * Ambiguous syntax:
-	 *     '('?
+	 *     '('*
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) 'not' booleanexpression+=SimpleBoolean
 	 *     (rule start) (ambiguity) operator=Operator
 	 *     (rule start) (ambiguity) value=EBoolean
+	 *     (rule start) (ambiguity) {And.booleanexpression+=}
+	 *     (rule start) (ambiguity) {Or.booleanexpression+=}
 	 */
-	protected void emit_SimpleBoolean_LeftParenthesisKeyword_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_SimpleBoolean_LeftParenthesisKeyword_3_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '('+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) {And.booleanexpression+=}
+	 *     (rule start) (ambiguity) {Or.booleanexpression+=}
+	 */
+	protected void emit_SimpleBoolean_LeftParenthesisKeyword_3_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

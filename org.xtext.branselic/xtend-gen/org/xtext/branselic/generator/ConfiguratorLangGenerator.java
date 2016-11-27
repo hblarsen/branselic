@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.xtext.branselic.generator.ScalaGeneratorAdapter;
 
 /**
  * Generates code from your model files on save.
@@ -17,5 +18,9 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class ConfiguratorLangGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    final ScalaGeneratorAdapter generator = new ScalaGeneratorAdapter();
+    String _resourceName = generator.getResourceName(resource);
+    String _generateScala = generator.generateScala(resource);
+    fsa.generateFile(_resourceName, _generateScala);
   }
 }

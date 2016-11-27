@@ -44,7 +44,7 @@ public class ConfiguratorLangSemanticSequencer extends AbstractDelegatingSemanti
 		if (epackage == DomainmodelPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
 			case DomainmodelPackage.AND:
-				sequence_And(context, (And) semanticObject); 
+				sequence_AndBool(context, (And) semanticObject); 
 				return; 
 			case DomainmodelPackage.ATOM:
 				sequence_Atom(context, (Atom) semanticObject); 
@@ -74,7 +74,7 @@ public class ConfiguratorLangSemanticSequencer extends AbstractDelegatingSemanti
 				sequence_Operator(context, (Operator) semanticObject); 
 				return; 
 			case DomainmodelPackage.OR:
-				sequence_Or(context, (Or) semanticObject); 
+				sequence_BooleanExpression(context, (Or) semanticObject); 
 				return; 
 			case DomainmodelPackage.RULE:
 				sequence_Rule(context, (Rule) semanticObject); 
@@ -90,13 +90,15 @@ public class ConfiguratorLangSemanticSequencer extends AbstractDelegatingSemanti
 	/**
 	 * Contexts:
 	 *     BooleanExpression returns And
+	 *     BooleanExpression.Or_1_0 returns And
+	 *     AndBool returns And
+	 *     AndBool.And_1_0 returns And
 	 *     SimpleBoolean returns And
-	 *     And returns And
 	 *
 	 * Constraint:
-	 *     (booleanexpression+=SimpleBoolean booleanexpression+=SimpleBoolean)
+	 *     (booleanexpression+=AndBool_And_1_0 booleanexpression+=SimpleBoolean)
 	 */
-	protected void sequence_And(ISerializationContext context, And semanticObject) {
+	protected void sequence_AndBool(ISerializationContext context, And semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -104,6 +106,9 @@ public class ConfiguratorLangSemanticSequencer extends AbstractDelegatingSemanti
 	/**
 	 * Contexts:
 	 *     BooleanExpression returns Atom
+	 *     BooleanExpression.Or_1_0 returns Atom
+	 *     AndBool returns Atom
+	 *     AndBool.And_1_0 returns Atom
 	 *     Atom returns Atom
 	 *     SimpleBoolean returns Atom
 	 *
@@ -136,6 +141,22 @@ public class ConfiguratorLangSemanticSequencer extends AbstractDelegatingSemanti
 	
 	/**
 	 * Contexts:
+	 *     BooleanExpression returns Or
+	 *     BooleanExpression.Or_1_0 returns Or
+	 *     AndBool returns Or
+	 *     AndBool.And_1_0 returns Or
+	 *     SimpleBoolean returns Or
+	 *
+	 * Constraint:
+	 *     (booleanexpression+=BooleanExpression_Or_1_0 booleanexpression+=AndBool)
+	 */
+	protected void sequence_BooleanExpression(ISerializationContext context, Or semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     ConfiguratorModel returns ConfiguratorModel
 	 *
 	 * Constraint:
@@ -149,6 +170,9 @@ public class ConfiguratorLangSemanticSequencer extends AbstractDelegatingSemanti
 	/**
 	 * Contexts:
 	 *     BooleanExpression returns Const
+	 *     BooleanExpression.Or_1_0 returns Const
+	 *     AndBool returns Const
+	 *     AndBool.And_1_0 returns Const
 	 *     Const returns Const
 	 *     SimpleBoolean returns Const
 	 *
@@ -207,20 +231,17 @@ public class ConfiguratorLangSemanticSequencer extends AbstractDelegatingSemanti
 	/**
 	 * Contexts:
 	 *     BooleanExpression returns Negation
+	 *     BooleanExpression.Or_1_0 returns Negation
+	 *     AndBool returns Negation
+	 *     AndBool.And_1_0 returns Negation
 	 *     SimpleBoolean returns Negation
 	 *     Negation returns Negation
 	 *
 	 * Constraint:
-	 *     booleanexpression=SimpleBoolean
+	 *     booleanexpression+=SimpleBoolean
 	 */
 	protected void sequence_Negation(ISerializationContext context, Negation semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DomainmodelPackage.Literals.NEGATION__BOOLEANEXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainmodelPackage.Literals.NEGATION__BOOLEANEXPRESSION));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNegationAccess().getBooleanexpressionSimpleBooleanParserRuleCall_1_0(), semanticObject.getBooleanexpression());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -229,33 +250,9 @@ public class ConfiguratorLangSemanticSequencer extends AbstractDelegatingSemanti
 	 *     Operator returns Operator
 	 *
 	 * Constraint:
-	 *     (feature=[Feature|ID] op=OpSymbol value=ID)
+	 *     (feature=[Feature|ID] op=OpSymbol (value=BoolString | value=IntString | value=ID))
 	 */
 	protected void sequence_Operator(ISerializationContext context, Operator semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DomainmodelPackage.Literals.OPERATOR__FEATURE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainmodelPackage.Literals.OPERATOR__FEATURE));
-			if (transientValues.isValueTransient(semanticObject, DomainmodelPackage.Literals.OPERATOR__OP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainmodelPackage.Literals.OPERATOR__OP));
-			if (transientValues.isValueTransient(semanticObject, DomainmodelPackage.Literals.OPERATOR__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainmodelPackage.Literals.OPERATOR__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getOperatorAccess().getFeatureFeatureIDTerminalRuleCall_0_0_1(), semanticObject.getFeature());
-		feeder.accept(grammarAccess.getOperatorAccess().getOpOpSymbolParserRuleCall_1_0(), semanticObject.getOp());
-		feeder.accept(grammarAccess.getOperatorAccess().getValueIDTerminalRuleCall_2_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Or returns Or
-	 *
-	 * Constraint:
-	 *     (booleanexpression+=SimpleBoolean booleanexpression+=SimpleBoolean)
-	 */
-	protected void sequence_Or(ISerializationContext context, Or semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -277,7 +274,7 @@ public class ConfiguratorLangSemanticSequencer extends AbstractDelegatingSemanti
 	 *     Rule returns Rule
 	 *
 	 * Constraint:
-	 *     (name=ID? if=SimpleBoolean then=SimpleBoolean text=STRING?)
+	 *     (name=ID if=SimpleBoolean then=SimpleBoolean text=STRING?)
 	 */
 	protected void sequence_Rule(ISerializationContext context, Rule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

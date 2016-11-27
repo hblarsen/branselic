@@ -141,15 +141,6 @@ public interface DomainmodelFactory extends EFactory
   Negation createNegation();
 
   /**
-   * Returns a new object of class '<em>And</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>And</em>'.
-   * @generated
-   */
-  And createAnd();
-
-  /**
    * Returns a new object of class '<em>Or</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -157,6 +148,15 @@ public interface DomainmodelFactory extends EFactory
    * @generated
    */
   Or createOr();
+
+  /**
+   * Returns a new object of class '<em>And</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>And</em>'.
+   * @generated
+   */
+  And createAnd();
 
   /**
    * Returns the package supported by this factory.

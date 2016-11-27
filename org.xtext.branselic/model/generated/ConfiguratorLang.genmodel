@@ -46,11 +46,11 @@
     <genClasses ecoreClass="ConfiguratorLang.ecore#//Negation">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ConfiguratorLang.ecore#//Negation/booleanexpression"/>
     </genClasses>
-    <genClasses ecoreClass="ConfiguratorLang.ecore#//And">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ConfiguratorLang.ecore#//And/booleanexpression"/>
-    </genClasses>
     <genClasses ecoreClass="ConfiguratorLang.ecore#//Or">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ConfiguratorLang.ecore#//Or/booleanexpression"/>
+    </genClasses>
+    <genClasses ecoreClass="ConfiguratorLang.ecore#//And">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ConfiguratorLang.ecore#//And/booleanexpression"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

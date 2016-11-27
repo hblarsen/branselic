@@ -3,7 +3,15 @@
  */
 package org.xtext.branselic.validation;
 
+import org.eclipse.xtext.validation.Check;
+import org.xtext.branselic.domainmodel.BooleanExpression;
+import org.xtext.branselic.domainmodel.ConfiguratorModel;
+import org.xtext.branselic.domainmodel.DomainmodelPackage;
+import org.xtext.branselic.domainmodel.Feature;
+import org.xtext.branselic.domainmodel.Operator;
+import org.xtext.branselic.domainmodel.Rule;
 import org.xtext.branselic.validation.AbstractConfiguratorLangValidator;
+import org.xtext.branselic.validation.ConstraintsAdapter;
 
 /**
  * This class contains custom validation rules.
@@ -12,4 +20,75 @@ import org.xtext.branselic.validation.AbstractConfiguratorLangValidator;
  */
 @SuppressWarnings("all")
 public class ConfiguratorLangValidator extends AbstractConfiguratorLangValidator {
+  @Check
+  public void checkModelComplete(final ConfiguratorModel model) {
+    final ConstraintsAdapter constraints = new ConstraintsAdapter();
+    boolean _modelComplete = constraints.modelComplete(model);
+    boolean _not = (!_modelComplete);
+    if (_not) {
+      this.error("Rules must refer to valid features", 
+        DomainmodelPackage.Literals.CONFIGURATOR_MODEL__FEATURE);
+    }
+  }
+  
+  @Check
+  public void checkNonCircularBools(final Rule r) {
+    final ConstraintsAdapter constraints = new ConstraintsAdapter();
+    BooleanExpression _if = r.getIf();
+    boolean _nonCircularBools = constraints.nonCircularBools(_if);
+    boolean _not = (!_nonCircularBools);
+    if (_not) {
+      this.error("Boolean expression may not refer to themselves", 
+        DomainmodelPackage.Literals.RULE__IF);
+    }
+    BooleanExpression _then = r.getThen();
+    boolean _nonCircularBools_1 = constraints.nonCircularBools(_then);
+    boolean _not_1 = (!_nonCircularBools_1);
+    if (_not_1) {
+      this.error("Boolean expression may not refer to themselves", 
+        DomainmodelPackage.Literals.RULE__THEN);
+    }
+  }
+  
+  @Check
+  public void checkLegalOperations(final Operator op) {
+    final ConstraintsAdapter constraints = new ConstraintsAdapter();
+    boolean _legalOperations = constraints.legalOperations(op);
+    boolean _not = (!_legalOperations);
+    if (_not) {
+      String _op = op.getOp();
+      String _plus = ("Operator " + _op);
+      String _plus_1 = (_plus + " not supported");
+      this.error(_plus_1, 
+        DomainmodelPackage.Literals.OPERATOR__OP);
+    }
+  }
+  
+  @Check
+  public void checkCorrectlyTyped(final Operator op) {
+    final ConstraintsAdapter constraints = new ConstraintsAdapter();
+    boolean _correctlyTyped = constraints.correctlyTyped(op);
+    boolean _not = (!_correctlyTyped);
+    if (_not) {
+      String _value = op.getValue();
+      String _plus = ("Value \'" + _value);
+      String _plus_1 = (_plus + "\' is not valid for feature ");
+      Feature _feature = op.getFeature();
+      String _name = _feature.getName();
+      String _plus_2 = (_plus_1 + _name);
+      this.error(_plus_2, 
+        DomainmodelPackage.Literals.OPERATOR__VALUE);
+    }
+  }
+  
+  @Check
+  public void checkNonCircularRules(final Rule r) {
+    final ConstraintsAdapter constraints = new ConstraintsAdapter();
+    boolean _nonCircularRules = constraints.nonCircularRules(r);
+    boolean _not = (!_nonCircularRules);
+    if (_not) {
+      this.error("Rules must not refer to a feature in both right side and left side", 
+        DomainmodelPackage.Literals.RULE__IF);
+    }
+  }
 }

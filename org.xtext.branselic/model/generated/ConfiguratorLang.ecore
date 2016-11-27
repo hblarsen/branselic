@@ -46,14 +46,14 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Negation" eSuperTypes="#//BooleanExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="booleanexpression" eType="#//BooleanExpression"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="And" eSuperTypes="#//BooleanExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="booleanexpression" upperBound="-1"
         eType="#//BooleanExpression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Or">
+  <eClassifiers xsi:type="ecore:EClass" name="Or" eSuperTypes="#//BooleanExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="booleanexpression" upperBound="-1"
+        eType="#//BooleanExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="And" eSuperTypes="#//BooleanExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="booleanexpression" upperBound="-1"
         eType="#//BooleanExpression" containment="true"/>
   </eClassifiers>

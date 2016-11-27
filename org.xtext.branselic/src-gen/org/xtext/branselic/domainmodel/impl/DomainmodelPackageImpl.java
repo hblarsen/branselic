@@ -131,14 +131,14 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass andEClass = null;
+  private EClass orEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass orEClass = null;
+  private EClass andEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -518,26 +518,6 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAnd()
-  {
-    return andEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAnd_Booleanexpression()
-  {
-    return (EReference)andEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getOr()
   {
     return orEClass;
@@ -551,6 +531,26 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
   public EReference getOr_Booleanexpression()
   {
     return (EReference)orEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAnd()
+  {
+    return andEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAnd_Booleanexpression()
+  {
+    return (EReference)andEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -627,11 +627,11 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
     negationEClass = createEClass(NEGATION);
     createEReference(negationEClass, NEGATION__BOOLEANEXPRESSION);
 
-    andEClass = createEClass(AND);
-    createEReference(andEClass, AND__BOOLEANEXPRESSION);
-
     orEClass = createEClass(OR);
     createEReference(orEClass, OR__BOOLEANEXPRESSION);
+
+    andEClass = createEClass(AND);
+    createEReference(andEClass, AND__BOOLEANEXPRESSION);
   }
 
   /**
@@ -669,6 +669,7 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
     constEClass.getESuperTypes().add(this.getBooleanExpression());
     atomEClass.getESuperTypes().add(this.getBooleanExpression());
     negationEClass.getESuperTypes().add(this.getBooleanExpression());
+    orEClass.getESuperTypes().add(this.getBooleanExpression());
     andEClass.getESuperTypes().add(this.getBooleanExpression());
 
     // Initialize classes and features; add operations and parameters
@@ -714,13 +715,13 @@ public class DomainmodelPackageImpl extends EPackageImpl implements DomainmodelP
     initEReference(getAtom_Operator(), this.getOperator(), null, "operator", null, 0, 1, Atom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(negationEClass, Negation.class, "Negation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getNegation_Booleanexpression(), this.getBooleanExpression(), null, "booleanexpression", null, 0, 1, Negation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(andEClass, And.class, "And", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAnd_Booleanexpression(), this.getBooleanExpression(), null, "booleanexpression", null, 0, -1, And.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNegation_Booleanexpression(), this.getBooleanExpression(), null, "booleanexpression", null, 0, -1, Negation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(orEClass, Or.class, "Or", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOr_Booleanexpression(), this.getBooleanExpression(), null, "booleanexpression", null, 0, -1, Or.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(andEClass, And.class, "And", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAnd_Booleanexpression(), this.getBooleanExpression(), null, "booleanexpression", null, 0, -1, And.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

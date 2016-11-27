@@ -298,20 +298,54 @@ ruleOperator returns [EObject current=null]
 		)
 		(
 			(
-				lv_value_2_0=RULE_ID
-				{
-					newLeafNode(lv_value_2_0, grammarAccess.getOperatorAccess().getValueIDTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getOperatorRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getOperatorAccess().getValueBoolStringParserRuleCall_2_0_0());
 					}
-					setWithLastConsumed(
-						$current,
-						"value",
-						lv_value_2_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
+					lv_value_2_1=ruleBoolString
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getOperatorRule());
+						}
+						set(
+							$current,
+							"value",
+							lv_value_2_1,
+							"org.xtext.branselic.ConfiguratorLang.BoolString");
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					{
+						newCompositeNode(grammarAccess.getOperatorAccess().getValueIntStringParserRuleCall_2_0_1());
+					}
+					lv_value_2_2=ruleIntString
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getOperatorRule());
+						}
+						set(
+							$current,
+							"value",
+							lv_value_2_2,
+							"org.xtext.branselic.ConfiguratorLang.IntString");
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					lv_value_2_3=RULE_ID
+					{
+						newLeafNode(lv_value_2_3, grammarAccess.getOperatorAccess().getValueIDTerminalRuleCall_2_0_2());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getOperatorRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"value",
+							lv_value_2_3,
+							"org.eclipse.xtext.common.Terminals.ID");
+					}
+				)
 			)
 		)
 	)
@@ -599,32 +633,30 @@ ruleRule returns [EObject current=null]
 	(
 		(
 			(
-				(
-					lv_name_0_0=RULE_ID
-					{
-						newLeafNode(lv_name_0_0, grammarAccess.getRuleAccess().getNameIDTerminalRuleCall_0_0_0());
+				lv_name_0_0=RULE_ID
+				{
+					newLeafNode(lv_name_0_0, grammarAccess.getRuleAccess().getNameIDTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRuleRule());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getRuleRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"name",
-							lv_name_0_0,
-							"org.eclipse.xtext.common.Terminals.ID");
-					}
-				)
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_0_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
 			)
-			otherlv_1=':'
-			{
-				newLeafNode(otherlv_1, grammarAccess.getRuleAccess().getColonKeyword_0_1());
-			}
-		)?
+		)
+		otherlv_1=':'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getRuleAccess().getColonKeyword_1());
+		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRuleAccess().getIfSimpleBooleanParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getRuleAccess().getIfSimpleBooleanParserRuleCall_2_0());
 				}
 				lv_if_2_0=ruleSimpleBoolean
 				{
@@ -642,12 +674,12 @@ ruleRule returns [EObject current=null]
 		)
 		otherlv_3='->'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getRuleAccess().getHyphenMinusGreaterThanSignKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getRuleAccess().getHyphenMinusGreaterThanSignKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRuleAccess().getThenSimpleBooleanParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getRuleAccess().getThenSimpleBooleanParserRuleCall_4_0());
 				}
 				lv_then_4_0=ruleSimpleBoolean
 				{
@@ -667,7 +699,7 @@ ruleRule returns [EObject current=null]
 			(
 				lv_text_5_0=RULE_STRING
 				{
-					newLeafNode(lv_text_5_0, grammarAccess.getRuleAccess().getTextSTRINGTerminalRuleCall_4_0());
+					newLeafNode(lv_text_5_0, grammarAccess.getRuleAccess().getTextSTRINGTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
@@ -701,40 +733,104 @@ ruleBooleanExpression returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getBooleanExpressionAccess().getConstParserRuleCall_0());
+			newCompositeNode(grammarAccess.getBooleanExpressionAccess().getAndBoolParserRuleCall_0());
 		}
-		this_Const_0=ruleConst
+		this_AndBool_0=ruleAndBool
 		{
-			$current = $this_Const_0.current;
+			$current = $this_AndBool_0.current;
 			afterParserOrEnumRuleCall();
 		}
-		    |
+		(
+			(
+				{
+					$current = forceCreateModelElementAndAdd(
+						grammarAccess.getBooleanExpressionAccess().getOrBooleanexpressionAction_1_0(),
+						$current);
+				}
+			)
+			otherlv_2='or'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getBooleanExpressionAccess().getOrKeyword_1_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getBooleanExpressionAccess().getBooleanexpressionAndBoolParserRuleCall_1_2_0());
+					}
+					lv_booleanexpression_3_0=ruleAndBool
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getBooleanExpressionRule());
+						}
+						add(
+							$current,
+							"booleanexpression",
+							lv_booleanexpression_3_0,
+							"org.xtext.branselic.ConfiguratorLang.AndBool");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+	)
+;
+
+// Entry rule entryRuleAndBool
+entryRuleAndBool returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAndBoolRule()); }
+	iv_ruleAndBool=ruleAndBool
+	{ $current=$iv_ruleAndBool.current; }
+	EOF;
+
+// Rule AndBool
+ruleAndBool returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
 		{
-			newCompositeNode(grammarAccess.getBooleanExpressionAccess().getAtomParserRuleCall_1());
+			newCompositeNode(grammarAccess.getAndBoolAccess().getSimpleBooleanParserRuleCall_0());
 		}
-		this_Atom_1=ruleAtom
+		this_SimpleBoolean_0=ruleSimpleBoolean
 		{
-			$current = $this_Atom_1.current;
+			$current = $this_SimpleBoolean_0.current;
 			afterParserOrEnumRuleCall();
 		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getBooleanExpressionAccess().getAndParserRuleCall_2());
-		}
-		this_And_2=ruleAnd
-		{
-			$current = $this_And_2.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getBooleanExpressionAccess().getNegationParserRuleCall_3());
-		}
-		this_Negation_3=ruleNegation
-		{
-			$current = $this_Negation_3.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					$current = forceCreateModelElementAndAdd(
+						grammarAccess.getAndBoolAccess().getAndBooleanexpressionAction_1_0(),
+						$current);
+				}
+			)
+			otherlv_2='and'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getAndBoolAccess().getAndKeyword_1_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getAndBoolAccess().getBooleanexpressionSimpleBooleanParserRuleCall_1_2_0());
+					}
+					lv_booleanexpression_3_0=ruleSimpleBoolean
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getAndBoolRule());
+						}
+						add(
+							$current,
+							"booleanexpression",
+							lv_booleanexpression_3_0,
+							"org.xtext.branselic.ConfiguratorLang.SimpleBoolean");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
 	)
 ;
 
@@ -844,22 +940,31 @@ ruleSimpleBoolean returns [EObject current=null]
 			afterParserOrEnumRuleCall();
 		}
 		    |
+		{
+			newCompositeNode(grammarAccess.getSimpleBooleanAccess().getNegationParserRuleCall_2());
+		}
+		this_Negation_2=ruleNegation
+		{
+			$current = $this_Negation_2.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
 		(
-			otherlv_2='('
+			otherlv_3='('
 			{
-				newLeafNode(otherlv_2, grammarAccess.getSimpleBooleanAccess().getLeftParenthesisKeyword_2_0());
+				newLeafNode(otherlv_3, grammarAccess.getSimpleBooleanAccess().getLeftParenthesisKeyword_3_0());
 			}
 			{
-				newCompositeNode(grammarAccess.getSimpleBooleanAccess().getBooleanExpressionParserRuleCall_2_1());
+				newCompositeNode(grammarAccess.getSimpleBooleanAccess().getBooleanExpressionParserRuleCall_3_1());
 			}
-			this_BooleanExpression_3=ruleBooleanExpression
+			this_BooleanExpression_4=ruleBooleanExpression
 			{
-				$current = $this_BooleanExpression_3.current;
+				$current = $this_BooleanExpression_4.current;
 				afterParserOrEnumRuleCall();
 			}
-			otherlv_4=')'
+			otherlv_5=')'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getSimpleBooleanAccess().getRightParenthesisKeyword_2_2());
+				newLeafNode(otherlv_5, grammarAccess.getSimpleBooleanAccess().getRightParenthesisKeyword_3_2());
 			}
 		)
 	)
@@ -895,71 +1000,10 @@ ruleNegation returns [EObject current=null]
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getNegationRule());
 					}
-					set(
+					add(
 						$current,
 						"booleanexpression",
 						lv_booleanexpression_1_0,
-						"org.xtext.branselic.ConfiguratorLang.SimpleBoolean");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleAnd
-entryRuleAnd returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAndRule()); }
-	iv_ruleAnd=ruleAnd
-	{ $current=$iv_ruleAnd.current; }
-	EOF;
-
-// Rule And
-ruleAnd returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getAndAccess().getBooleanexpressionSimpleBooleanParserRuleCall_0_0());
-				}
-				lv_booleanexpression_0_0=ruleSimpleBoolean
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAndRule());
-					}
-					add(
-						$current,
-						"booleanexpression",
-						lv_booleanexpression_0_0,
-						"org.xtext.branselic.ConfiguratorLang.SimpleBoolean");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_1='and'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getAndAccess().getAndKeyword_1());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getAndAccess().getBooleanexpressionSimpleBooleanParserRuleCall_2_0());
-				}
-				lv_booleanexpression_2_0=ruleSimpleBoolean
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAndRule());
-					}
-					add(
-						$current,
-						"booleanexpression",
-						lv_booleanexpression_2_0,
 						"org.xtext.branselic.ConfiguratorLang.SimpleBoolean");
 					afterParserOrEnumRuleCall();
 				}
@@ -996,6 +1040,60 @@ ruleEBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
 			newLeafNode(kw, grammarAccess.getEBooleanAccess().getFalseKeyword_1());
 		}
 	)
+;
+
+// Entry rule entryRuleBoolString
+entryRuleBoolString returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getBoolStringRule()); }
+	iv_ruleBoolString=ruleBoolString
+	{ $current=$iv_ruleBoolString.current.getText(); }
+	EOF;
+
+// Rule BoolString
+ruleBoolString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		kw='true'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getBoolStringAccess().getTrueKeyword_0());
+		}
+		    |
+		kw='false'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getBoolStringAccess().getFalseKeyword_1());
+		}
+	)
+;
+
+// Entry rule entryRuleIntString
+entryRuleIntString returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getIntStringRule()); }
+	iv_ruleIntString=ruleIntString
+	{ $current=$iv_ruleIntString.current.getText(); }
+	EOF;
+
+// Rule IntString
+ruleIntString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	this_INT_0=RULE_INT
+	{
+		$current.merge(this_INT_0);
+	}
+	{
+		newLeafNode(this_INT_0, grammarAccess.getIntStringAccess().getINTTerminalRuleCall());
+	}
 ;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

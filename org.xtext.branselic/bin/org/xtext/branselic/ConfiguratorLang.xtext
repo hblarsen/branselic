@@ -22,7 +22,7 @@ Feature returns branselic::Feature:
 Operator returns branselic::Operator:
 	feature=[branselic::Feature|ID]
 	op=OpSymbol
-	value=ID
+	value=(BoolString | IntString | ID)
 	;
 
 OpSymbol returns ecore::EString:
@@ -60,7 +60,7 @@ RuleSet returns branselic::RuleSet:
 
 
 Rule returns branselic::Rule:
-	(name = ID ':')?
+	name = ID ':'
 	if=SimpleBoolean
 	'->'
 	then=SimpleBoolean
@@ -69,8 +69,12 @@ Rule returns branselic::Rule:
 
 
 BooleanExpression returns branselic::BooleanExpression:
-	Const | Atom | And | Negation ;
+	 AndBool ({branselic::Or.booleanexpression+=current} 'or' booleanexpression+=AndBool)*
+;
 
+AndBool returns branselic::BooleanExpression:
+	SimpleBoolean ({branselic::And.booleanexpression+=current} 'and' booleanexpression+=SimpleBoolean)*
+;
 
 Const returns branselic::Const:
 	value=EBoolean
@@ -80,22 +84,26 @@ Atom returns branselic::Atom:
 	operator=Operator;
 
 SimpleBoolean returns branselic::BooleanExpression:
-	Const | Atom | "(" BooleanExpression ")"
+	Const | Atom | Negation | "(" BooleanExpression ")"
 	;
 
 
 Negation returns branselic::Negation:
 	'not'
-	booleanexpression=SimpleBoolean
+	booleanexpression+=SimpleBoolean
 	;
 
-And returns branselic::And:
-	booleanexpression+=SimpleBoolean "and" booleanexpression+=SimpleBoolean
-;
-
-Or returns branselic::Or:
-	booleanexpression+=SimpleBoolean "or" booleanexpression+=SimpleBoolean
-;
 
 EBoolean returns ecore::EBoolean:
 	'true' | 'false';
+
+BoolString returns ecore::EString:
+	'true' | 'false';
+
+IntString returns ecore::EString:
+	INT
+;
+
+NL:
+	('\n' | '\r')+
+;

@@ -5,8 +5,6 @@ package org.xtext.branselic.domainmodel;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Or</b></em>'.
@@ -23,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Or extends EObject
+public interface Or extends BooleanExpression
 {
   /**
    * Returns the value of the '<em><b>Booleanexpression</b></em>' containment reference list.

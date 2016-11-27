@@ -3,6 +3,9 @@
  */
 package org.xtext.branselic.validation
 
+import org.eclipse.xtext.validation.Check
+import org.xtext.branselic.domainmodel.*
+import org.xtext.branselic.domainmodel.DomainmodelPackage
 
 /**
  * This class contains custom validation rules. 
@@ -13,13 +16,67 @@ class ConfiguratorLangValidator extends AbstractConfiguratorLangValidator {
 	
 //	public static val INVALID_NAME = 'invalidName'
 //
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					ConfiguratorLangPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
+	@Check
+	def checkModelComplete(ConfiguratorModel model)
+	{
+		val constraints = new ConstraintsAdapter()
+		
+		if(!constraints.modelComplete(model))
+		{
+			error("Rules must refer to valid features", 
+        		DomainmodelPackage.Literals.CONFIGURATOR_MODEL__FEATURE)
+		}
+		
+	}
 	
+	@Check
+	def checkNonCircularBools(Rule r)
+	{
+		val constraints = new ConstraintsAdapter()
+		if(!constraints.nonCircularBools(r.getIf()))
+		{
+			error("Boolean expression may not refer to themselves", 
+        		DomainmodelPackage.Literals.RULE__IF)
+		}
+		if(!constraints.nonCircularBools(r.getThen()))
+		{
+			error("Boolean expression may not refer to themselves", 
+        		DomainmodelPackage.Literals.RULE__THEN)
+		}
+	}
+	
+	@Check
+	def checkLegalOperations(Operator op)
+	{
+		val constraints = new ConstraintsAdapter()
+		if(!constraints.legalOperations(op))
+		{
+			error("Operator " + op.getOp() + " not supported", 
+        		DomainmodelPackage.Literals.OPERATOR__OP)
+		}
+	}
+	
+	@Check
+	def checkCorrectlyTyped(Operator op)
+	{
+		val constraints = new ConstraintsAdapter()
+		if(!constraints.correctlyTyped(op))
+		{
+			error("Value '" + op.getValue() + "' is not valid for feature " + op.getFeature().getName(), 
+        		DomainmodelPackage.Literals.OPERATOR__VALUE)
+		}
+	}
+	
+	@Check
+	def checkNonCircularRules(Rule r)
+	{
+		val constraints = new ConstraintsAdapter()
+		if(!constraints.nonCircularRules(r))
+		{
+			error("Rules must not refer to a feature in both right side and left side", 
+        		DomainmodelPackage.Literals.RULE__IF)
+		}
+		
+	}
 }
+	
