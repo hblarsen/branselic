@@ -82,13 +82,24 @@ package org.xtext.branselic.generator
       b match
       {
         case c:Const => c.isValue.toString
-        case a:Atom => s""" (m("${a.getOperator.getFeature.getName}")=="${a.getOperator.getValue}") """
+        case a:Atom => s""" (m("${a.getOperator.getFeature.getName}")""" + 
+                       s"""${fromOperator(a.getOperator.getOp)}"${a.getOperator.getValue}") """
         case n:Negation => s"""(!${fromBool(n.getBooleanexpression.iterator.toList(0))})"""
         case a:And => s"""(${fromBool(a.getBooleanexpression.iterator.toList(0))} && """ +
                       s"""${fromBool(a.getBooleanexpression.iterator.toList(1))})"""
         case o:Or => s"""(${fromBool(o.getBooleanexpression.iterator.toList(0))} || """ +
                       s"""${fromBool(o.getBooleanexpression.iterator.toList(1))})"""
       }
+    
+    def fromOperator(op:String) :String =
+    {
+      op match
+      {
+        case "=" => "=="
+        case "<" => "<"
+        case ">" => ">"
+      }
+    }
   }
  
 }

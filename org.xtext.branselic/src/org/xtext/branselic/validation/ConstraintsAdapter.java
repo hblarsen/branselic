@@ -19,6 +19,11 @@ public class ConstraintsAdapter
 		return new Constraints().legalOperations(op);
 	}
 	
+	public boolean legalArgument(Operator op)
+	{
+		return new Constraints().legalArgument(op);
+	}
+	
 	public boolean correctlyTyped(Operator op)
 	{
 		return new Constraints().correctlyTyped(op);

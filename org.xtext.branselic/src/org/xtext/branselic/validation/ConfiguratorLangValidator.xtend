@@ -57,6 +57,17 @@ class ConfiguratorLangValidator extends AbstractConfiguratorLangValidator {
 	}
 	
 	@Check
+	def checkLegalArgument(Operator op)
+	{
+		val constraints = new ConstraintsAdapter()
+		if(!constraints.legalArgument(op))
+		{
+			error("Operator " + op.getOp() + " does not support value " + op.getValue(), 
+        		DomainmodelPackage.Literals.OPERATOR__VALUE)
+		}
+	}
+	
+	@Check
 	def checkCorrectlyTyped(Operator op)
 	{
 		val constraints = new ConstraintsAdapter()

@@ -17,6 +17,14 @@ package org.xtext.branselic.validation
     def legalOperations (op:Operator) :Boolean = 
       List("=", "<", ">").contains(op.getOp)
     
+    def legalArgument (op:Operator) :Boolean =
+      op.getOp match
+      {
+        case "=" => true
+        case "<" => op.getValue.forall(Character.isDigit)
+        case ">" => op.getValue.forall(Character.isDigit)
+      }
+    
     def correctlyTyped (op:Operator) :Boolean = 
       op.getFeature.getType match
       {
