@@ -61,9 +61,9 @@ RuleSet returns branselic::RuleSet:
 
 Rule returns branselic::Rule:
 	name = ID ':'
-	if=SimpleBoolean
+	if=BooleanExpression
 	'->'
-	then=SimpleBoolean
+	then=BooleanExpression
 	(text = STRING)?
 	;
 
@@ -104,6 +104,3 @@ IntString returns ecore::EString:
 	INT
 ;
 
-NL:
-	('\n' | '\r')+
-;
