@@ -14,7 +14,8 @@ import org.scalatest.FunSuite
 import org.xtext.branselic.domainmodel.impl.RuleSetImpl
 import org.xtext.branselic.domainmodel.util.DomainmodelAdapterFactory
 import org.xtext.branselic.validation.ConfiguratorLangValidator
-
+import org.xtext.branselic.tests.Validator.EnumType
+import scala.collection.mutable.ListBuffer
 
 @RunWith(classOf[JUnitRunner])
 class ConstraintsSpec extends FlatSpec with Matchers {
@@ -116,8 +117,6 @@ class ConstraintsSpec extends FlatSpec with Matchers {
 
    val eINSTANCE = org.xtext.branselic.domainmodel.impl.DomainmodelFactoryImpl.init();
 
-   //Atom -> operator -> feature
-   
    //HDMI = true
    val feature = eINSTANCE.createFeature()
    feature.setName("HDMI")
@@ -154,12 +153,8 @@ class ConstraintsSpec extends FlatSpec with Matchers {
   
  "A valid rule" should "not have circular bools" in { 
 
-   //A rule must contain a reference to a feature    
-   
    val eINSTANCE = org.xtext.branselic.domainmodel.impl.DomainmodelFactoryImpl.init();
 
-   //Atom -> operator -> feature
-   
    //HDMI = true
    val feature = eINSTANCE.createFeature()
    feature.setName("HDMI")
@@ -181,9 +176,6 @@ class ConstraintsSpec extends FlatSpec with Matchers {
    val atom_then = eINSTANCE.createAtom()
    atom_then.setOperator(op2)
 
- 
-   // Rule/BooleanExpression -> ContainedOperators(rule) -> ContainedOperators(BooleanExpression)
-   // Test of both ContainedOperators def's
    val rule = eINSTANCE.createRule()
    rule.setIf(atom_if)
    rule.setName("Test_Rule")
@@ -214,12 +206,8 @@ class ConstraintsSpec extends FlatSpec with Matchers {
  
  "A non valid circular rule" should "validate false" in { 
 
-   //A rule must contain a reference to a feature    
-   
    val eINSTANCE = org.xtext.branselic.domainmodel.impl.DomainmodelFactoryImpl.init();
 
-   //Atom -> operator -> feature
-   
    //HDMI = true
    val feature = eINSTANCE.createFeature()
    feature.setName("HDMI")
@@ -234,7 +222,6 @@ class ConstraintsSpec extends FlatSpec with Matchers {
    val atom_if = eINSTANCE.createAtom()
    atom_if.setOperator(op)
    
-   
    // HDMI = false 
    val bo2 = eINSTANCE.createBool()
    feature.setType(bo2)
@@ -245,28 +232,20 @@ class ConstraintsSpec extends FlatSpec with Matchers {
 
    val atom_then = eINSTANCE.createAtom()
    atom_then.setOperator(op2)
-
  
-   // Rule/BooleanExpression -> ContainedOperators(rule) -> ContainedOperators(BooleanExpression)
-   // Test of both ContainedOperators def's
    val rule = eINSTANCE.createRule()
    rule.setIf(atom_if)
    rule.setName("Test_Rule")
    rule.setThen(atom_then)
 
-//   val validator = new ConfiguratorLangValidator()
-//   validator.checkNonCircularRules(rule)
-   
-   assert(new Constraints().nonCircularRules(rule))
-  
+   //Expect false
+   assert(false == new Constraints().nonCircularRules(rule))
    
  } 
 
 
  "A model" should "be complete" in { 
 
-   //A rule must contain a reference to a feature    
-   
    val eINSTANCE = org.xtext.branselic.domainmodel.impl.DomainmodelFactoryImpl.init();
 
    //HDMI = true
@@ -290,15 +269,11 @@ class ConstraintsSpec extends FlatSpec with Matchers {
    val atom_then = eINSTANCE.createAtom()
    atom_then.setOperator(op2)
 
- 
-   // Rule/BooleanExpression -> ContainedOperators(rule) -> ContainedOperators(BooleanExpression)
-   // Test of both ContainedOperators def's
    val rule = eINSTANCE.createRule()
    rule.setIf(atom_if)
    rule.setName("Test_Rule")
    rule.setThen(atom_then) 
    rule.setText("rule message")
-   
  
    val model = eINSTANCE.createConfiguratorModel()
    val ruleset = eINSTANCE.createRuleSet()
@@ -306,34 +281,15 @@ class ConstraintsSpec extends FlatSpec with Matchers {
    model.setRuleset(ruleset)
    ruleset.getRule.add(rule)
    
-   
    model.getFeature.add(feature)
    model.getFeature.add(feature2)
     
    assert(new Constraints().modelComplete(model))
    
-   
- 
-   
-   //  Negate : not ElectricWindows=true -> (Fuel = Gasoline) 
-//   val neg = eINSTANCE.createNegation()
-//   rule2.setThen(neg)  
-   
-//   val or = eINSTANCE.createAnd()
-//   val and = eINSTANCE.createOr()
-//   val enum = eINSTANCE.createEnum()
-
-//   rule2.setThen(or)  
-//   rule2.setThen(and)  
-
-   
-   
  } 
  
  "Negation in contained operators" should "validate" in { 
 
-   //A rule must contain a reference to a feature    
-   
    val eINSTANCE = org.xtext.branselic.domainmodel.impl.DomainmodelFactoryImpl.init();
 
    //HDMI = true
@@ -347,7 +303,6 @@ class ConstraintsSpec extends FlatSpec with Matchers {
    val atom_if = eINSTANCE.createAtom()
    atom_if.setOperator(op)
 
-   
    // CPU : [AMD, Intel]
    val feature2 = eINSTANCE.createFeature()
    feature2.setName("CPU")
@@ -359,9 +314,6 @@ class ConstraintsSpec extends FlatSpec with Matchers {
    val atom_then = eINSTANCE.createAtom()
    atom_then.setOperator(op2)
 
- 
-   // Rule/BooleanExpression -> ContainedOperators(rule) -> ContainedOperators(BooleanExpression)
-   // Test of both ContainedOperators def's
    val rule = eINSTANCE.createRule()
    val neg = eINSTANCE.createNegation()
    neg.getBooleanexpression.add(atom_if)
@@ -376,8 +328,6 @@ class ConstraintsSpec extends FlatSpec with Matchers {
 
  "Using one And-expression in a rule" should "validate and contain 3 operators " in { 
 
-   //A rule must contain a reference to a feature    
-   
    val eINSTANCE = org.xtext.branselic.domainmodel.impl.DomainmodelFactoryImpl.init();
 
    //HDMI = true
@@ -391,7 +341,6 @@ class ConstraintsSpec extends FlatSpec with Matchers {
    val atom_if = eINSTANCE.createAtom()
    atom_if.setOperator(op)
 
-   
    // CPU : [AMD, Intel]
    val feature2 = eINSTANCE.createFeature()
    feature2.setName("CPU")
@@ -402,7 +351,6 @@ class ConstraintsSpec extends FlatSpec with Matchers {
    op2.setFeature(feature2) 
    val atom_then = eINSTANCE.createAtom()
    atom_then.setOperator(op2)
-
 
    // OS : [Linux, Windows]
    val feature3 = eINSTANCE.createFeature()
@@ -415,10 +363,6 @@ class ConstraintsSpec extends FlatSpec with Matchers {
    val atom_then2 = eINSTANCE.createAtom()
    atom_then2.setOperator(op3)
 
-   
-   
-   // Rule/BooleanExpression -> ContainedOperators(rule) -> ContainedOperators(BooleanExpression)
-   // Test of both ContainedOperators def's
    val rule = eINSTANCE.createRule()
    val and = eINSTANCE.createAnd()
    and.getBooleanexpression.add(atom_then)
@@ -434,9 +378,43 @@ class ConstraintsSpec extends FlatSpec with Matchers {
    
  } 
 
+ "Generated file" should "be able to validate - true and false" in { 
+
+//   val value = listWithOneTuple(0)._3.asInstanceOf[EnumType].vals(0)   //Pick first value
+//   val listWithOneTuple2 = Validator.features.filter(_._1 == "Rims")
+   
+//     val listWithOneTuple = Validator.features.take(1)
+//     val valueEnum =
+//     listWithOneTuple(0)._3 match {
+//      case valueEnum: EnumType => valueEnum
+//      case _ => throw new ClassCastException
+//     }
+//      
+   
+     var testConfig :Map[String,String] = Map()
  
+     // Fill map with all params and empty values except for the test case   
+     Validator.features.foreach(x => testConfig = testConfig + (x._1 -> ""))
+     testConfig = testConfig + ("RimsColor" -> "MatteBlack") 
+     testConfig = testConfig + ("ElectricWindows" -> "false") 
+     
+     var status = Validator.validate(testConfig)
+     
+     //Expect fail. RimsColor can only be MatteBlack if Rims is Aluminum and EnginePower is 120 or 150
+     assert(false==status)
  
-} //end CompileSpec
+
+     testConfig = testConfig + ("Rims" -> "Aluminum")
+     testConfig = testConfig + ("Fuel" -> "Gasoline")
+     testConfig = testConfig + ("EnginePower" -> "120")
+     
+     status = Validator.validate(testConfig)
+     
+     assert(status)
+
+ } 
+ 
+} //end ConstraintsSpec
 
 
 
